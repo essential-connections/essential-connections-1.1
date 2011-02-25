@@ -1,0 +1,3 @@
+<?php
+
+include_once('ec_delegate_menu.features.inc');
