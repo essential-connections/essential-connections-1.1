@@ -368,21 +368,6 @@ Personal message from @username:
   $strongarm->value = '0';
 
   $export['og_visibility_registration'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'vertical_tabs_fieldsets_group';
-  $strongarm->value = array(
-    0 => 'custom_breadcrumbs',
-    1 => 'menu',
-    2 => 'notifications',
-    3 => 'book',
-    4 => 'revision_information',
-    5 => 'author',
-    6 => 'options',
-    7 => 'comment_settings',
-    8 => 'path',
-  );
 
   return $export;
 }
