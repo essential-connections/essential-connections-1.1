@@ -38,20 +38,6 @@ function ec_base_user_default_permissions() {
     ),
   );
 
-  // Exported permission: access site-wide contact form
-  $permissions['access site-wide contact form'] = array(
-    'name' => 'access site-wide contact form',
-    'roles' => array(),
-  );
-
-  // Exported permission: access user profiles
-  $permissions['access user profiles'] = array(
-    'name' => 'access user profiles',
-    'roles' => array(
-      '0' => 'authenticated user',
-    ),
-  );
-
   // Exported permission: administer actions
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
@@ -122,14 +108,6 @@ function ec_base_user_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported permission: administer permissions
-  $permissions['administer permissions'] = array(
-    'name' => 'administer permissions',
-    'roles' => array(
-      '0' => 'administrator',
-    ),
-  );
-
   // Exported permission: administer rules
   $permissions['administer rules'] = array(
     'name' => 'administer rules',
@@ -160,23 +138,6 @@ function ec_base_user_default_permissions() {
   $permissions['administer url aliases'] = array(
     'name' => 'administer url aliases',
     'roles' => array(),
-  );
-
-  // Exported permission: administer users
-  $permissions['administer users'] = array(
-    'name' => 'administer users',
-    'roles' => array(
-      '0' => 'administrator',
-      '1' => 'manager',
-    ),
-  );
-
-  // Exported permission: change own username
-  $permissions['change own username'] = array(
-    'name' => 'change own username',
-    'roles' => array(
-      '0' => 'authenticated user',
-    ),
   );
 
   // Exported permission: create url aliases

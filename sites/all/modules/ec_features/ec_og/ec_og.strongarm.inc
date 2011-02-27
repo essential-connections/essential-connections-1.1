@@ -384,6 +384,5 @@ Personal message from @username:
     8 => 'path',
   );
 
-  $export['vertical_tabs_fieldsets_group'] = $strongarm;
   return $export;
 }
