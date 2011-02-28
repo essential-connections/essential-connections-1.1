@@ -40,18 +40,6 @@ function ec_page_user_default_permissions() {
     ),
   );
 
-
-  // Exported permission: edit field_map
-  $permissions['edit field_map'] = array(
-    'name' => 'edit field_map',
-    'roles' => array(
-      '0' => 'administrator',
-      '1' => 'advanced user',
-      '2' => 'authenticated user',
-      '3' => 'manager',
-    ),
-  );
-
   // Exported permission: edit own page content
   $permissions['edit own page content'] = array(
     'name' => 'edit own page content',
