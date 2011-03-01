@@ -2,6 +2,7 @@
 
 include_once('ec_backup_migrate.features.inc');
 
+/*
 function ec_backup_migrate_backup_migrate_destinations_alter($type, &$data) {
   //dpm($type);
   //drupal_set_message("data:".$data);
@@ -9,5 +10,5 @@ function ec_backup_migrate_backup_migrate_destinations_alter($type, &$data) {
   watchdog('ec_backup_migrate', ' in hook_backup_migrate_destinations_alter', array(), WATCHDOG_ERROR, NULL);
   
 }
-
+*/
 
