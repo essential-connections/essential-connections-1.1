@@ -6,7 +6,7 @@ function ec_backup_migrate_backup_migrate_destinations_alter($type, &$data) {
   //dpm($type);
   //drupal_set_message("data:".$data);
   
-  watchdog('ec_backup_migrate', dpm($type).' in hook_backup_migrate_destinations_alter', array(), WATCHDOG_ERROR, NULL);
+  watchdog('ec_backup_migrate', ' in hook_backup_migrate_destinations_alter', array(), WATCHDOG_ERROR, NULL);
   
 }
 
