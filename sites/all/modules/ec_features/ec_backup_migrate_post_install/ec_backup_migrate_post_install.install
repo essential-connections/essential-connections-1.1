@@ -9,9 +9,6 @@ function ec_backup_migrate_post_install_install() {
   $result = db_query("REPLACE INTO {backup_migrate_destinations} (destination_id, name, type, location, settings) VALUES
   ('manual', 'Manual Backups Directory', 'file_manual', 'backups/".$site_path."/manual', 'a:2:{s:5:\"chmod\";s:0:\"\";s:5:\"chgrp\";s:0:\"\";}'),
   ('scheduled', 'Scheduled Backups Directory', 'file_scheduled', 'backups/".$site_path."/scheduled', 'a:2:{s:5:\"chmod\";s:0:\"\";s:5:\"chgrp\";s:0:\"\";}');");
-  //$result = db_query("REPLACE INTO {backup_migrate_destinations} (destination_id, name, type, location, settings) VALUES
-  ('62ad34530578d5766feadbf88aec3d6c', 'Manual Backups Directory', 'file', 'backups/".$site_path."/manual', 'a:2:{s:5:\"chmod\";s:0:\"\";s:5:\"chgrp\";s:0:\"\";}'),
-  ('d9858383afd309e7f59d0569e4f7ab18', 'Scheduled Backups Directory', 'file', 'backups/".$site_path."/scheduled', 'a:2:{s:5:\"chmod\";s:0:\"\";s:5:\"chgrp\";s:0:\"\";}");
   if($result != 1) watchdog('ec_backup_migrate_post_install', 'problem replacing backup_migrate_destinations in hook_install', array(), WATCHDOG_ERROR, NULL);
   
   $result = db_query("REPLACE INTO {backup_migrate_profiles} (profile_id, name, filename, append_timestamp, timestamp_format, filters) VALUES
