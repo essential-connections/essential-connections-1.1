@@ -90,11 +90,11 @@ function ec_help_menu() {
  * Implementation of hook_menu_link_alter().
  */
 function ec_help_menu_link_alter(&$item, $menu) {
-  drupal_set_message('menu:<pre>'.print_r($item).'</pre>' );
+  //drupal_set_message('menu:<pre>'.print_r($item).'</pre>' );
   //global $user;
   if ($item['link_path'] == 'help') {
     $url = variable_get('ec_help_url', 'http://help.essential-connections.com');
-    $item['href'] = '$url';
+    $item['path'] = '$url';
     $item['options']['attributes']['class'] = (($item['options']['attributes']['class'])?' ':'') . 'ec-help-link';
   }
 }
