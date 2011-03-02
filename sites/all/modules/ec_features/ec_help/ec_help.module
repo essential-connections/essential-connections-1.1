@@ -90,45 +90,15 @@ function ec_help_menu() {
  * Implementation of hook_menu_link_alter().
  */
 function ec_help_menu_link_alter(&$item, $menu) {
-  drupal_set_message('menu:<pre>'.print_r($item).'</pre>' );
+  //drupal_set_message('menu:<pre>'.print_r($item).'</pre>' );
   //global $user;
-  if (strpos($item['link_path'], 'help') === 0) {
+  if ($item['link_path'] == 'help') {
+    $url = variable_get('ec_help_url', 'http://help.essential-connections.com');
+    $item['link_path'] = '$url';
     $item['options']['attributes']['class'] = (($item['options']['attributes']['class'])?' ':'') . 'ec-help-link';
   }
-  /*if (strpos($item['link_path'], 'logout') === 0) {
-    drupal_set_message('item:'.$item['title'] );
-    $item['title'] .= ' '.$user->name;
-  }*/
 }
 
-/**
- * Implementation of hook_simplemenu_tree_alter().
- */
-/*function ec_help_simplemenu_tree_alter(&$tree) {
-  //drupal_set_message('<b>tree:</b><pre>'.print_r($tree, TRUE) .'</pre>');
-  global $user;
-  foreach($tree as $key => $item){
-  if($item['link']['link_path'] == 'help'){
-    //drupal_set_message('<b>help:</b><pre>'.print_r($item, TRUE) .'</pre>');
-    $help = ec_help_get_page_help();
-    $tree[$key]['link']['href'] = $help['url'];
-    foreach($item['below'] as $key2 => $item2){
-      //drupal_set_message('<b>help2:</b><pre>'.print_r($item, TRUE) .'</pre>');
-      if($item2['link']['link_path'] == 'help/page'){
-        $tree[$key]['below'][$key2]['link']['href'] = $help['page_link'];
-      }else{
-        $tree[$key]['below'][$key2]['link']['href'] = $help['url'];
-      }
-      if(!$help['page_link']) $tree[$key]['below'][$key2]['link']['hidden'] = TRUE;
-    }
-  }else if($item['link']['link_path'] == 'logout'){
-    $tree[$key]['link']['title'] = 'Log out '.$user->name;
-    //$tree[$key]['link']['localized_options']['attributes']['style'] = '"float:right;"';
-    //drupal_set_message('<b>help:</b><pre>'.print_r($item, TRUE) .'</pre>');
-  }
-  }
-
-}*/
 function ec_help_get_page_help(){
 
   $args = arg();
