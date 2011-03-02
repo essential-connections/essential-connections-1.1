@@ -11,7 +11,7 @@ function ec_user_menu() {
 
   global $user;
   
-  $items['administration/user_settings'] = array(
+  $items['admin/user/user_settings'] = array(
      'title' => 'User Settings',
      'description' => '',
      'page callback' => 'drupal_get_form',
