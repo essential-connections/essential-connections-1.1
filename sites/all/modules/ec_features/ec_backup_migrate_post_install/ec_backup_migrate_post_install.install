@@ -4,7 +4,7 @@
 
 function ec_backup_migrate_post_install_install() {
 	
-  $site_path = config_path();
+  $site_path = conf_path();
   
   $result = db_query("REPLACE INTO {backup_migrate_destinations} (destination_id, name, type, location, settings) VALUES
   ('manual', 'Manual Backups Directory', 'file_manual', 'backups/".$site_path."/manual', 'a:2:{s:5:\"chmod\";s:0:\"\";s:5:\"chgrp\";s:0:\"\";}'),
