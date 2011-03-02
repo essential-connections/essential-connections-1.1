@@ -214,6 +214,14 @@ function ec_base_user_default_permissions() {
       '1' => 'manager',
     ),
   );
+  
+  // Exported permission: access administration
+  $permissions['access administration'] = array(
+    'name' => 'access administration',
+    'roles' => array(
+      '0' => 'administrator',
+    ),
+  );
 
   return $permissions;
 }

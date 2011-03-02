@@ -1,3 +1,79 @@
 <?php
 
 include_once('ec_user.features.inc');
+
+
+/**
+ * Implementation of hook_menu().
+ */
+function ec_user_menu() {
+  $items = array();
+
+  global $user;
+  
+  $items['administration/user_settings'] = array(
+     'title' => 'User Settings',
+     'description' => '',
+     'page callback' => 'drupal_get_form',
+     'page arguments' => array('ec_user_user_settings'),
+     'access callback' => 'user_access',
+     'access arguments' => array('administer users'),
+     'type' => MENU_NORMAL_ITEM,
+     'weight' => 3
+  );
+
+  return $items;
+}
+
+
+function ec_user_user_settings_submit($form, &$form_state) {
+
+        // set variables
+        variable_set('user_register', $form_state['values']['user_register']);
+        variable_set('user_email_verification', $form_state['values']['user_email_verification']);
+        variable_set('user_registration_help', $form_state['values']['user_registration_help']);
+        drupal_set_message(t('The configuration options have been saved.'));
+        //drupal_goto($_GET['q'], drupal_get_destination());
+}
+function ec_user_user_settings() {
+  //global $user;
+
+  $form['registration'] = array('#type' => 'fieldset', '#title' => t('User registration settings'));
+  $form['registration']['user_register'] = array(
+	'#type' => 'radios', 
+	'#title' => t('Public registrations'), 
+	'#default_value' => variable_get('user_register', 1), 
+	'#options' => array(
+		t('Only site administrators can create new user accounts.'), 
+		t('Visitors can create accounts and no administrator approval is required.'), 
+		t('Visitors can create accounts but administrator approval is required.')
+	)
+  );
+  $form['registration']['user_email_verification'] = array(
+	'#type' => 'checkbox', 
+	'#title' => t('Require e-mail verification when a visitor creates an account'), 
+	'#default_value' => variable_get('user_email_verification', TRUE), 
+	'#description' => t('If this box is checked, new users will be required to validate their e-mail address prior to logging into the site, and will be assigned a system-generated password. With it unchecked, users will be logged in immediately upon registering, and may select their own passwords during registration.')
+  );
+  $form['registration']['user_registration_help'] = array(
+	'#type' => 'textarea', '#title' => t('User registration guidelines'), 
+	'#default_value' => variable_get('user_registration_help', ''), 
+	'#description' => t('This text is displayed at the top of the user registration form and is useful for helping or instructing your users.')
+  );
+
+
+  $form['submit'] = array('#type' => 'submit', '#value' => t('Save'));
+
+  return $form;
+
+}
+
+
+
+
+
+
+
+
+
+

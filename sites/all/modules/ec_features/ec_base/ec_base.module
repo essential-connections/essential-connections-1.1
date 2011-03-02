@@ -1,3 +1,75 @@
 <?php
 
-// Drupal needs this blank file.
+/**
+ * Implementation of hook_theme_registry_alter().
+ */
+function ec_base_theme_registry_alter(&$theme_registry) {
+  $funcs = &$theme_registry['page']['preprocess functions'];
+  $key = array_search('ec_base_preprocess_page', $funcs);
+  unset($funcs[$key]);
+  array_unshift($funcs, 'ec_base_preprocess_page');
+
+}
+/**
+ * Preprocess function for the page theme hook.
+ *
+ */
+function ec_base_preprocess_page(&$variables) {
+  $path = implode("/", arg());
+  if((arg(0) == 'admin' || arg(0) == 'administer' || arg(0) == 'administration') && arg(2) != 'block'){
+    $variables['show_blocks'] = FALSE;
+    //unset($variables['right']);
+    //$variables['layout'] = 'left';
+  }
+
+}
+function ec_base_preprocess_node(&$variables) {
+  if(arg(0) == 'node' && arg(1) > 0 && !arg(2)){
+    if($variables['node']->field_show_auth_info['0']['value'] == 1){
+      $variables['submitted'] = FALSE;
+    }
+  }
+}
+
+////
+
+/**
+ * Implementation of hook_perm().
+ */
+function ec_base_perm() {
+  return array('access administration');
+}
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function ec_base_form_alter(&$form, $form_state, $form_id) {
+
+  $node = $form['#node'];
+
+  if($form_id == $node->type."_node_form"){
+
+    $form['body_field']['teaser_include']['#type'] = 'hidden';
+		
+    $form['buttons']['#prefix'] = "<div style='position:fixed;bottom:0;left:100;background: #FFFFFF;background-position: 50 10;border: 1px solid #CCCCCC;' >";
+    $form['buttons']['#suffix'] = "</div>";
+  }
+
+}
+
+/**
+* Implementation of hook_link()
+*/
+function ec_base_link($type, $object, $teaser = FALSE) {
+  $links = array();
+  global $user;
+  if ($type == 'node' && user_access('edit any '.$object->type.' content')) {
+    $links['edit'] = array(
+      'title' => '[edit '.$object->title.']',
+      'href' => 'node/' . $object->nid . '/edit',
+      'query' => '',
+      'fragment' => '',
+    );
+  }
+  return $links;
+}
