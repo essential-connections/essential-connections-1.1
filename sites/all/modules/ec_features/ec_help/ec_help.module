@@ -39,7 +39,7 @@ function ec_help_help($path, $arg) {
   if(user_access('access help')){
     $help = ec_help_get_page_help();
     if($help['page_link']){
-	  $output = l('Help for this page',$help['page_link'],array('attributes' => array('class' => 'ec-help-link','style' => 'float:right;')));
+	  $output = l('[Help for this page]',$help['page_link'],array('attributes' => array('class' => 'ec-help-link','style' => 'float:right;')));
     }
   }
   return $output;
