@@ -90,7 +90,7 @@ function ec_help_menu() {
  * Implementation of hook_menu_link_alter().
  */
 function ec_help_menu_link_alter(&$item, $menu) {
-  //drupal_set_message('menu:<pre>'.($item['path']).'</pre>' );
+  dpm($item);
   //global $user;
   if (strpos($item['link_path'], 'help') === 0) {
     $item['options']['attributes']['class'] = (($item['options']['attributes']['class'])?' ':'') . 'ec-help-link';
