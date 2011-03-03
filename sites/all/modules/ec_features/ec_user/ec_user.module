@@ -2,6 +2,31 @@
 
 include_once('ec_user.features.inc');
 
+/**
+ * Preprocess function for the page theme hook.
+ *
+ */
+function ec_user_preprocess_page(&$variables) {
+    if(arg(0) == 'admin' && arg(1) == 'user' && arg(2) == 'roles'){
+	  $locked_roles = variable_get('ec_locked_roles',array(DRUPAL_ANONYMOUS_RID, DRUPAL_AUTHENTICATED_RID,3,4,5,6));
+        $header = array(t('Name'), array('data' => t('Operations'), 'colspan' => 2));
+        foreach (user_roles() as $rid => $name) {
+            $edit_permissions = l(t('edit permissions'), 'admin/user/permissions/'. $rid);
+            if (!in_array($rid, $locked_roles)) {
+                $rows[] = array($name, l(t('edit role'), 'admin/user/roles/edit/'. $rid), $edit_permissions);
+            }else{
+                $rows[] = array($name, t('locked'), $edit_permissions);
+            }
+        }
+        $form = user_admin_role();
+        $rows[] = array(drupal_render($form['name']), array('data' => drupal_render($form['submit']), 'colspan' => 2));
+
+        $output = drupal_render($form);
+        $output .= theme('table', $header, $rows);
+
+        $variables['content'] = $output;
+    }
+}
 
 /**
  * Implementation of hook_menu().
@@ -25,6 +50,24 @@ function ec_user_menu() {
   return $items;
 }
 
+/**
+ * Implementation of hook_form_alter().
+ */
+function ec_user_form_alter(&$form, $form_state, $form_id) {
+
+  //$node = $form['#node'];
+  
+  // lock default roles
+  if($form_id == 'user_admin_role'){
+    $locked_roles = variable_get('ec_locked_roles',array(DRUPAL_ANONYMOUS_RID, DRUPAL_AUTHENTICATED_RID,3,4,5,6));
+    $rid = arg(4);
+    if (in_array($rid,$locked_roles)) {
+        drupal_goto('admin/user/roles');
+    }
+  }
+
+
+}
 
 function ec_user_user_settings_submit($form, &$form_state) {
 

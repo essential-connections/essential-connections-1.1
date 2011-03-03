@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Implementation of hook_theme_registry_alter().
  */
@@ -16,6 +17,7 @@ function ec_base_theme_registry_alter(&$theme_registry) {
  */
 function ec_base_preprocess_page(&$variables) {
   $path = implode("/", arg());
+  
   if((arg(0) == 'admin' || arg(0) == 'administer' || arg(0) == 'administration') && arg(2) != 'block'){
     $variables['show_blocks'] = FALSE;
     //unset($variables['right']);
@@ -47,6 +49,7 @@ function ec_base_form_alter(&$form, $form_state, $form_id) {
 
   $node = $form['#node'];
 
+  // for all node edit forms
   if($form_id == $node->type."_node_form"){
 
     $form['body_field']['teaser_include']['#type'] = 'hidden';
