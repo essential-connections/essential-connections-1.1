@@ -9,3 +9,4 @@ function ec_delegate_menu_ctools_plugin_api() {
     return array("version" => 1);
   }
 }
+

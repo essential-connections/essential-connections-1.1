@@ -31,3 +31,4 @@ function ec_admin_access_menu_link_alter(&$item, $menu) {
     }
   }
 }
+

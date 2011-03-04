@@ -11,3 +11,4 @@ name = "htmlpurifier"
 package = "Features"
 project = "ec_htmlpurifier"
 version = "6.x-1.0"
+

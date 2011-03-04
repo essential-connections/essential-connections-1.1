@@ -20,3 +20,4 @@ name = "input formats and filters"
 package = "Features"
 project = "ec_formats_filters"
 version = "6.x-1.0"
+

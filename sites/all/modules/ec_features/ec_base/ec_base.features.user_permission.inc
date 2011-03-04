@@ -225,3 +225,4 @@ function ec_base_user_default_permissions() {
 
   return $permissions;
 }
+

@@ -14,3 +14,4 @@ name = "clickpath"
 package = "Features"
 project = "ec_clickpath"
 version = "6.x-1.0"
+

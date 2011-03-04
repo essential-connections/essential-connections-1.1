@@ -29,3 +29,4 @@ function ec_event_node_info() {
   );
   return $items;
 }
+

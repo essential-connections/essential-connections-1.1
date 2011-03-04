@@ -22,3 +22,4 @@ function ec_block_user_default_permissions() {
 
   return $permissions;
 }
+

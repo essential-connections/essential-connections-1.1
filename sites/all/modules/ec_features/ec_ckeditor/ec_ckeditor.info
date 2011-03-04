@@ -8,3 +8,4 @@ name = "ckeditor"
 package = "Features"
 project = "ec_ckeditor"
 version = "6.x-1.0"
+

@@ -8,3 +8,4 @@ function ec_content_views_api() {
     'api' => '2',
   );
 }
+

@@ -28,3 +28,4 @@ name = "imagecache"
 package = "Features"
 project = "ec_imagecache"
 version = "6.x-1.0"
+

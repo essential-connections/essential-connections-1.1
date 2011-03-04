@@ -46,3 +46,4 @@ function ec_admin_access_strongarm() {
   $export['ec_denied_admin_paths'] = $strongarm;
   return $export;
 }
+

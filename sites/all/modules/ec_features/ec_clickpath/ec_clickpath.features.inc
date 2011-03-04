@@ -9,3 +9,4 @@ function ec_clickpath_ctools_plugin_api() {
     return array("version" => 1);
   }
 }
+

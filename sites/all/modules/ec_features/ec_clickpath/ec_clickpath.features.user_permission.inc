@@ -14,3 +14,4 @@ function ec_clickpath_user_default_permissions() {
 
   return $permissions;
 }
+

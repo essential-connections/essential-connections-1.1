@@ -10,3 +10,4 @@ name = "Delegate menu administration"
 package = "Features"
 project = "ec_delegate_menu"
 version = "6.x-1.0"
+

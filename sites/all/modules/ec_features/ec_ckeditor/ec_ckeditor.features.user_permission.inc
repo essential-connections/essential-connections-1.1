@@ -25,3 +25,4 @@ function ec_ckeditor_user_default_permissions() {
 
   return $permissions;
 }
+

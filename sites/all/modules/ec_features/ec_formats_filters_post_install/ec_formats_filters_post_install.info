@@ -5,3 +5,4 @@ name = "formats_filters_post_install"
 package = "Features"
 project = "ec_formats_filters_post_install"
 version = "6.x-1.0"
+

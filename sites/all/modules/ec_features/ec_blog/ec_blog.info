@@ -31,3 +31,4 @@ name = "blog"
 package = "Features"
 project = "ec_blog"
 version = "6.x-1.0"
+

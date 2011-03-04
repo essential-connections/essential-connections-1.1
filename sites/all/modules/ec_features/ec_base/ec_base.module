@@ -75,3 +75,4 @@ function ec_base_link($type, $object, $teaser = FALSE) {
   }
   return $links;
 }
+

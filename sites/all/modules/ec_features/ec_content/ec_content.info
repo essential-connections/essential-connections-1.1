@@ -14,3 +14,4 @@ name = "content"
 package = "Features"
 project = "ec_content"
 version = "6.x-1.0"
+

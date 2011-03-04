@@ -28,3 +28,4 @@ function ec_backup_migrate_strongarm() {
   $export['backup_migrate_source_id'] = $strongarm;
   return $export;
 }
+

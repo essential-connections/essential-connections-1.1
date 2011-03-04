@@ -1,7 +1,4 @@
-/**
- * @file
- *  Creates a tab by the scrollbar for feedback and suggestions.
- */
+
 
 // Sets up the tab and it's callbacks.
 Drupal.behaviors.feedbacktab = function(context) {

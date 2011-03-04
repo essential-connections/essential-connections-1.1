@@ -54,3 +54,4 @@ function ec_backup_migrate_user_default_permissions() {
 
   return $permissions;
 }
+
