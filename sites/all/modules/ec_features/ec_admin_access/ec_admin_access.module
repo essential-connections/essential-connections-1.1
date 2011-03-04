@@ -1,0 +1,33 @@
+<?php
+
+include_once('ec_admin_access.features.inc');
+
+
+/**
+ * Preprocess function for the page theme hook.
+ *
+ */
+function eit_groups_preprocess_page(&$variables) {
+  
+  global $user;
+  if($user->uid > 1){
+    $path = implode("/", arg());
+    $denied_paths = variable_get('ec_denied_admin_paths',array());
+    if(in_array($path,$denied_paths)){
+      drupal_access_denied();
+    }
+  }
+}
+
+/**
+* Implementation of hook_menu_link_alter()
+*/
+function ec_admin_access_menu_link_alter(&$item, $menu) {
+  global $user;
+  if($user->uid > 1){
+    $denied_paths = variable_get('ec_denied_admin_paths',array());
+    if (in_array($item['link_path'],$denied_paths)) {
+      $item['hidden'] = 1;
+    }
+  }
+}

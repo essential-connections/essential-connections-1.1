@@ -161,7 +161,7 @@ function ec_statistics_views_default_views() {
     'default' => 'day',
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->override_option('path', 'administer/activity/comment');
+  $handler->override_option('path', 'admin/activity/comment');
   $handler->override_option('menu', array(
     'type' => 'tab',
     'title' => 'Comments',
@@ -334,7 +334,7 @@ function ec_statistics_views_default_views() {
     'default' => 'day',
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->override_option('path', 'administer/activity/posts');
+  $handler->override_option('path', 'admin/activity/posts');
   $handler->override_option('menu', array(
     'type' => 'tab',
     'title' => 'Posts',
@@ -622,7 +622,7 @@ function ec_statistics_views_default_views() {
     'default' => 'day',
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->override_option('path', 'administer/activity/pi');
+  $handler->override_option('path', 'admin/activity/pi');
   $handler->override_option('menu', array(
     'type' => 'tab',
     'title' => 'Page Impressions',
@@ -913,7 +913,7 @@ function ec_statistics_views_default_views() {
     'default' => 'day',
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->override_option('path', 'administer/activity/user');
+  $handler->override_option('path', 'admin/activity/user');
   $handler->override_option('menu', array(
     'type' => 'tab',
     'title' => 'Users',
