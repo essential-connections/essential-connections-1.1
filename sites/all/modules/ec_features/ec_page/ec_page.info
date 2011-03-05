@@ -1,5 +1,5 @@
 core = "6.x"
-dependencies[] = "cck"
+dependencies[] = "content"
 dependencies[] = "embed_gmap"
 dependencies[] = "features"
 dependencies[] = "fieldgroup"
