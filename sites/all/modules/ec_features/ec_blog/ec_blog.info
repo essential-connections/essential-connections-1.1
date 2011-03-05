@@ -1,7 +1,7 @@
 core = "6.x"
 dependencies[] = "blog"
 dependencies[] = "blogapi"
-dependencies[] = "cck"
+dependencies[] = "content"
 dependencies[] = "embed_gmap"
 dependencies[] = "features"
 dependencies[] = "fieldgroup"

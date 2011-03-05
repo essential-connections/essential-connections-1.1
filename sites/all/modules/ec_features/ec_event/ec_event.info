@@ -1,7 +1,7 @@
 core = "6.x"
 dependencies[] = "calendar"
 dependencies[] = "calendar_ical"
-dependencies[] = "cck"
+dependencies[] = "content"
 dependencies[] = "date"
 dependencies[] = "date_api"
 dependencies[] = "date_locale"
