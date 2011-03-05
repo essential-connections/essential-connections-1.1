@@ -1,0 +1,18 @@
+<?php
+
+function ec_pushbutton_form_alter(&$form, $form_state, $form_id) {
+
+  switch($form_id){
+    case 'system_themes_form':
+
+        $form['pushbutton']['info']['#value']['description'] = '';
+
+        $form['pushbutton']['info']['#value']['version'] = '';
+      
+      break;
+    case 'system_theme_settings':
+      
+      break;
+  }
+
+}
