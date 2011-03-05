@@ -127,7 +127,7 @@ function ec_og_form_alter(&$form, $form_state, $form_id) {
     //$form['og_directory']['#default_value'] = 1;
     $form['og_directory']['#description'] = 'Should this group appear on the list of groups page? Disabled if the group is set to private group.';
 
-  }else if($form_id == 'og_confirm_unsubscribe' || $form_id == 'og_create_admin_confirm'):
+  }else if($form_id == 'og_confirm_unsubscribe' || $form_id == 'og_create_admin_confirm'){
     if(is_numeric(arg(2)) && arg(0) == 'og'){
       $form['actions']['cancel']['#value'] = l('Cancel','node/'.arg(2).'/members');
     }
