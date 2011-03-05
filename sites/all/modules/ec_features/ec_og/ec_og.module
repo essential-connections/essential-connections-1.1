@@ -146,7 +146,7 @@ function ec_og_mail($key, &$message, $params) {
 * Implementation of hook_mail_alter()
 */
 function ec_og_mail_alter(&$message) {
-  global $user
+  global $user;
   if(arg(2) == 'broadcast'){
     $message['headers']['Errors-To'] = $user->mail;
     $message['headers']['Return-Path'] = $user->mail;
