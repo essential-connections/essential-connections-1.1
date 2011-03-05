@@ -44,14 +44,6 @@ function ec_base_user_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported permission: administer blocks
-  $permissions['administer blocks'] = array(
-    'name' => 'administer blocks',
-    'roles' => array(
-      '0' => 'administrator',
-    ),
-  );
-
   // Exported permission: administer comments
   $permissions['administer comments'] = array(
     'name' => 'administer comments',
@@ -79,12 +71,6 @@ function ec_base_user_default_permissions() {
     'roles' => array(
       '0' => 'administrator',
     ),
-  );
-
-  // Exported permission: administer filters
-  $permissions['administer filters'] = array(
-    'name' => 'administer filters',
-    'roles' => array(),
   );
 
   // Exported permission: administer menu
