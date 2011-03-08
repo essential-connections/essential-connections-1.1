@@ -14,10 +14,28 @@ function ec_og_user_default_permissions() {
     ),
   );
 
+  // Exported permission: broadcast
+  $permissions['broadcast'] = array(
+    'name' => 'broadcast',
+    'roles' => array(
+      '0' => 'administrator',
+      '1' => 'manager',
+    ),
+  );
+
   // Exported permission: manage OG panels pages
   $permissions['manage OG panels pages'] = array(
     'name' => 'manage OG panels pages',
     'roles' => array(),
+  );
+
+  // Exported permission: manage groups
+  $permissions['manage groups'] = array(
+    'name' => 'manage groups',
+    'roles' => array(
+      '0' => 'administrator',
+      '1' => 'manager',
+    ),
   );
 
   // Exported permission: subscribe to content in groups

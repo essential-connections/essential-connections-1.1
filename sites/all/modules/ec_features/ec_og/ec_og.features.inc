@@ -29,3 +29,12 @@ function ec_og_node_info() {
   );
   return $items;
 }
+
+/**
+ * Implementation of hook_views_api().
+ */
+function ec_og_views_api() {
+  return array(
+    'api' => '2',
+  );
+}

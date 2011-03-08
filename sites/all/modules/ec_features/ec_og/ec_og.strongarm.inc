@@ -107,17 +107,18 @@ function ec_og_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'og_admin_email_body';
-  $strongarm->value = '@body
-
---
-This message was sent by an administrator in the \'@group\' group at @site. To visit this group, browse to !url_group. To unsubscribe from this group, visit !url_unsubscribe';
+  $strongarm->value = '<p>
+	@body -- This message was sent by an administrator in the &#39;@group&#39; group at @site. To visit this group, browse to !url_group. To unsubscribe from this group, visit !url_unsubscribe</p>
+';
 
   $export['og_admin_email_body'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'og_approve_user_body';
-  $strongarm->value = 'You may now post messages in this group located at !group_url';
+  $strongarm->value = '<p>
+	You may now post messages in this group located at !group_url</p>
+';
 
   $export['og_approve_user_body'] = $strongarm;
   $strongarm = new stdClass;
@@ -215,7 +216,9 @@ This message was sent by an administrator in the \'@group\' group at @site. To v
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'og_deny_user_body';
-  $strongarm->value = 'Sorry, your membership request was denied.';
+  $strongarm->value = '<p>
+	Sorry, your membership request was denied.</p>
+';
 
   $export['og_deny_user_body'] = $strongarm;
   $strongarm = new stdClass;
@@ -243,12 +246,9 @@ This message was sent by an administrator in the \'@group\' group at @site. To v
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'og_invite_user_body';
-  $strongarm->value = 'Hi. I\'m a member of \'@group\' and I welcome you to join this group as well. Please see the link and message below.
-
-@group
-@description
-Join: !group_url
-@body';
+  $strongarm->value = '<p>
+	Hi. I&#39;m a member of &#39;@group&#39; and I welcome you to join this group as well. Please see the link and message below. @group @description Join: !group_url @body</p>
+';
 
   $export['og_invite_user_body'] = $strongarm;
   $strongarm = new stdClass;
@@ -262,10 +262,9 @@ Join: !group_url
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'og_new_admin_body';
-  $strongarm->value = '@username, you are now an administrator for the group \'@group\'.
-
-You can administer this group by logging in here:
- !group_url';
+  $strongarm->value = '<p>
+	@username, you are now an administrator for the group &#39;@group&#39;. You can administer this group by logging in here: !group_url</p>
+';
 
   $export['og_new_admin_body'] = $strongarm;
   $strongarm = new stdClass;
@@ -279,16 +278,9 @@ You can administer this group by logging in here:
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'og_new_node_body';
-  $strongarm->value = '@type \'@subject\' by @username
-
-@node_teaser
-
-!read_more: !content_url
-Post reply: !reply_url
-
---
-You are subscribed from the group \'@group\' at @site.
-To manage your subscription, visit !group_url';
+  $strongarm->value = '<p>
+	@type &#39;@subject&#39; by @username @node_teaser !read_more: !content_url Post reply: !reply_url -- You are subscribed from the group &#39;@group&#39; at @site. To manage your subscription, visit !group_url</p>
+';
 
   $export['og_new_node_body'] = $strongarm;
   $strongarm = new stdClass;
@@ -302,7 +294,7 @@ To manage your subscription, visit !group_url';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'og_notifications_autosubscribe';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
 
   $export['og_notifications_autosubscribe'] = $strongarm;
   $strongarm = new stdClass;
@@ -331,13 +323,9 @@ To manage your subscription, visit !group_url';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'og_request_user_body';
-  $strongarm->value = 'To instantly approve this request, visit !approve_url.
-You may deny this request or manage members at !group_url. 
-
-Personal message from @username:
-------------------
-
-@request';
+  $strongarm->value = '<p>
+	To instantly approve this request, visit !approve_url. You may deny this request or manage members at !group_url. Personal message from @username: ------------------ @request</p>
+';
 
   $export['og_request_user_body'] = $strongarm;
   $strongarm = new stdClass;
@@ -368,6 +356,5 @@ Personal message from @username:
   $strongarm->value = '0';
 
   $export['og_visibility_registration'] = $strongarm;
-
   return $export;
 }
