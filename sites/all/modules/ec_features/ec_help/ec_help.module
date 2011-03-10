@@ -8,11 +8,11 @@ function ec_help_theme_registry_alter(&$theme_registry) {
   // get to.
   $funcs = &$theme_registry['page']['preprocess functions'];
 
-  // Move 'eit_ec_help_preprocess_page' to be the first callback
+  // Move 'eit_ec_help_preprocess_page' to be the last callback
   // function.
   $key = array_search('ec_help_preprocess_page', $funcs);
   unset($funcs[$key]);
-  array_unshift($funcs, 'ec_help_preprocess_page');
+  array_push($funcs, 'ec_help_preprocess_page');
 }
 
 /**
@@ -93,8 +93,8 @@ function ec_help_menu_link_alter(&$item, $menu) {
   //drupal_set_message('menu:<pre>'.print_r($item).'</pre>' );
   //global $user;
   if ($item['link_path'] == 'help') {
-    $url = variable_get('ec_help_url', 'http://help.essential-connections.com');
-    $item['link_path'] = $url;
+    //$url = variable_get('ec_help_url', 'http://help.essential-connections.com');
+    //$item['link_path'] = $url;
     $item['options']['attributes']['class'] = (($item['options']['attributes']['class'])?' ':'') . 'ec-help-link';
   }
 }
