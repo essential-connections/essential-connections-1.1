@@ -10,7 +10,7 @@ function ec_theme_cti_flex_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'conditional_styles_cti_flex';
   $strongarm->value = '<!--[if IE]>
-<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cti_flex/ie.css?O" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/cti_flex/ie.css?h" />
 <![endif]-->
 ';
 
