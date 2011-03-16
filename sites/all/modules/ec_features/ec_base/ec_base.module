@@ -24,7 +24,7 @@ function ec_base_preprocess_page(&$variables) {
   }
   
   //if (variable_get('eit_ads','1') == 1){
-    $variables['header'] = ('<div id="ec_ads_top" style="text-align:center;">
+    $variables['header'] = ('<div id="ec_ads_top" style="text-align:center;float:top;">
        <script type="text/javascript"><!--
 google_ad_client = "pub-9646714435306637";
 google_ad_slot = "3219472777";
