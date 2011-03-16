@@ -23,7 +23,8 @@ function ec_base_preprocess_page(&$variables) {
     //$variables['layout'] = 'left';
   }
   
-  //if (variable_get('eit_ads','1') == 1){
+  // this needs to be in page.tpl.php right after <body>, no way to add it to the very top from here
+  /*if (variable_get('eit_ads','1') == 1){
     $variables['header'] = ('<div id="ec_ads_top" style="text-align:center;float:top;">
        <script type="text/javascript"><!--
 google_ad_client = "pub-9646714435306637";
@@ -35,7 +36,7 @@ google_ad_height = 90;
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
         </div>');
-  //}
+  }*/
 
 }
 function ec_base_preprocess_node(&$variables) {
