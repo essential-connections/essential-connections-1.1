@@ -8,7 +8,7 @@ function ec_help_theme_registry_alter(&$theme_registry) {
   // get to.
   $funcs = &$theme_registry['page']['preprocess functions'];
 
-  // Move 'eit_ec_help_preprocess_page' to be the last callback
+  // Move 'ec_help_preprocess_page' to be the last callback
   // function.
   $key = array_search('ec_help_preprocess_page', $funcs);
   unset($funcs[$key]);
@@ -23,7 +23,7 @@ function ec_help_theme_registry_alter(&$theme_registry) {
  * the page hook's other preprocess functions, so that the JS and CSS
  * is added before they render $styles, $script and $closure.
  */
-function ec_help_preprocess_page($content, $show_blocks, $show_messages = TRUE) {
+function ec_help_preprocess_page(&$variables) {
 
   $path = drupal_get_path('module', 'ec_help');
   drupal_add_js("$path/ec_help.js", 'module', 'footer', TRUE);
