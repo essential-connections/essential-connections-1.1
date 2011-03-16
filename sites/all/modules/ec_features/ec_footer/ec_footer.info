@@ -1,7 +1,0 @@
-core = "6.x"
-dependencies[] = "features"
-description = "ec_footer"
-name = "ec_footer"
-package = "Features"
-project = "ec_footer"
-version = "6.x-1.0"

@@ -1,6 +1,0 @@
-core = "6.x"
-description = "ec_pushbutton"
-name = "ec_pushbutton"
-package = "Features"
-project = "ec_pushbutton"
-version = "6.x-1.0"
