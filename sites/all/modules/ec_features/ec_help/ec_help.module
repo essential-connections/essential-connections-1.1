@@ -29,7 +29,7 @@ function ec_help_preprocess_page(&$variables) {
   drupal_add_js("$jspath/ec_help.js", 'module', 'footer', TRUE);
   
   //drupal_set_message(':::'.$variables['help']);
-  //$variables['help'] = '';
+  $variables['help'] = '';
   if(user_access('access help')){
     $help = ec_help_get_page_help();
     if($help['page_link']){
