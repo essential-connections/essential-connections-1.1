@@ -7,6 +7,9 @@ function ec_help_theme_registry_alter(&$theme_registry) {
   // Make the array of the page hook's preprocess functions easier to
   // get to.
   $funcs = &$theme_registry['page']['preprocess functions'];
+  
+  // add js first
+  array_unshift($funcs, 'ec_help_preprocess_page_js');
 
   // Move 'ec_help_preprocess_page' to be the last callback
   // function.
@@ -14,7 +17,12 @@ function ec_help_theme_registry_alter(&$theme_registry) {
   unset($funcs[$key]);
   array_push($funcs, 'ec_help_preprocess_page');
 }
+function ec_help_preprocess_page_js() {
 
+  $jspath = drupal_get_path('module', 'ec_help');
+  drupal_add_js("$jspath/ec_help.js", 'module', 'footer', TRUE);
+  
+}
 /**
  * Preprocess function for the page theme hook.
  *
