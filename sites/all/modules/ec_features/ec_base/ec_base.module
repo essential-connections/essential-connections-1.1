@@ -22,6 +22,8 @@ function ec_base_preprocess_page(&$variables) {
     //unset($variables['right']);
     //$variables['layout'] = 'left';
   }
+  
+  $variables['header'] = 'hi';
 
 }
 function ec_base_preprocess_node(&$variables) {
