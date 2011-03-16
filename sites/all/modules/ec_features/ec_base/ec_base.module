@@ -23,7 +23,19 @@ function ec_base_preprocess_page(&$variables) {
     //$variables['layout'] = 'left';
   }
   
-  $variables['header'] = 'hi';
+  if (variable_get('eit_ads','1') == 1){
+    $variables['header_top'] = ('<div id="ec_ads_top" style="text-align:center;">
+       <script type="text/javascript"><!--
+google_ad_client = "pub-9646714435306637";
+google_ad_slot = "3219472777";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script> <script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+        </div>');
+  }
 
 }
 function ec_base_preprocess_node(&$variables) {
