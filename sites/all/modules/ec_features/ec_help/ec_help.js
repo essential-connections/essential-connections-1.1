@@ -38,7 +38,7 @@ Drupal.behaviors.feedbacktab = function(context) {
     //help.moveTo(0,0);
   });*/
   $('.ec-help-link').click(function() {
-    var path = 'http://help.essential-connections.com';//$(this).attr('href');
+    var path = $(this).attr('href');
     help = window.open(path,'help','location=0,status=1,scrollbars=1,resizable=1,width=300,height=500');
     help.focus();
     //help.moveTo(0,0);
