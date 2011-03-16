@@ -27,6 +27,8 @@ function ec_help_preprocess_page(&$variables) {
 
   $path = drupal_get_path('module', 'ec_help');
   drupal_add_js("$path/ec_help.js", 'module', 'footer', TRUE);
+  
+  unset($variables['help']);
 
 }
 
