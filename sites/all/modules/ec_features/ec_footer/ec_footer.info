@@ -1,0 +1,6 @@
+core = "6.x"
+description = "ec_footer"
+name = "ec_footer"
+package = "Features"
+project = "ec_footer"
+version = "6.x-1.0"
