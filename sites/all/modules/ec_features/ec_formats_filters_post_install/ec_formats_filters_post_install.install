@@ -3,6 +3,7 @@
 
 function ec_formats_filters_post_install_install() {
 	
+	/*
 	$result = db_query("REPLACE INTO {filters} (fid, format, module, delta, weight) VALUES
 	(21, 1, 'filter', 0, 1),
 	(22, 1, 'filter', 1, 2),
@@ -23,6 +24,7 @@ function ec_formats_filters_post_install_install() {
 	(4, 'Messaging plain text', '', 0);
 	");
 	if($result != 1) watchdog('ec_formats_filters_post_install', 'problem replacing filter_formats in hook_install', array(), WATCHDOG_ERROR,NULL);
+	*/
 	
 	db_query("REPLACE INTO {better_formats_defaults} (rid, type, format, type_weight, weight) VALUES
 	(1, 'node', 0, 1, 0),
