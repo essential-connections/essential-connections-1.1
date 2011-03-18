@@ -10,6 +10,43 @@
 function essential_connections_profile_modules() {
   $modules = array( 
 	'ctools','features','strongarm',
+	'ec_base',
+	'ec_protect_critical_users',
+	'ec_user',
+	'ec_permissions_lock',
+	'ec_delegate_menu',
+	'ec_admin_access',
+	'ec_views',
+	'ec_simplemenu',
+	'ec_help',
+	'ec_backup_migrate',
+	'ec_content',
+	'ec_filefield',
+	'ec_filefield_post_install',
+	'ec_block',
+	'ec_formats_filters',
+	'ec_htmlpurifier',
+	'ec_imagecache',
+	'ec_og',
+	'ec_messaging_notifications',
+	'ec_blog',
+	'ec_page',
+	'ec_event',
+	'ec_webform',
+	'ec_imce',
+	'ec_ckeditor',
+	'ec_vertical_tabs',
+	'ec_clickpath',
+	'ec_save_edit',
+	'ec_statistics',
+	'ec_theme',
+	'ec_theme_acquia_marina',
+	'ec_theme_acquia_prosper',
+	'ec_theme_cti_flex',
+	'ec_theme_garland',
+	'ec_theme_mix_and_match',
+	'ec_theme_zeropoint',
+	'ec_uc',
   ); 
   return $modules;
 } 
@@ -52,7 +89,7 @@ function essential_connections_profile_tasks(&$task, $url) {
     //variable_set('site_frontpage', 'user/login');
 	variable_set('theme_default', 'cti_flex');
 
-	
+	/*
 	module_enable(array(
 	'ec_base',
 	'ec_protect_critical_users',
@@ -66,6 +103,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 	'ec_backup_migrate',
 	'ec_content',
 	'ec_filefield',
+	'ec_filefield_post_install',
 	'ec_block',
 	'ec_formats_filters',
 	'ec_htmlpurifier',
@@ -92,6 +130,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 	'ec_uc',
 
 	));
+	*/
 	
     //cache_clear_all();
     //drupal_rebuild_theme_registry();
