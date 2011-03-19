@@ -392,5 +392,5 @@ print l(\'edit\',\'administer/categories/edit/\'.$data->tid, array(\'attributes\
 
   $views[$view->name] = $view;
 
-  return $views;
+  //return $views;
 }
