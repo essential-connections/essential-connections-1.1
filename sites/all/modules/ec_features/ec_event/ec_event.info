@@ -77,3 +77,4 @@ name = "event"
 package = "Features"
 project = "ec_event"
 version = "6.x-1.0"
+
