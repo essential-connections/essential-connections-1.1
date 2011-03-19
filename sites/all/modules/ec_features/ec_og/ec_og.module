@@ -88,9 +88,7 @@ function ec_og_menu() {
     'weight' => 7
   );
 
-  //// Hide some items
-  
-  $items['og/activity']['access callback'] = FALSE;
+
 
   ////////////////////////////////////
 
