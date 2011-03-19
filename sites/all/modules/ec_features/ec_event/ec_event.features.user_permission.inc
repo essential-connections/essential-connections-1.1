@@ -23,4 +23,3 @@ function ec_event_user_default_permissions() {
 
   return $permissions;
 }
-

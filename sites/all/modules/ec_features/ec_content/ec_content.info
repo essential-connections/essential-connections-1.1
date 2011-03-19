@@ -9,9 +9,9 @@ dependencies[] = "views_customfield"
 description = "content"
 features[views][] = "content"
 features[views][] = "ec_admin_content"
-
+features[views][] = "node_gallery"
+//features[views_api][] = "api:2"
 name = "content"
 package = "Features"
 project = "ec_content"
 version = "6.x-1.0"
-

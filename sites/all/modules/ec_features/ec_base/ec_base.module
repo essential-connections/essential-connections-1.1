@@ -71,6 +71,29 @@ function ec_base_perm() {
 }
 
 /**
+ * Implementation of hook_menu().
+ */
+function ec_base_menu() {
+  $items = array();
+
+    global $user;
+ 
+  // SITE SETTINGS
+    $items['admin/settings/site_settings'] = array(
+       'title' => 'Site Settings',
+       'description' => 'Edit site title, slogan, footer, timezone and home page style',
+       'page callback' => 'drupal_get_form',
+       'page arguments' => array('ec_base_site_settings'),
+       'access callback' => 'user_access',
+       'access arguments' => array('administer site configuration'),
+       'type' => MENU_NORMAL_ITEM,
+       'weight' => 1
+    );
+
+  return $items;
+}
+
+/**
  * Implementation of hook_form_alter().
  */
 function ec_base_form_alter(&$form, $form_state, $form_id) {
@@ -86,6 +109,13 @@ function ec_base_form_alter(&$form, $form_state, $form_id) {
     $form['buttons']['#suffix'] = "</div>";
   }
 
+  switch($form_id){
+    case 'menu_edit_item':
+      $form['menu']['link_path']['#description'] = 'The path this menu item links to. This can be an internal path such as <em>content/mypage</em> or an external URL such as <em>http://essential-connections.com</em>. Enter <em>&lt;front&gt;</em> to link to the front page.';
+      break;
+
+  }
+  
 }
 
 /**
@@ -104,4 +134,87 @@ function ec_base_link($type, $object, $teaser = FALSE) {
   }
   return $links;
 }
+
+////
+
+function ec_base_site_settings_submit($form, &$form_state) {
+
+	// set variables
+	variable_set('site_name', $form_state['values']['site_name']);
+	variable_set('site_mail', $form_state['values']['site_mail']);
+	variable_set('site_slogan', $form_state['values']['site_slogan']);
+	variable_set('site_footer', $form_state['values']['site_footer']);
+	variable_set('site_frontpage', $form_state['values']['site_frontpage']);
+	drupal_set_message(t('The configuration options have been saved.'));
+	//drupal_goto($_GET['q'], drupal_get_destination());
+}
+
+function ec_base_site_settings() {
+	global $user;
+
+	// get variables
+	//global $conf;
+	//foreach ($conf['node_options_page'] as $k => $v) {
+	//	drupal_set_message('>'.$k.' : '.$v);
+	//}
+
+	// build form
+	$form['site_name'] = array(
+		'#type' => 'textfield',
+		'#title' => t('Site name'),
+		'#default_value' => variable_get('site_name', NULL),
+		//'#size' => 70,
+		'#maxlength' => 50,
+		'#description' => t('The name of this website.'),
+		'#required' => TRUE,
+	);
+        $form['site_mail'] = array(
+                '#type' => 'textfield',
+                '#title' => t('Site e-mail address'),
+                '#default_value' => variable_get('site_mail', NULL),
+                //'#size' => 70,
+                '#maxlength' => 50,
+                '#description' => t("The From address in automated e-mails sent during registration and new password requests, and other notifications. (Use an address ending in your site's domain to help prevent this e-mail being flagged as spam.)"),
+                '#required' => TRUE,
+        );
+	$form['site_slogan'] = array(
+		'#type' => 'textfield',
+		'#title' => t('Site slogan'),
+		'#default_value' => variable_get('site_slogan', NULL),
+		//'#size' => 70,
+		'#maxlength' => 50,
+		'#description' => t('Your site`s motto, tag line, or catchphrase (displayed under the site name).'),
+		//'#required' => TRUE,
+	);
+	$form['site_footer'] = array(
+		'#type' => 'textarea',
+		'#title' => t('Footer message'),
+		'#default_value' => variable_get('site_footer', NULL),
+		'#rows' => 5,
+		'#cols' => 90,
+		'#description' => t('This text will be displayed at the bottom of each page. Useful for adding a copyright notice to your pages.'),
+		//'#required' => TRUE,
+	);
+	
+	date_timezone_site_form($form);
+	
+	$form['site_frontpage'] = array(
+		'#type' => 'radios',
+		'#title' => t('Site front page'),
+		'#options' => array('frontpage' => 'Show full posts','frontpage_teaser' => 'Show only teasers'),
+		'#default_value' => variable_get('site_frontpage', NULL),
+		//'#size' => 70,
+		'#description' => t('Select whether the front page shows full posts or teasers with a "read more" link'),
+		'#required' => TRUE,
+	);
+	
+	$form['submit'] = array('#type' => 'submit', '#value' => t('Save'));
+
+	return $form;
+}
+
+
+
+
+
 

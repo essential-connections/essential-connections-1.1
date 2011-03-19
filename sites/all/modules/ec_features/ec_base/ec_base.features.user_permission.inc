@@ -6,6 +6,15 @@
 function ec_base_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: access administration
+  $permissions['access administration'] = array(
+    'name' => 'access administration',
+    'roles' => array(
+      '0' => 'administrator',
+      '1' => 'manager',
+    ),
+  );
+
   // Exported permission: access administration pages
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
@@ -36,6 +45,12 @@ function ec_base_user_default_permissions() {
     'roles' => array(
       '0' => 'administrator',
     ),
+  );
+
+  // Exported permission: access site-wide contact form
+  $permissions['access site-wide contact form'] = array(
+    'name' => 'access site-wide contact form',
+    'roles' => array(),
   );
 
   // Exported permission: administer actions
@@ -178,20 +193,6 @@ function ec_base_user_default_permissions() {
     ),
   );
 
-  // Exported permission: select different theme
-  $permissions['select different theme'] = array(
-    'name' => 'select different theme',
-    'roles' => array(
-      '0' => 'administrator',
-    ),
-  );
-
-  // Exported permission: use PHP for block visibility
-  $permissions['use PHP for block visibility'] = array(
-    'name' => 'use PHP for block visibility',
-    'roles' => array(),
-  );
-
   // Exported permission: view revisions
   $permissions['view revisions'] = array(
     'name' => 'view revisions',
@@ -200,15 +201,6 @@ function ec_base_user_default_permissions() {
       '1' => 'manager',
     ),
   );
-  
-  // Exported permission: access administration
-  $permissions['access administration'] = array(
-    'name' => 'access administration',
-    'roles' => array(
-      '0' => 'administrator',
-    ),
-  );
 
   return $permissions;
 }
-

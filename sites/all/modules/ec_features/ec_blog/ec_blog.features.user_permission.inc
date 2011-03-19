@@ -56,7 +56,5 @@ function ec_blog_user_default_permissions() {
     ),
   );
 
-
-
   return $permissions;
 }

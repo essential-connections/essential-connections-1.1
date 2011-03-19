@@ -30,3 +30,11 @@ function ec_event_node_info() {
   return $items;
 }
 
+/**
+ * Implementation of hook_views_api().
+ */
+function ec_event_views_api() {
+  return array(
+    'api' => '2',
+  );
+}
