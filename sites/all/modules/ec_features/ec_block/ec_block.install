@@ -1,0 +1,106 @@
+<?php
+
+
+function ec_block_install() {
+	
+  //global $base_url;
+ 
+  
+  $result = db_query("REPLACE INTO {blocks} (bid, module, delta, theme, status, weight, region, custom, throttle, visibility, pages, title, cache) VALUES
+(1, 'user', '0', 'garland', 0, -19, '', 0, 0, 0, '', '', -1),
+(2, 'user', '1', 'garland', 0, -18, '', 0, 0, 0, '', '', -1),
+(3, 'system', '0', 'garland', 0, 10, '', 0, 0, 0, '', '', -1),
+(4, 'blog', '0', 'minnelli', 0, 0, '', 0, 0, 0, '', '', 1),
+(5, 'comment', '0', 'minnelli', 0, 0, '', 0, 0, 0, '', '', 1),
+(6, 'menu', 'primary-links', 'minnelli', 0, 0, '', 0, 0, 0, '', '', -1),
+(7, 'menu', 'secondary-links', 'minnelli', 0, 0, '', 0, 0, 0, '', '', -1),
+(8, 'node', '0', 'minnelli', 0, 0, '', 0, 0, 0, '', '', -1),
+(9, 'system', '0', 'minnelli', 0, 10, '', 0, 0, 0, '', '', -1),
+(10, 'user', '0', 'minnelli', 0, 0, '', 0, 0, 0, '', '', -1),
+(11, 'user', '1', 'minnelli', 0, 0, '', 0, 0, 0, '', '', -1),
+(12, 'user', '2', 'minnelli', 0, 0, '', 0, 0, 0, '', '', 1),
+(13, 'user', '3', 'minnelli', 0, 0, '', 0, 0, 0, '', '', -1),
+(14, 'clickpath', '0', 'minnelli', 0, 0, '', 0, 0, 0, '', '', 1),
+(15, 'diff', 'inline', 'minnelli', 0, 0, '', 0, 0, 0, '', '', 1),
+(16, 'blog', '0', 'cti_flex', 0, 1, '', 0, 0, 0, '', '', 1),
+(17, 'comment', '0', 'cti_flex', 0, 2, '', 0, 0, 0, '', '', 1),
+(18, 'locale', '0', 'cti_flex', 0, -8, '', 0, 0, 0, '', '', -1),
+(19, 'menu', 'primary-links', 'cti_flex', 0, -1, '', 0, 0, 0, '', '', -1),
+(20, 'menu', 'secondary-links', 'cti_flex', 0, 5, '', 0, 0, 0, '', '', -1),
+(21, 'node', '0', 'cti_flex', 0, 8, '', 0, 0, 0, '', '', -1),
+(22, 'profile', '0', 'cti_flex', 0, -18, '', 0, 0, 0, '', '', 5),
+(23, 'search', '0', 'cti_flex', 0, 4, '', 0, 0, 0, '', '', -1),
+(24, 'system', '0', 'cti_flex', 0, 17, '', 0, 0, 0, '', '', -1),
+(25, 'user', '0', 'cti_flex', 0, 10, '', 0, 0, 0, '', '', -1),
+(26, 'user', '1', 'cti_flex', 0, -5, '', 0, 0, 0, '', '', -1),
+(27, 'user', '2', 'cti_flex', 0, 11, '', 0, 0, 0, '', '', 1),
+(28, 'user', '3', 'cti_flex', 0, 12, '', 0, 0, 0, '', '', -1),
+(29, 'clickpath', '0', 'cti_flex', 0, 3, '', 0, 0, 0, '', '', 1),
+(30, 'diff', 'inline', 'cti_flex', 0, -14, '', 0, 0, 0, '', '', 1),
+(31, 'logintoboggan', '0', 'cti_flex', 0, -7, '', 0, 0, 0, '', '', -1),
+(32, 'notifications_ui', '0', 'cti_flex', 0, 7, '', 0, 0, 0, '', '', 1),
+(33, 'og_views', '0', 'cti_flex', 0, -10, '', 0, 0, 0, '', '', -1),
+(34, 'og_views', '1', 'cti_flex', 0, -11, '', 0, 0, 0, '', '', -1),
+(35, 'og', '0', 'cti_flex', 1, -19, 'left', 0, 0, 0, '', '', -1),
+(36, 'og', '3', 'cti_flex', 0, -3, '', 0, 0, 0, '', '', 2),
+(37, 'uc_cart', '0', 'cti_flex', 0, 6, '', 0, 0, 0, '', '', -1),
+(38, 'uc_catalog', '0', 'cti_flex', 0, -15, '', 0, 0, 0, '', '', 4),
+(39, 'calendar', '0', 'cti_flex', 0, -16, '', 0, 0, 0, '', '', 1),
+(40, 'views', 'node_gallery-block_1', 'cti_flex', 0, 13, '', 0, 0, 0, '', '', -1),
+(41, 'views', 'ec_calendar-calendar_block_1', 'cti_flex', 0, -17, '', 0, 0, 0, '', '', -1),
+(42, 'views', 'ec_calendar-block_1', 'cti_flex', 1, -18, 'right', 0, 0, 0, '', '', -1),
+(43, 'views', 'og_members_block-block', 'cti_flex', 0, -13, '', 0, 0, 0, '', '', -1),
+(44, 'views', 'og_members_block-block_1', 'cti_flex', 0, -12, '', 0, 0, 0, '', '', -1),
+(45, 'views', 'og_my-block_1', 'cti_flex', 0, -6, '', 0, 0, 0, '', '', -1),
+(46, 'views', 'new_products-block_1', 'cti_flex', 0, -4, '', 0, 0, 0, '', '', -1),
+(47, 'views', 'popular_products-block_1', 'cti_flex', 0, 14, '', 0, 0, 0, '', '', -1),
+(48, 'views', 'user_products-block_1', 'cti_flex', 0, 16, '', 0, 0, 0, '', '', -1),
+(49, 'views', 'product_pairs_block-block_1', 'cti_flex', 0, 15, '', 0, 0, 0, '', '', -1),
+(50, 'heartbeat', 'privateheartbeat', 'cti_flex', 0, -2, '', 0, 0, 0, '', '', 6),
+(51, 'heartbeat', 'publicheartbeat', 'cti_flex', 0, 0, '', 0, 0, 0, '', '', 6),
+(52, 'heartbeat', 'connectedheartbeat', 'cti_flex', 0, -9, '', 0, 0, 0, '', '', 6),
+(53, 'blog', '0', 'garland', 0, 1, '', 0, 0, 0, '', '', 1),
+(54, 'comment', '0', 'garland', 0, 2, '', 0, 0, 0, '', '', 1),
+(55, 'locale', '0', 'garland', 0, -7, '', 0, 0, 0, '', '', -1),
+(56, 'menu', 'primary-links', 'garland', 0, -1, '', 0, 0, 0, '', '', -1),
+(57, 'menu', 'secondary-links', 'garland', 0, 5, '', 0, 0, 0, '', '', -1),
+(58, 'node', '0', 'garland', 0, 8, '', 0, 0, 0, '', '', -1),
+(59, 'profile', '0', 'garland', 0, -17, '', 0, 0, 0, '', '', 5),
+(60, 'search', '0', 'garland', 0, 4, '', 0, 0, 0, '', '', -1),
+(61, 'user', '2', 'garland', 0, 9, '', 0, 0, 0, '', '', 1),
+(62, 'user', '3', 'garland', 0, 10, '', 0, 0, 0, '', '', -1),
+(63, 'clickpath', '0', 'garland', 0, 3, '', 0, 0, 0, '', '', 1),
+(64, 'diff', 'inline', 'garland', 0, -13, '', 0, 0, 0, '', '', 1),
+(65, 'logintoboggan', '0', 'garland', 0, -6, '', 0, 0, 0, '', '', -1),
+(66, 'notifications_ui', '0', 'garland', 0, 7, '', 0, 0, 0, '', '', 1),
+(67, 'og_views', '0', 'garland', 0, -9, '', 0, 0, 0, '', '', -1),
+(68, 'og_views', '1', 'garland', 0, -10, '', 0, 0, 0, '', '', -1),
+(69, 'og', '0', 'garland', 1, -19, 'left', 0, 0, 0, '', '', -1),
+(70, 'og', '3', 'garland', 0, -3, '', 0, 0, 0, '', '', 2),
+(71, 'uc_cart', '0', 'garland', 0, 6, '', 0, 0, 0, '', '', -1),
+(72, 'uc_catalog', '0', 'garland', 0, -14, '', 0, 0, 0, '', '', 4),
+(73, 'calendar', '0', 'garland', 0, -15, '', 0, 0, 0, '', '', 1),
+(74, 'views', 'node_gallery-block_1', 'garland', 0, 11, '', 0, 0, 0, '', '', -1),
+(75, 'views', 'ec_calendar-calendar_block_1', 'garland', 0, -16, '', 0, 0, 0, '', '', -1),
+(76, 'views', 'ec_calendar-block_1', 'garland', 1, -18, 'right', 0, 0, 0, '', '', -1),
+(77, 'views', 'og_members_block-block', 'garland', 0, -12, '', 0, 0, 0, '', '', -1),
+(78, 'views', 'og_members_block-block_1', 'garland', 0, -11, '', 0, 0, 0, '', '', -1),
+(79, 'views', 'og_my-block_1', 'garland', 0, -5, '', 0, 0, 0, '', '', -1),
+(80, 'views', 'new_products-block_1', 'garland', 0, -4, '', 0, 0, 0, '', '', -1),
+(81, 'views', 'popular_products-block_1', 'garland', 0, 12, '', 0, 0, 0, '', '', -1),
+(82, 'views', 'user_products-block_1', 'garland', 0, 14, '', 0, 0, 0, '', '', -1),
+(83, 'views', 'product_pairs_block-block_1', 'garland', 0, 13, '', 0, 0, 0, '', '', -1),
+(84, 'heartbeat', 'privateheartbeat', 'garland', 0, -2, '', 0, 0, 0, '', '', 6),
+(85, 'heartbeat', 'publicheartbeat', 'garland', 0, 0, '', 0, 0, 0, '', '', 6),
+(308, 'heartbeat', 'connectedheartbeat', 'garland', 0, -8, '', 0, 0, 0, '', '', 6);");
+  if($result != 1) watchdog('ec_block_install', 'problem replacing {blocks} in hook_install', array(), WATCHDOG_ERROR, NULL);
+  
+
+}
+
+function ec_block_uninstall() {
+  
+  
+}
+
+
