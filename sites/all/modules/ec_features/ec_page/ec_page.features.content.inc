@@ -89,63 +89,6 @@ function ec_page_content_default_fields() {
     ),
   );
 
-  // Exported field: field_geo_data
-  $fields['page-field_geo_data'] = array(
-    'field_name' => 'field_geo_data',
-    'type_name' => 'page',
-    'display_settings' => array(
-      'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      'teaser' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      'full' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '2' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '3' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      'token' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-    ),
-    'widget_active' => '1',
-    'type' => 'geo',
-    'required' => '0',
-    'multiple' => '1',
-    'module' => 'geo',
-    'active' => '1',
-    'srid' => 4326,
-    'geo_type' => 'point',
-    'widget' => array(
-      'default_value' => array(
-        '0' => array(
-          'geo' => '',
-        ),
-      ),
-      'default_value_php' => NULL,
-      'label' => 'geodata',
-      'weight' => '12',
-      'description' => '',
-      'type' => 'geo_wkt',
-      'module' => 'geo_field',
-    ),
-  );
-
   // Exported field: field_image
   $fields['page-field_image'] = array(
     'field_name' => 'field_image',
@@ -299,76 +242,6 @@ function ec_page_content_default_fields() {
     ),
   );
 
-  // Exported field: field_ol_map
-  $fields['page-field_ol_map'] = array(
-    'field_name' => 'field_ol_map',
-    'type_name' => 'page',
-    'display_settings' => array(
-      'label' => array(
-        'format' => 'above',
-        'exclude' => 0,
-      ),
-      'teaser' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      'full' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '2' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '3' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      'token' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-    ),
-    'widget_active' => '1',
-    'type' => 'openlayers_wkt',
-    'required' => '0',
-    'multiple' => '1',
-    'module' => 'openlayers_cck',
-    'active' => '1',
-    'openlayers_cck_feature_types' => array(
-      'point' => 'point',
-      'path' => 'path',
-      'polygon' => 'polygon',
-    ),
-    'widget' => array(
-      'openlayers_cck_preset_map' => 'default',
-      'openlayers_behaviors' => array(
-        'openlayers_behavior_zoomtolayer' => array(
-          'enabled' => 0,
-          'options' => array(
-            'zoomtolayer' => 'openlayers_cck_vector_layer',
-            'point_zoom_level' => '5',
-          ),
-        ),
-      ),
-      'default_value' => array(
-        '0' => array(
-          'openlayers_wkt' => '',
-        ),
-      ),
-      'default_value_php' => NULL,
-      'label' => 'Map',
-      'weight' => '11',
-      'description' => '',
-      'type' => 'openlayers_wkt_widget',
-      'module' => 'openlayers_cck',
-    ),
-  );
-
   // Exported field: field_show_auth_info
   $fields['page-field_show_auth_info'] = array(
     'field_name' => 'field_show_auth_info',
@@ -503,7 +376,6 @@ function ec_page_content_default_fields() {
   t('Map');
   t('Slideshow');
   t('Video');
-  t('geodata');
 
   return $fields;
 }
