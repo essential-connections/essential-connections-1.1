@@ -46,7 +46,7 @@ function ec_messaging_notifications_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'messaging_log';
-  $strongarm->value = '0';
+  $strongarm->value = '2419200';
 
   $export['messaging_log'] = $strongarm;
   $strongarm = new stdClass;
@@ -95,7 +95,7 @@ function ec_messaging_notifications_strongarm() {
   $strongarm->name = 'messaging_process_limit';
   $strongarm->value = array(
     'message' => '0',
-    'time' => '0',
+    'time' => '600',
     'percent' => '0',
   );
 
@@ -115,9 +115,9 @@ function ec_messaging_notifications_strongarm() {
     'taxonomy' => 'taxonomy',
     'grouptype' => 'grouptype',
     'thread' => 'thread',
+    'nodetype' => 'nodetype',
     'author' => 'author',
     'typeauthor' => 'typeauthor',
-    'nodetype' => 0,
   );
 
   $export['notifications_content_type'] = $strongarm;
@@ -256,7 +256,7 @@ function ec_messaging_notifications_strongarm() {
   $strongarm->value = array(
     'row' => '0',
     'message' => '0',
-    'time' => '0',
+    'time' => '600',
     'percent' => '0',
   );
 
@@ -265,7 +265,7 @@ function ec_messaging_notifications_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'notifications_send_immediate';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
 
   $export['notifications_send_immediate'] = $strongarm;
   $strongarm = new stdClass;
@@ -305,6 +305,7 @@ function ec_messaging_notifications_strongarm() {
   $strongarm->value = array(
     2 => 2,
     1 => 0,
+    3 => 0,
   );
 
   $export['notifications_tags_vocabularies'] = $strongarm;
@@ -313,8 +314,8 @@ function ec_messaging_notifications_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'notifications_ui_account_options';
   $strongarm->value = array(
-    'block' => 'block',
-    'links' => 0,
+    'links' => 'links',
+    'block' => 0,
   );
 
   $export['notifications_ui_account_options'] = $strongarm;
@@ -323,12 +324,12 @@ function ec_messaging_notifications_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'notifications_ui_node';
   $strongarm->value = array(
-    'block' => 'block',
+    'comment' => 'comment',
+    'subform' => 'subform',
     'form' => 0,
-    'comment' => 0,
     'links' => 0,
     'teaserlinks' => 0,
-    'subform' => 0,
+    'block' => 0,
   );
 
   $export['notifications_ui_node'] = $strongarm;
@@ -348,9 +349,9 @@ function ec_messaging_notifications_strongarm() {
     'messaging' => 'messaging',
     'grouptype' => 'grouptype',
     'thread' => 'thread',
+    'nodetype' => 'nodetype',
     'author' => 'author',
     'typeauthor' => 'typeauthor',
-    'nodetype' => 0,
   );
 
   $export['notifications_ui_types'] = $strongarm;
