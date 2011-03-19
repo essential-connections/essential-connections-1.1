@@ -5,7 +5,7 @@
  */
 function ec_base_views_default_views() {
   $views = array();
-/*
+
   // Exported view: ec_frontpage
   $view = new view;
   $view->name = 'ec_frontpage';
@@ -148,6 +148,6 @@ function ec_base_views_default_views() {
   ));
 
   $views[$view->name] = $view;
-*/
-  return $views;
+
+  //return $views;
 }

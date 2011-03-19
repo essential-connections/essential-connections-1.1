@@ -5,7 +5,7 @@
  */
 function ec_event_views_default_views() {
   $views = array();
-/*
+
   // Exported view: ec_calendar
   $view = new view;
   $view->name = 'ec_calendar';
@@ -481,6 +481,6 @@ function ec_event_views_default_views() {
   $handler->override_option('block_caching', -1);
 
   $views[$view->name] = $view;
-*/
-  return $views;
+
+  //return $views;
 }
