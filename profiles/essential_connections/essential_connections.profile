@@ -47,7 +47,7 @@ function essential_connections_profile_modules() {
 	'ec_theme_garland',
 	'ec_theme_mix_and_match',
 	'ec_theme_zeropoint',
-	'ec_uc',
+	//'ec_uc',
   ); 
   return $modules;
 } 
@@ -143,7 +143,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 	'ec_theme_garland' => array('user_permission','variable'),
 	'ec_theme_mix_and_match' => array('user_permission','variable'),
 	'ec_theme_zeropoint' => array('user_permission','variable'),
-	'ec_uc' => array('user_permission','variable'),
+	//'ec_uc' => array('user_permission','variable'),
     ); 
     features_revert($revert);
 
