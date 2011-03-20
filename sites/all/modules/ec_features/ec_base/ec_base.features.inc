@@ -1,10 +1,4 @@
 <?php
 
-/**
- * Implementation of hook_views_api().
- */
-function ec_base_views_api() {
-  return array(
-    'api' => '2',
-  );
-}
+// This file is deprecated and can be removed.
+// Please remove include_once('ec_base.features.inc') in ec_base.module as well.

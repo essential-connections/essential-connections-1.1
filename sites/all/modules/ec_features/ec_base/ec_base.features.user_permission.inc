@@ -18,10 +18,7 @@ function ec_base_user_default_permissions() {
   // Exported permission: access administration pages
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
-    'roles' => array(
-      '0' => 'administrator',
-      '1' => 'manager',
-    ),
+    'roles' => array(),
   );
 
   // Exported permission: access comments
@@ -53,7 +50,10 @@ function ec_base_user_default_permissions() {
   // Exported permission: access site-wide contact form
   $permissions['access site-wide contact form'] = array(
     'name' => 'access site-wide contact form',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
   );
 
   // Exported permission: administer actions
@@ -129,7 +129,9 @@ function ec_base_user_default_permissions() {
   // Exported permission: administer site-wide contact form
   $permissions['administer site-wide contact form'] = array(
     'name' => 'administer site-wide contact form',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'administrator',
+    ),
   );
 
   // Exported permission: administer url aliases
