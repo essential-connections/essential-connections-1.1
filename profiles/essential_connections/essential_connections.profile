@@ -10,7 +10,7 @@
 function essential_connections_profile_modules() {
   $modules = array( 
 	'ctools','features','strongarm',
-	'ec_base',
+	//'ec_base',
 	'ec_protect_critical_users',
 	'ec_user',
 	'ec_permissions_lock',
@@ -20,7 +20,7 @@ function essential_connections_profile_modules() {
 	'ec_simplemenu',
 	'ec_help',
 	'ec_backup_migrate',
-	//'ec_content',
+	'ec_content',
 	'ec_filefield',
 	'ec_filefield_post_install',
 	'ec_block',
@@ -107,7 +107,7 @@ function essential_connections_profile_tasks(&$task, $url) {
     }
 
     $revert = array(
-	'ec_base' => array('user_permission','variable'),
+	//'ec_base' => array('user_permission','variable'),
 	'ec_protect_critical_users' => array('user_permission','variable'),
 	'ec_user' => array('user_permission','variable'),
 	'ec_permissions_lock' => array('user_permission','variable'),
@@ -117,7 +117,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 	'ec_simplemenu' => array('user_permission','variable'),
 	'ec_help' => array('user_permission','variable'),
 	'ec_backup_migrate' => array('user_permission','variable'),
-	//'ec_content' => array('user_permission','variable'),
+	'ec_content' => array('user_permission','variable'),
 	//'ec_filefield' => array('user_permission','variable'),
 	'ec_block' => array('user_permission','variable'),
 	'ec_formats_filters' => array('user_permission','variable'),
