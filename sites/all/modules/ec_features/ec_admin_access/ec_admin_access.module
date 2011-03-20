@@ -26,6 +26,7 @@ function ec_admin_access_menu_link_alter(&$item, $menu) {
   global $user;
   if($user->uid > 1){
     $denied_paths = variable_get('ec_denied_admin_paths',array());
+	drupal_set_message(':::'.$item['link_path'].' : '.in_array($item['link_path'],$denied_paths));
     if (in_array($item['link_path'],$denied_paths)) {
       $item['hidden'] = 1;
     }
