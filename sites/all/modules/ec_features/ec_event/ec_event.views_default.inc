@@ -482,5 +482,5 @@ function ec_event_views_default_views() {
 
   $views[$view->name] = $view;
 
-  //return $views;
+  return $views;
 }

@@ -1631,7 +1631,7 @@ print l(\'edit\',\'node/\'.$data->nid.\'/edit\', array(\'attributes\' => array(\
     'weight' => 0,
   ));
 
-  //$views[$view->name] = $view;
+  $views[$view->name] = $view;
 
   return $views;
 }

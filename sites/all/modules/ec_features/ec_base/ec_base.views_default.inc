@@ -149,5 +149,5 @@ function ec_base_views_default_views() {
 
   $views[$view->name] = $view;
 
-  //return $views;
+  return $views;
 }
