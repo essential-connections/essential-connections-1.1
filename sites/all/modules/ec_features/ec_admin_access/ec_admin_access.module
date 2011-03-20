@@ -2,6 +2,16 @@
 
 include_once('ec_admin_access.features.inc');
 
+/**
+ * Implementation of hook_theme_registry_alter().
+ */
+function ec_admin_access_theme_registry_alter(&$theme_registry) {
+  $funcs = &$theme_registry['page']['preprocess functions'];
+  $key = array_search('ec_admin_access_preprocess_page', $funcs);
+  unset($funcs[$key]);
+  array_push($funcs, 'ec_admin_access_preprocess_page');
+
+}
 
 /**
  * Preprocess function for the page theme hook.
