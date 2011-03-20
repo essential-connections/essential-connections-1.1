@@ -129,12 +129,6 @@ function ec_base_user_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported permission: administer taxonomy
-  $permissions['administer taxonomy'] = array(
-    'name' => 'administer taxonomy',
-    'roles' => array(),
-  );
-
   // Exported permission: administer url aliases
   $permissions['administer url aliases'] = array(
     'name' => 'administer url aliases',
