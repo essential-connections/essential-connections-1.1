@@ -10,7 +10,7 @@
 function essential_connections_profile_modules() {
   $modules = array( 
 	'ctools','features','strongarm',
-	//'ec_base',
+	'ec_base',
 	'ec_protect_critical_users',
 	'ec_user',
 	'ec_permissions_lock',
@@ -107,7 +107,7 @@ function essential_connections_profile_tasks(&$task, $url) {
     }
 
     $revert = array(
-	//'ec_base' => array('user_permission','variable'),
+	'ec_base' => array('user_permission','variable'),
 	'ec_protect_critical_users' => array('user_permission','variable'),
 	'ec_user' => array('user_permission','variable'),
 	'ec_permissions_lock' => array('user_permission','variable'),
