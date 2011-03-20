@@ -3,9 +3,9 @@
 /**
  * Implementation of hook_views_default_views().
  */
-function ec_base_views_default_views() {
+function ec_frontpage_views_default_views() {
   $views = array();
-/*
+
   // Exported view: ec_frontpage
   $view = new view;
   $view->name = 'ec_frontpage';
@@ -15,7 +15,7 @@ function ec_base_views_default_views() {
   $view->base_table = 'node';
   $view->is_cacheable = FALSE;
   $view->api_version = 2;
-  $view->disabled = FALSE; 
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('sorts', array(
     'sticky' => array(
@@ -148,6 +148,6 @@ function ec_base_views_default_views() {
   ));
 
   $views[$view->name] = $view;
-*/
+
   return $views;
 }

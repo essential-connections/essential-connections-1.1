@@ -3,7 +3,7 @@
 /**
  * Implementation of hook_menu_default_menu_links().
  */
-function ec_base_menu_default_menu_links() {
+function ec_frontpage_menu_default_menu_links() {
   $menu_links = array();
 
   // Exported menu link: primary-links:<front>

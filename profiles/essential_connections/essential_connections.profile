@@ -90,13 +90,13 @@ function essential_connections_profile_tasks(&$task, $url) {
     //variable_set('site_frontpage', 'user/login');
 	variable_set('theme_default', 'cti_flex');
 
-	/*
+	
 	module_enable(array(
-	'ec_base',
-
+	'ec_filefield_post_install',
+	'ec_frontpage',
 
 	));
-	*/
+	
 	
     //cache_clear_all();
     //drupal_rebuild_theme_registry();
