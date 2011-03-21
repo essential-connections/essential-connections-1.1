@@ -758,7 +758,7 @@ print $output;
     ),
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->override_option('path', 'admin/user/users');
+  $handler->override_option('path', 'admin/user/user');
   $handler->override_option('menu', array(
     'type' => 'normal',
     'title' => 'Users',
