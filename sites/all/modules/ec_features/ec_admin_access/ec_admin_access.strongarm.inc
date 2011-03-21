@@ -48,6 +48,12 @@ function ec_admin_access_strongarm() {
 	36 => 'admin/content/rss-publishing',
 	37 => 'admin/settings/performance',
 	38 => 'admin/user/rules',
+	39 => 'admin/reports/dblog',
+	40 => 'admin/reports/statspro',
+	41 => 'admin/reports/access-denied',
+	42 => 'admin/reports/page-not-found',
+	43 => 'admin/reports/pages',
+	44 => 'admin/reports/browscap',
   );
 
   $export['ec_denied_admin_paths'] = $strongarm;
