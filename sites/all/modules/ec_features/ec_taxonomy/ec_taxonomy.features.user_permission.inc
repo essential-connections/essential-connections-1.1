@@ -9,7 +9,10 @@ function ec_taxonomy_user_default_permissions() {
   // Exported permission: administer taxonomy
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'administrator',
+      '1' => 'manager',
+    ),
   );
 
   return $permissions;

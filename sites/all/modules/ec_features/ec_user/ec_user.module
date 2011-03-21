@@ -53,6 +53,16 @@ function ec_user_menu() {
 }
 
 /**
+* Implementation of hook_menu_link_alter()
+*/
+function ec_user_menu_link_alter(&$item, $menu) {
+  global $user;
+  if($item['link_path'] == 'user/add'){
+      $item['link_path'] = 'admin/user/add';
+  }
+}
+
+/**
  * Implementation of hook_form_alter().
  */
 function ec_user_form_alter(&$form, $form_state, $form_id) {
