@@ -58,7 +58,7 @@ function ec_user_menu() {
 function ec_user_menu_link_alter(&$item, $menu) {
   global $user;
   if($item['link_path'] == 'user/add'){
-      $item['link_path'] = 'admin/user/add';
+      $item['tab_root'] = 'admin/user';
   }
 }
 
