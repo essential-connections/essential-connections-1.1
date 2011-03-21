@@ -36,6 +36,7 @@ function ec_user_menu() {
 
   global $user;
   
+  /*
   $items['admin/user/user_settings'] = array(
      'title' => 'User Settings',
      'description' => '',
@@ -46,7 +47,8 @@ function ec_user_menu() {
      'type' => MENU_NORMAL_ITEM,
      'weight' => 3
   );
-
+  */
+  
   return $items;
 }
 
@@ -69,6 +71,7 @@ function ec_user_form_alter(&$form, $form_state, $form_id) {
 
 }
 
+/*
 function ec_user_user_settings_submit($form, &$form_state) {
 
         // set variables
@@ -110,7 +113,7 @@ function ec_user_user_settings() {
   return $form;
 
 }
-
+*/
 
 
 
