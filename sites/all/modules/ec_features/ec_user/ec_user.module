@@ -36,6 +36,16 @@ function ec_user_menu() {
 
   global $user;
   
+  $items['admin/user/add'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ucreate_user_form'),
+    'title' => 'Add user',
+    'description' => 'Add a user to this web site.',
+    'access arguments' => array('create users'),
+    'menu_name' => 'menu-administration',
+  );
+
+  
   /*
   $items['admin/user/user_settings'] = array(
      'title' => 'User Settings',
@@ -58,7 +68,7 @@ function ec_user_menu() {
 function ec_user_menu_link_alter(&$item, $menu) {
   global $user;
   if($item['link_path'] == 'user/add'){
-      $item['tab_root'] = 'admin/user';
+      $item['hidden'] = 1;
   }
 }
 
