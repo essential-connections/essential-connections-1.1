@@ -24,7 +24,7 @@ function ec_admin_access_preprocess_page(&$variables) {
   if($user->uid > 1){
     $path = implode("/", arg());
     $denied_paths = variable_get('ec_denied_admin_paths',array());
-	drupal_set_message('1::'.$path.' : '.in_array($path,$denied_paths));
+	//drupal_set_message('1::'.$path.' : '.in_array($path,$denied_paths));
     if(in_array($path,$denied_paths)){
       //drupal_access_denied();
       drupal_set_message('access denied');
