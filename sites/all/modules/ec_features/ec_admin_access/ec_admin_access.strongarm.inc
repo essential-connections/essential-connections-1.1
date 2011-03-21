@@ -41,6 +41,9 @@ function ec_admin_access_strongarm() {
 	28 => 'admin/og/og_access',
 	29 => 'admin/og/og_panels',
 	30 => 'admin/build/modules',
+	31 => 'admin/settings/admin',
+	32 => 'admin/settings/site-information',
+	
   );
 
   $export['ec_denied_admin_paths'] = $strongarm;
