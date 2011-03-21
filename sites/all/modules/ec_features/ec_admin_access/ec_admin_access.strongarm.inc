@@ -46,6 +46,8 @@ function ec_admin_access_strongarm() {
 	34 => 'admin/content/backup_migrate/restore',
 	35 => 'admin/content/node-settings',
 	36 => 'admin/content/rss-publishing',
+	37 => 'admin/settings/performance',
+	38 => 'admin/user/rules',
   );
 
   $export['ec_denied_admin_paths'] = $strongarm;
