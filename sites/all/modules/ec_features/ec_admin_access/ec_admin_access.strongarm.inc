@@ -25,7 +25,6 @@ function ec_admin_access_strongarm() {
 	12 => 'admin/settings/imce',
 	13 => 'admin/settings/jquery_update',
 	14 => 'admin/settings/logging',
-	15 => 'admin/settings/performance',
 	15 => 'admin/settings/search404',
 	17 => 'admin/settings/signup',
 	18 => 'admin/settings/strongarm',
@@ -43,7 +42,10 @@ function ec_admin_access_strongarm() {
 	30 => 'admin/build/modules',
 	31 => 'admin/settings/admin',
 	32 => 'admin/settings/site-information',
-	
+	33 => 'admin/content/backup_migrate/export/advanced',
+	34 => 'admin/content/backup_migrate/restore',
+	35 => 'admin/content/node-settings',
+	36 => 'admin/content/rss-publishing',
   );
 
   $export['ec_denied_admin_paths'] = $strongarm;

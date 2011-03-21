@@ -4,7 +4,7 @@ function ec_block_preprocess_block_admin_display_form(&$variables) {
   global $user;
   if($user->uid > 1){
   foreach ($variables['block_listing']['-1'] as $key => $val) {
-    //drupal_set_message('<b>blocks:'.$key.':</b><pre>'.print_r($val, TRUE) .'</pre>');
+    drupal_set_message('<b>blocks:'.$key.':</b><pre>'.print_r($val, TRUE) .'</pre>');
     switch($key){
       case 'menu_menu-administration':
       case 'user_1':
@@ -29,7 +29,7 @@ function ec_block_preprocess_block_admin_display_form(&$variables) {
       case 'eit_groups_0':
       case 'system_0':
       case 'node_0':
-        //unset($variables['block_listing']['-1'][$key]);
+        unset($variables['block_listing']['-1'][$key]);
         break;
     }
   }
