@@ -94,6 +94,43 @@ function ec_base_menu() {
 }
 
 /**
+ * Implementation of hook_menu_link_alter().
+ */
+function ec_base_menu_link_alter(&$item, $menu) {
+  //drupal_set_message('menu:<pre>'.print_r($item).'</pre>' );
+  //global $user;
+  switch($item['link_path']) {
+    case 'http://help.essential-connections.com':
+	  $item['weight'] = -9999;
+	break;
+    case 'admin':
+	  $item['weight'] = -999;
+	break;
+    case 'node/add':
+	  $item['weight'] = -99;
+	break;
+    case 'content':
+	  $item['weight'] = -9;
+	break;
+    case 'users':
+	  $item['weight'] = -8;
+	break;
+    case 'tracker':
+	  $item['weight'] = 9;
+	break;
+    case 'group':
+	  $item['weight'] = 98;
+	break;
+    case 'og':
+	  $item['weight'] = 99;
+	break;
+    case 'logout':
+	  $item['weight'] = 9999;
+	break;
+  }
+}
+
+/**
  * Implementation of hook_form_alter().
  */
 function ec_base_form_alter(&$form, $form_state, $form_id) {

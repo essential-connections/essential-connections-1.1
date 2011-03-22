@@ -18,7 +18,14 @@ function ec_delegate_menu_strongarm() {
       'secondary-links' => array(
         'admin' => TRUE,
       ),
-      'menu-nav-links' => array(
+      'menu-nav-links' => array(),
+      'menu-menu1' => array(
+        'admin' => TRUE,
+      ),
+      'menu-menu2' => array(
+        'admin' => TRUE,
+      ),
+      'menu-menu3' => array(
         'admin' => TRUE,
       ),
     ),
@@ -41,7 +48,10 @@ function ec_delegate_menu_strongarm() {
       ),
     ),
     0 => array(
-      0 => array(
+      0 => array(),
+    ),
+    9 => array(
+      9 => array(
         'admin' => TRUE,
       ),
     ),

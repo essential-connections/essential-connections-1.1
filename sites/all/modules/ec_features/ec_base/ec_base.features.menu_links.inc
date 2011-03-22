@@ -18,7 +18,7 @@ function ec_base_menu_default_menu_links() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-50',
+    'weight' => '9999',
   );
   // Exported menu link: primary-links:contact
   $menu_links['primary-links:contact'] = array(
@@ -41,7 +41,7 @@ function ec_base_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Contact Us');
-  t('Log in');
+  t('Log out');
 
 
   return $menu_links;

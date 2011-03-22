@@ -17,4 +17,3 @@ function ec_delegate_menu_user_default_permissions() {
 
   return $permissions;
 }
-
