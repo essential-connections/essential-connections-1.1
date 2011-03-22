@@ -122,7 +122,7 @@ function ec_statistics_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Site Activity');
+  $handler->override_option('title', 'Comments');
   $handler->override_option('header', '<strong>New comments</strong>');
   $handler->override_option('header_format', '1');
   $handler->override_option('header_empty', 0);
@@ -161,9 +161,9 @@ function ec_statistics_views_default_views() {
     'default' => 'day',
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->override_option('path', 'admin/activity/comment');
+  $handler->override_option('path', 'admin/reports/comment');
   $handler->override_option('menu', array(
-    'type' => 'tab',
+    'type' => 'normal',
     'title' => 'Comments',
     'description' => '',
     'weight' => '21',
@@ -294,7 +294,7 @@ function ec_statistics_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Site Activity');
+  $handler->override_option('title', 'Posts');
   $handler->override_option('header', '<strong>New posts</strong>');
   $handler->override_option('header_format', '1');
   $handler->override_option('header_empty', 0);
@@ -334,9 +334,9 @@ function ec_statistics_views_default_views() {
     'default' => 'day',
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->override_option('path', 'admin/activity/posts');
+  $handler->override_option('path', 'admin/reports/posts');
   $handler->override_option('menu', array(
-    'type' => 'tab',
+    'type' => 'normal',
     'title' => 'Posts',
     'description' => '',
     'weight' => '20',
@@ -582,7 +582,7 @@ function ec_statistics_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Site Activity');
+  $handler->override_option('title', 'Page Impressions');
   $handler->override_option('header', '<strong>Guests and registered users</strong>');
   $handler->override_option('header_format', '1');
   $handler->override_option('header_empty', 0);
@@ -622,9 +622,9 @@ function ec_statistics_views_default_views() {
     'default' => 'day',
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->override_option('path', 'admin/activity/pi');
+  $handler->override_option('path', 'admin/reports/pi');
   $handler->override_option('menu', array(
-    'type' => 'tab',
+    'type' => 'normal',
     'title' => 'Page Impressions',
     'description' => '',
     'weight' => '0',
@@ -873,7 +873,7 @@ function ec_statistics_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('title', 'Site Activity');
+  $handler->override_option('title', 'Users');
   $handler->override_option('header', '<strong>New user registrations</strong>');
   $handler->override_option('header_format', '1');
   $handler->override_option('header_empty', 0);
@@ -913,9 +913,9 @@ function ec_statistics_views_default_views() {
     'default' => 'day',
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->override_option('path', 'admin/activity/user');
+  $handler->override_option('path', 'admin/reports/user');
   $handler->override_option('menu', array(
-    'type' => 'tab',
+    'type' => 'normal',
     'title' => 'Users',
     'description' => '',
     'weight' => '10',
