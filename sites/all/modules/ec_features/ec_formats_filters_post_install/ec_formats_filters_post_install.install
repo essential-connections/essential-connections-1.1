@@ -9,7 +9,6 @@ function ec_formats_filters_post_install_install() {
 	(14, 1, 'htmlpurifier', 0, 10),
 	(10, 2, 'htmlpurifier', 0, 10),
 	(8, 3, 'php', 0, 0),
-	(9, 4, 'messaging', 1, 0),
 	(11, 2, 'filter', 3, 10),
 	(12, 2, 'filter', 1, 1),
 	(13, 2, 'filter', 2, 0),
