@@ -1,7 +1,7 @@
 core = "6.x"
 dependencies[] = "ckeditor"
 dependencies[] = "features"
-//dependencies[] = "ec_ckeditor_post_install"
+dependencies[] = "ec_ckeditor_post_install"
 description = "wysiwyg html editor"
 features[user_permission][] = "access ckeditor"
 features[user_permission][] = "administer ckeditor"
