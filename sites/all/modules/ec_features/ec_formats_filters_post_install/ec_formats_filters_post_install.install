@@ -3,20 +3,23 @@
 
 function ec_formats_filters_post_install_install() {
 	
-	/*
+	
 	$result = db_query("REPLACE INTO {filters} (fid, format, module, delta, weight) VALUES
-	(21, 1, 'filter', 0, 1),
-	(22, 1, 'filter', 1, 2),
-	(20, 1, 'filter', 3, 10),
-	(41, 2, 'filter', 1, 1),
+	(15, 1, 'filter', 3, 10),
+	(14, 1, 'htmlpurifier', 0, 10),
+	(10, 2, 'htmlpurifier', 0, 10),
 	(8, 3, 'php', 0, 0),
 	(9, 4, 'messaging', 1, 0),
-	(23, 1, 'filter', 2, 0),
-	(34, 2, 'htmlpurifier', 0, 10),
-	(43, 2, 'filter', 2, 0);
+	(11, 2, 'filter', 3, 10),
+	(12, 2, 'filter', 1, 1),
+	(13, 2, 'filter', 2, 0),
+	(16, 1, 'filter', 0, 1),
+	(17, 1, 'filter', 1, 2),
+	(18, 1, 'filter', 2, 0);
 	");
 	if($result != 1) watchdog('ec_formats_filters_post_install', 'problem replacing filters in hook_install', array(), WATCHDOG_ERROR,NULL);
-	
+
+	/*
 	db_query("REPLACE INTO {filter_formats} (format, name, roles, cache) VALUES
 	(1, 'Filtered HTML', ',1,', 1),
 	(2, 'Full HTML', ',1,2,5,3,4,', 0),
@@ -27,8 +30,8 @@ function ec_formats_filters_post_install_install() {
 	*/
 	
 	db_query("REPLACE INTO {better_formats_defaults} (rid, type, format, type_weight, weight) VALUES
-	(1, 'node', 0, 1, 0),
-	(1, 'comment', 0, 1, 0),
+	(1, 'node', 1, 1, 0),
+	(1, 'comment', 1, 1, 0),
 	(1, 'block', 0, 1, 25),
 	(2, 'node', 0, 1, 0),
 	(2, 'comment', 0, 1, 0),
