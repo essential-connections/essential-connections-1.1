@@ -6,3 +6,4 @@ package = "Features"
 project = "ec_imagecache_post_install"
 version = "6.x-1.0"
 
+
