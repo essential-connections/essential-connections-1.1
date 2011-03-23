@@ -91,19 +91,24 @@ function essential_connections_profile_tasks(&$task, $url) {
 	variable_set('theme_default', 'cti_flex');
 	variable_set('preprocess_css', '1');
 	variable_set('preprocess_js', '1');
+	variable_set('user_picture_path', 'home/profile_pictures')
 
+	// Create user picture directory
+	$picture_path = file_create_path(variable_get('user_picture_path', 'home/profile_pictures'));
+	file_check_directory($picture_path, 1, 'user_picture_path');
 	
 	module_enable(array(
-	'ec_filefield_post_install',
-	//'ec_formats_filters_post_install',
+	//'ec_filefield_post_install',
 	'ec_frontpage',
-
 	));
 	
+	module_load_install('ec_filefield_post_install');
 	
     //cache_clear_all();
     //drupal_rebuild_theme_registry();
-    //drupal_flush_all_caches();
+	drupal_flush_all_caches();
+    //menu_rebuild();
+    node_access_rebuild();
 
     if (function_exists('strongarm_init')) {
       strongarm_init();

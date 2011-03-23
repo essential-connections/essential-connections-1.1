@@ -302,6 +302,42 @@ function ec_uc_user_default_permissions() {
     ),
   );
 
+  // Exported permission: view imagecache cart
+  $permissions['view imagecache cart'] = array(
+    'name' => 'view imagecache cart',
+    'roles' => array(),
+  );
+
+  // Exported permission: view imagecache product
+  $permissions['view imagecache product'] = array(
+    'name' => 'view imagecache product',
+    'roles' => array(),
+  );
+
+  // Exported permission: view imagecache product_full
+  $permissions['view imagecache product_full'] = array(
+    'name' => 'view imagecache product_full',
+    'roles' => array(),
+  );
+
+  // Exported permission: view imagecache product_list
+  $permissions['view imagecache product_list'] = array(
+    'name' => 'view imagecache product_list',
+    'roles' => array(),
+  );
+
+  // Exported permission: view imagecache uc_category
+  $permissions['view imagecache uc_category'] = array(
+    'name' => 'view imagecache uc_category',
+    'roles' => array(),
+  );
+
+  // Exported permission: view imagecache uc_thumbnail
+  $permissions['view imagecache uc_thumbnail'] = array(
+    'name' => 'view imagecache uc_thumbnail',
+    'roles' => array(),
+  );
+
   // Exported permission: view own orders
   $permissions['view own orders'] = array(
     'name' => 'view own orders',
