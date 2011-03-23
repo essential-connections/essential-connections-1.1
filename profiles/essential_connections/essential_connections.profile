@@ -91,7 +91,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 	variable_set('theme_default', 'cti_flex');
 	variable_set('preprocess_css', '1');
 	variable_set('preprocess_js', '1');
-	variable_set('user_picture_path', 'home/profile_pictures')
+	variable_set('user_picture_path', 'home/profile_pictures');
 
 	// Create user picture directory
 	$picture_path = file_create_path(variable_get('user_picture_path', 'home/profile_pictures'));
