@@ -22,7 +22,7 @@ function essential_connections_profile_modules() {
 	'ec_backup_migrate',
 	'ec_content',
 	'ec_filefield',
-	//'ec_filefield_post_install',
+	'ec_filefield_post_install',
 	'ec_block',
 	'ec_formats_filters',
 	'ec_htmlpurifier',
@@ -92,7 +92,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 
 	
 	module_enable(array(
-	'ec_filefield_post_install',
+	//'ec_filefield_post_install',
 	'ec_frontpage',
 
 	));
