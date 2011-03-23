@@ -28,8 +28,8 @@ function ec_base_menu_default_menu_links() {
   // Exported menu link: navigation:logout
   $menu_links['navigation:login'] = array(
     'menu_name' => 'navigation',
-    'link_path' => 'login',
-    'router_path' => 'login',
+    'link_path' => 'user/login',
+    'router_path' => 'user/login',
     'link_title' => 'Log in',
     'options' => array(),
     'module' => 'system',
