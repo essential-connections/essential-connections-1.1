@@ -21,7 +21,7 @@ function essential_connections_profile_modules() {
 	'ec_help',
 	'ec_backup_migrate',
 	'ec_content',
-	'ec_filefield',
+	//'ec_filefield',
 	//'ec_filefield_post_install',
 	'ec_block',
 	'ec_formats_filters',
@@ -98,13 +98,14 @@ function essential_connections_profile_tasks(&$task, $url) {
 	chmod($home_path,0777);
 	$picture_path = file_create_path(variable_get('user_picture_path', 'home/profile_pictures'));
 	file_check_directory($picture_path, 1);
+	chmod($picture_path,0777);
 	
 	module_enable(array(
 	//'ec_filefield_post_install',
 	'ec_frontpage',
 	));
 	
-	module_load_install('ec_filefield_post_install');
+	//module_load_install('ec_filefield_post_install');
 	
     //cache_clear_all();
     //drupal_rebuild_theme_registry();
@@ -128,7 +129,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 	'ec_help' => array('user_permission','variable'),
 	'ec_backup_migrate' => array('user_permission','variable'),
 	'ec_content' => array('user_permission','variable'),
-	'ec_filefield' => array('user_permission','variable'),
+	//'ec_filefield' => array('user_permission','variable'),
 	'ec_block' => array('user_permission','variable'),
 	'ec_formats_filters' => array('user_permission','variable'),
 	'ec_htmlpurifier' => array('user_permission','variable'),
@@ -157,9 +158,9 @@ function essential_connections_profile_tasks(&$task, $url) {
     ); 
     features_revert($revert);
 
-	drupal_flush_all_caches();
+	//drupal_flush_all_caches();
     //menu_rebuild();
-    node_access_rebuild();
+    //node_access_rebuild();
     
   }
 
