@@ -101,7 +101,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 	
     //cache_clear_all();
     //drupal_rebuild_theme_registry();
-    drupal_flush_all_caches();
+    //drupal_flush_all_caches();
 
     if (function_exists('strongarm_init')) {
       strongarm_init();
@@ -148,6 +148,7 @@ function essential_connections_profile_tasks(&$task, $url) {
     ); 
     features_revert($revert);
 
+	drupal_flush_all_caches();
     menu_rebuild();
     node_access_rebuild();
     
