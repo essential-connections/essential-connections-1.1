@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Implementation of hook_menu_default_menu_links().
  */
@@ -24,10 +25,24 @@ function ec_base_menu_default_menu_links() {
     'expanded' => '0',
     'weight' => '50',
   );
+  // Exported menu link: navigation:logout
+  $menu_links['navigation:login'] = array(
+    'menu_name' => 'navigation',
+    'link_path' => 'login',
+    'router_path' => 'login',
+    'link_title' => 'Log in',
+    'options' => array(),
+    'module' => 'system',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '-9999',
+  );
   // Translatables
   // Included for use with string extractors like potx.
   t('Contact Us');
-
+  t('Log in');
 
   return $menu_links;
 }
