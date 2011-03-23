@@ -9,4 +9,3 @@ function ec_formats_filters_ctools_plugin_api() {
     return array("version" => 1);
   }
 }
-
