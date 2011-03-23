@@ -1,6 +1,6 @@
 core = "6.x"
 dependencies[] = "better_formats"
-//dependencies[] = "ec_formats_filters_post_install"
+dependencies[] = "ec_formats_filters_post_install"
 dependencies[] = "features"
 dependencies[] = "strongarm"
 description = "input formats and filters"
