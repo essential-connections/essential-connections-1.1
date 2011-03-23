@@ -95,6 +95,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 
 	$home_path = file_create_path('home');
 	file_check_directory($home_path, 1);
+	chmod($home_path,0777);
 	$picture_path = file_create_path(variable_get('user_picture_path', 'home/profile_pictures'));
 	file_check_directory($picture_path, 1);
 	

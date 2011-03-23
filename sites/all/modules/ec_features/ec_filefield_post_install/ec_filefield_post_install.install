@@ -15,15 +15,15 @@ function ec_filefield_post_install_install() {
   if($result != 1) watchdog('ec_filefield_post_install', 'problem replacing filefield_paths structure in hook_install', array(), WATCHDOG_ERROR, NULL);
     
   $result = db_query("REPLACE INTO {filefield_paths} (type, field, filename, filepath) VALUES
-('page', 'field_file', '%s'),
-('page', 'field_image', '%s'),
-('page', 'field_video', '%s'),
-('event', 'field_file', '%s'),
-('event', 'field_image', '%s'),
-('event', 'field_video', '%s'),
-('blog', 'field_file', '%s'),
-('blog', 'field_image', '%s'),
-('blog', 'field_video', '%s');
+('page', 'field_file', '%s', '%s'),
+('page', 'field_image', '%s', '%s'),
+('page', 'field_video', '%s', '%s'),
+('event', 'field_file', '%s', '%s'),
+('event', 'field_image', '%s', '%s'),
+('event', 'field_video', '%s', '%s'),
+('blog', 'field_file', '%s', '%s'),
+('blog', 'field_image', '%s', '%s'),
+('blog', 'field_video', '%s', '%s');
 "
 ,'a:4:{s:5:"value";s:60:"[filefield-onlyname-original].[filefield-extension-original]";s:7:"tolower";i:0;s:8:"pathauto";i:0;s:13:"transliterate";i:1;}', 'a:4:{s:5:"value";s:18:"home/user[user-id]";s:7:"tolower";i:0;s:8:"pathauto";i:0;s:13:"transliterate";i:0;}'
 ,'a:4:{s:5:"value";s:60:"[filefield-onlyname-original].[filefield-extension-original]";s:7:"tolower";i:0;s:8:"pathauto";i:0;s:13:"transliterate";i:1;}', 'a:4:{s:5:"value";s:18:"home/user[user-id]";s:7:"tolower";i:0;s:8:"pathauto";i:0;s:13:"transliterate";i:0;}'
