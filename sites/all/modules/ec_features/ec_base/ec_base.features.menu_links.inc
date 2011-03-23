@@ -18,7 +18,7 @@ function ec_base_menu_default_menu_links() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '9999',
+    'weight' => '-9999',
   );
   // Exported menu link: primary-links:contact
   $menu_links['primary-links:contact'] = array(
