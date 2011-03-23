@@ -1,4 +1,11 @@
 <?php
 
-// This file is deprecated and can be removed.
-// Please remove include_once('ec_base.features.inc') in ec_base.module as well.
+/**
+ * Implementation of hook_ctools_plugin_api().
+ */
+function ec_base_ctools_plugin_api() {
+  list($module, $api) = func_get_args();
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => 1);
+  }
+}

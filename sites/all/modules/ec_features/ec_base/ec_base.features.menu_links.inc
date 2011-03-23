@@ -6,20 +6,6 @@
 function ec_base_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: navigation:logout
-  $menu_links['navigation:login'] = array(
-    'menu_name' => 'navigation',
-    'link_path' => 'user/login',
-    'router_path' => 'user/login',
-    'link_title' => 'Log in',
-    'options' => array(),
-    'module' => 'system',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-9999',
-  );
   // Exported menu link: primary-links:contact
   $menu_links['primary-links:contact'] = array(
     'menu_name' => 'primary-links',
@@ -41,7 +27,6 @@ function ec_base_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Contact Us');
-  t('Log out');
 
 
   return $menu_links;
