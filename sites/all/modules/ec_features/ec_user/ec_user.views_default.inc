@@ -743,7 +743,6 @@ print $output;
       'views_bulk_operations_profile_action' => 'views_bulk_operations_profile_action',
       'views_bulk_operations_user_roles_action' => 'views_bulk_operations_user_roles_action',
       'og_promote_user_action' => 'og_promote_user_action',
-      'system_send_email_action' => 'system_send_email_action',
       'og_subscribe_user_action' => 'og_subscribe_user_action',
       'user_user_operations_unblock' => 'user_user_operations_unblock',
       'og_unsubscribe_user_action' => 'og_unsubscribe_user_action',
@@ -754,7 +753,6 @@ print $output;
       'views_bulk_operations_argument_selector_action' => 0,
       'token_actions_goto_action' => 0,
       'system_goto_action' => 0,
-      'token_actions_send_email_action' => 0,
     ),
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');
