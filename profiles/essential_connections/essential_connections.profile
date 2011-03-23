@@ -118,7 +118,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 	'ec_help' => array('user_permission','variable'),
 	'ec_backup_migrate' => array('user_permission','variable'),
 	'ec_content' => array('user_permission','variable'),
-	//'ec_filefield' => array('user_permission','variable'),
+	'ec_filefield' => array('user_permission','variable'),
 	'ec_block' => array('user_permission','variable'),
 	'ec_formats_filters' => array('user_permission','variable'),
 	'ec_htmlpurifier' => array('user_permission','variable'),
