@@ -93,9 +93,10 @@ function essential_connections_profile_tasks(&$task, $url) {
 	variable_set('preprocess_js', '1');
 	variable_set('user_picture_path', 'home/profile_pictures');
 
-	// Create user picture directory
+	$home_path = file_create_path('home');
+	file_check_directory($home_path, 1);
 	$picture_path = file_create_path(variable_get('user_picture_path', 'home/profile_pictures'));
-	file_check_directory($picture_path, 1, 'user_picture_path');
+	file_check_directory($picture_path, 1);
 	
 	module_enable(array(
 	//'ec_filefield_post_install',
