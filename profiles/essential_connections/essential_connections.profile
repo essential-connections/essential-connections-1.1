@@ -109,7 +109,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 	
     //cache_clear_all();
     //drupal_rebuild_theme_registry();
-	drupal_flush_all_caches();
+	//drupal_flush_all_caches();
     //menu_rebuild();
     node_access_rebuild();
 
@@ -162,6 +162,9 @@ function essential_connections_profile_tasks(&$task, $url) {
     //menu_rebuild();
     //node_access_rebuild();
     
+  }
+  if($task == 'ec'){
+	drupal_flush_all_caches();
   }
 
 }
