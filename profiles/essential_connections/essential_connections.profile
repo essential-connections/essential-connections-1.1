@@ -157,7 +157,6 @@ function essential_connections_profile_tasks(&$task, $url) {
     ); 
     features_revert($revert);
 
-	drupal_flush_all_caches();
 	//drupal_flush_all_caches();
     //node_access_rebuild();
     
