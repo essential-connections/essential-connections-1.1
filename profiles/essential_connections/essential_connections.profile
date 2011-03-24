@@ -159,7 +159,10 @@ function essential_connections_profile_tasks(&$task, $url) {
 
 	//drupal_flush_all_caches();
     //node_access_rebuild();
-    
+	module_enable(array(
+	'ec_install_last',
+	));
+	
   }
   //if($task == 'ec'){
 	//drupal_flush_all_caches();
