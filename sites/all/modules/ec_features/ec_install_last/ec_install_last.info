@@ -1,5 +1,5 @@
 core = "6.x"
-//dependencies[] = "ec_filefield_post_install"
+dependencies[] = "features"
 description = "install_last"
 name = "install_last"
 package = "Features"
