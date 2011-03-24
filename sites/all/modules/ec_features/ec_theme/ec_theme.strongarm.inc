@@ -9,13 +9,6 @@ function ec_theme_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'theme_default';
-  $strongarm->value = 'cti_flex';
-
-  $export['theme_default'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'theme_settings';
   $strongarm->value = array(
     'toggle_logo' => 0,
