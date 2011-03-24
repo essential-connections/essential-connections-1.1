@@ -79,7 +79,8 @@ function essential_connections_profile_details() {
  */
 function essential_connections_profile_task_list() {
   return array(
-    'ec' => 'main',
+    'ec1' => st('Setup 1'),
+	'ec2' => st('Setup 2'),
   );
 }
 /**
@@ -159,14 +160,11 @@ function essential_connections_profile_tasks(&$task, $url) {
 
 	//drupal_flush_all_caches();
     //node_access_rebuild();
-	module_enable(array(
-	'ec_install_last',
-	));
 	
   }
-  //if($task == 'ec'){
-	//drupal_flush_all_caches();
+  if($task == 'ec2'){
+	drupal_flush_all_caches();
 	//node_access_rebuild();
-  //}
+  }
 
 }
