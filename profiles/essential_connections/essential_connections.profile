@@ -108,7 +108,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 	
 	//module_load_install('ec_filefield_post_install');
 	
-	//drupal_flush_all_caches();
+	drupal_flush_all_caches();
     node_access_rebuild();
 
     if (function_exists('strongarm_init')) {
@@ -158,7 +158,7 @@ function essential_connections_profile_tasks(&$task, $url) {
     features_revert($revert);
 
 	drupal_flush_all_caches();
-	drupal_flush_all_caches();
+	//drupal_flush_all_caches();
     //node_access_rebuild();
     
   }
