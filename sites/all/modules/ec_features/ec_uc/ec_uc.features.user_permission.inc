@@ -17,7 +17,9 @@ function ec_uc_user_default_permissions() {
   // Exported permission: administer cart links
   $permissions['administer cart links'] = array(
     'name' => 'administer cart links',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'administrator',
+    ),
   );
 
   // Exported permission: administer catalog
@@ -305,37 +307,55 @@ function ec_uc_user_default_permissions() {
   // Exported permission: view imagecache cart
   $permissions['view imagecache cart'] = array(
     'name' => 'view imagecache cart',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
   );
 
   // Exported permission: view imagecache product
   $permissions['view imagecache product'] = array(
     'name' => 'view imagecache product',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
   );
 
   // Exported permission: view imagecache product_full
   $permissions['view imagecache product_full'] = array(
     'name' => 'view imagecache product_full',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
   );
 
   // Exported permission: view imagecache product_list
   $permissions['view imagecache product_list'] = array(
     'name' => 'view imagecache product_list',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
   );
 
   // Exported permission: view imagecache uc_category
   $permissions['view imagecache uc_category'] = array(
     'name' => 'view imagecache uc_category',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
   );
 
   // Exported permission: view imagecache uc_thumbnail
   $permissions['view imagecache uc_thumbnail'] = array(
     'name' => 'view imagecache uc_thumbnail',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
   );
 
   // Exported permission: view own orders
