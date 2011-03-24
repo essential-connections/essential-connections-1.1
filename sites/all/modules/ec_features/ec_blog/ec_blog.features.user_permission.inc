@@ -19,6 +19,7 @@ function ec_blog_user_default_permissions() {
       '0' => 'administrator',
       '1' => 'advanced user',
       '2' => 'manager',
+	  '3' => 'regular user',
     ),
   );
 
