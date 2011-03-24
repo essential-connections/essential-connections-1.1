@@ -30,6 +30,7 @@ function essential_connections_profile_modules() {
 	'ec_og',
 	'ec_messaging_notifications',
 	'ec_blog',
+	'ec_poll',
 	'ec_page',
 	'ec_event',
 	'ec_webform',
@@ -107,10 +108,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 	
 	//module_load_install('ec_filefield_post_install');
 	
-    //cache_clear_all();
-    //drupal_rebuild_theme_registry();
 	//drupal_flush_all_caches();
-    //menu_rebuild();
     node_access_rebuild();
 
     if (function_exists('strongarm_init')) {
@@ -137,6 +135,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 	'ec_og' => array('user_permission','variable'),
 	'ec_messaging_notifications' => array('user_permission','variable'),
 	'ec_blog' => array('user_permission','variable'),
+	'ec_poll' => array('user_permission','variable'),
 	'ec_page' => array('user_permission','variable'),
 	'ec_event' => array('user_permission','variable'),
 	'ec_webform' => array('user_permission','variable'),
@@ -158,13 +157,14 @@ function essential_connections_profile_tasks(&$task, $url) {
     ); 
     features_revert($revert);
 
-	//drupal_flush_all_caches();
-    //menu_rebuild();
+	drupal_flush_all_caches();
+	drupal_flush_all_caches();
     //node_access_rebuild();
     
   }
-  if($task == 'ec'){
-	drupal_flush_all_caches();
-  }
+  //if($task == 'ec'){
+	//drupal_flush_all_caches();
+	//node_access_rebuild();
+  //}
 
 }
