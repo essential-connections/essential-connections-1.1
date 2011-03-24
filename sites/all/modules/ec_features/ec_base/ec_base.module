@@ -98,10 +98,13 @@ function ec_base_menu() {
  */
 function ec_base_menu_link_alter(&$item, $menu) {
   //drupal_set_message('menu:<pre>'.print_r($item).'</pre>' );
-  //global $user;
+  global $user;
   switch($item['link_path']) {
     case 'http://help.essential-connections.com':
 	  $item['weight'] = 9999;
+	  if(!($user->uid > 0)){
+		$item['hidden'] = 1;
+	  }
 	break;
     case 'admin':
 	  $item['weight'] = 999;
@@ -114,6 +117,9 @@ function ec_base_menu_link_alter(&$item, $menu) {
 	break;	
     case 'og':
 	  $item['weight'] = 10;
+	  if(!($user->uid > 0)){
+		$item['hidden'] = 1;
+	  }
 	break;
     case 'content':
 	  $item['weight'] = 9;
