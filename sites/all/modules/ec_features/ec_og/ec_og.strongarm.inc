@@ -108,7 +108,7 @@ function ec_og_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'og_admin_email_body';
   $strongarm->value = '<p>
-	@body -- This message was sent by an administrator in the &#39;@group&#39; group at @site. To visit this group, browse to !url_group. To unsubscribe from this group, visit !url_unsubscribe</p>
+	@body -- This message was sent by an administrator in the @group group at @site. To visit this group, browse to !url_group. To unsubscribe from this group, visit !url_unsubscribe</p>
 ';
 
   $export['og_admin_email_body'] = $strongarm;
@@ -247,7 +247,7 @@ function ec_og_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'og_invite_user_body';
   $strongarm->value = '<p>
-	Hi. I&#39;m a member of &#39;@group&#39; and I welcome you to join this group as well. Please see the link and message below. @group @description Join: !group_url @body</p>
+	Hi. I am a member of @group and I welcome you to join this group as well. Please see the link and message below. @group @description Join: !group_url @body</p>
 ';
 
   $export['og_invite_user_body'] = $strongarm;
@@ -263,7 +263,7 @@ function ec_og_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'og_new_admin_body';
   $strongarm->value = '<p>
-	@username, you are now an administrator for the group &#39;@group&#39;. You can administer this group by logging in here: !group_url</p>
+	@username, you are now an administrator for the group @group. You can administer this group by logging in here: !group_url</p>
 ';
 
   $export['og_new_admin_body'] = $strongarm;
@@ -279,7 +279,7 @@ function ec_og_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'og_new_node_body';
   $strongarm->value = '<p>
-	@type &#39;@subject&#39; by @username @node_teaser !read_more: !content_url Post reply: !reply_url -- You are subscribed from the group &#39;@group&#39; at @site. To manage your subscription, visit !group_url</p>
+	@type @subject by @username @node_teaser !read_more: !content_url Post reply: !reply_url -- You are subscribed from the group @group at @site. To manage your subscription, visit !group_url</p>
 ';
 
   $export['og_new_node_body'] = $strongarm;
