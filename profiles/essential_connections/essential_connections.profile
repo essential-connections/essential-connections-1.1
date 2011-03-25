@@ -108,9 +108,8 @@ function essential_connections_profile_tasks(&$task, $url) {
 	//'ec_frontpage',
 	//));
 	
-	node_access_rebuild();
 	drupal_flush_all_caches();
-    
+    node_access_rebuild();
 
     if (function_exists('strongarm_init')) {
       strongarm_init();
@@ -171,4 +170,9 @@ function essential_connections_profile_tasks(&$task, $url) {
 	variable_set('install_task', 'profile-finished');
   }
 
+}
+
+function _essential_connections_module_install_finished($success, $results) {
+  //variable_set('install_task', 'watershednow-configure');
+  drupal_flush_all_caches();
 }
