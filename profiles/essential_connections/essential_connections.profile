@@ -158,14 +158,17 @@ function essential_connections_profile_tasks(&$task, $url) {
     ); 
     features_revert($revert);
 
-	drupal_flush_all_caches();
+	//drupal_flush_all_caches();
     //node_access_rebuild();
 	//drupal_cron_run();
+	
+	variable_set('install_task', 'ec1');
   }
-  //if($task == 'ec1'){
-	//drupal_flush_all_caches();
+  if($task == 'ec1'){
+	drupal_flush_all_caches();
 	//node_access_rebuild();
 	//$task = 'profile-finished';
-  //}
+	variable_set('install_task', 'profile-finished');
+  }
 
 }
