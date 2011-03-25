@@ -61,7 +61,19 @@ function ec_base_footer($main = 0) {
   
 }
 
-////
+/**
+ * Implementation of hook_help().
+ */
+function ec_base_help($path, $arg) {
+  $output = '';
+
+  if(!(variable_get('ec_caches_cleared','0') == '1')){
+    variable_set('ec_caches_cleared','1')
+	drupal_flush_all_caches();
+	watchdog('ec_base', 'caches cleared', array(), WATCHDOG_INFO,NULL);
+  }
+  return $output;
+}
 
 /**
  * Implementation of hook_perm().
