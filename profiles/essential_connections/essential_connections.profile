@@ -81,6 +81,7 @@ function essential_connections_profile_details() {
 function essential_connections_profile_task_list() {
   return array(
     'ec1' => 'Setup 1',
+	'ec1-batch' => 'Batch1',
   );
 }
 /**
@@ -117,11 +118,16 @@ function essential_connections_profile_tasks(&$task, $url) {
 	variable_set('install_task', 'ec1');
 	
   }
+  // We are running a batch task for this profile so basically do nothing and return page
+  if (in_array($task, array('ec-batch'))) {
+    include_once 'includes/batch.inc';
+    $output = _batch_page();
+  }
   if($task == 'ec1'){
     $batch['title'] = st('Configuring @drupal', array('@drupal' => drupal_install_profile_name()));
     $batch['operations'][] = array('_essential_connections_revert', array());
     $batch['finished'] = '_essential_connections_install_finished';
-    //variable_set('install_task', 'intranet-configure-batch');
+    variable_set('install_task', 'ec1-batch');
     batch_set($batch);
     batch_process($url, $url);
     // Jut for cli installs. We'll never reach here on interactive installs.
@@ -187,6 +193,6 @@ function _essential_connections_revert() {
     features_revert($revert);
 }
 function _essential_connections_install_finished() {
-  //variable_set('install_task', 'ec1');
   drupal_flush_all_caches();
+  variable_set('install_task', 'profile-finished');
 }
