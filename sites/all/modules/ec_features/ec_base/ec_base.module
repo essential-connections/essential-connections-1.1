@@ -70,6 +70,48 @@ function ec_base_help($path, $arg) {
   if(!(variable_get('ec_caches_cleared','0') == '1')){
     variable_set('ec_caches_cleared','1');
 	drupal_flush_all_caches();
+    $revert = array(
+	'ec_base' => array('user_permission','variable','menu_links','menu_custom'),
+	'ec_protect_critical_users' => array('user_permission','variable'),
+	'ec_user' => array('user_permission','variable'),
+	'ec_permissions_lock' => array('user_permission','variable'),
+	'ec_delegate_menu' => array('user_permission','variable'),
+	'ec_admin_access' => array('user_permission','variable'),
+	'ec_views' => array('user_permission','variable'),
+	'ec_simplemenu' => array('user_permission','variable'),
+	'ec_help' => array('user_permission','variable'),
+	'ec_backup_migrate' => array('user_permission','variable'),
+	'ec_content' => array('user_permission','variable'),
+	//'ec_filefield' => array('user_permission','variable'),
+	'ec_block' => array('user_permission','variable'),
+	'ec_formats_filters' => array('user_permission','variable'),
+	'ec_htmlpurifier' => array('user_permission','variable'),
+	'ec_imagecache' => array('user_permission','variable'),
+	'ec_og' => array('user_permission','variable','content'),
+	'ec_messaging_notifications' => array('user_permission','variable'),
+	'ec_blog' => array('content','fieldgroup','user_permission','variable'),
+	'ec_poll' => array('user_permission','variable'),
+	'ec_page' => array('content','fieldgroup','user_permission','variable'),
+	'ec_event' => array('content','fieldgroup','user_permission','variable'),
+	'ec_webform' => array('user_permission','variable'),
+	'ec_imce' => array('user_permission','variable'),
+	'ec_ckeditor' => array('user_permission','variable'),
+	'ec_vertical_tabs' => array('user_permission','variable'),
+	'ec_clickpath' => array('user_permission','variable'),
+	'ec_save_edit' => array('user_permission','variable'),
+	'ec_statistics' => array('user_permission','variable'),
+	'ec_taxonomy' => array('user_permission','variable'),
+	'ec_theme' => array('user_permission','variable'),
+	'ec_theme_acquia_marina' => array('user_permission','variable'),
+	'ec_theme_acquia_prosper' => array('user_permission','variable'),
+	'ec_theme_cti_flex' => array('user_permission','variable'),
+	'ec_theme_garland' => array('user_permission','variable'),
+	'ec_theme_mix_and_match' => array('user_permission','variable'),
+	'ec_theme_zeropoint' => array('user_permission','variable'),
+	'ec_uc' => array('user_permission','variable','menu_links'),
+	'ec_frontpage' => array('menu_links'),
+    ); 
+    features_revert($revert);
 	watchdog('ec_base', 'caches cleared', array(), WATCHDOG_INFO,NULL);
   }
   return $output;
