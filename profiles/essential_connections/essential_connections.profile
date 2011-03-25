@@ -219,12 +219,12 @@ function _essential_connections_configure() {
 /**
  * Finished callback for the modules install batch.
  *
- * Advance installer task to language import.
  */
 function _essential_connections_profile_batch_finished($success, $results) {
   variable_set('install_task', 'ec-configure');
 }
 function _essential_connections_install_finished() {
-  drupal_flush_all_caches();
+  //drupal_flush_all_caches();
+  drupal_cron_run();
   variable_set('install_task', 'profile-finished');
 }
