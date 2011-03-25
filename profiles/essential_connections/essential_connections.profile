@@ -87,6 +87,8 @@ function essential_connections_profile_task_list() {
  * Implementation of hook_profile_tasks().
  */
 function essential_connections_profile_tasks(&$task, $url) {
+  watchdog('ec_install', 'task:'.$task, array(), WATCHDOG_INFO,NULL);
+  
   // first run is 'profile'
   if($task == 'profile'){
     //variable_set('site_frontpage', 'user/login');
@@ -163,6 +165,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 	
   }
   if($task == 'ec2'){
+    watchdog('ec_install', 'task ec2:'.$task, array(), WATCHDOG_INFO,NULL);
 	drupal_flush_all_caches();
 	//node_access_rebuild();
   }
