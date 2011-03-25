@@ -51,7 +51,7 @@ function essential_connections_profile_modules() {
 	'ec_uc',
 	'ec_frontpage',
   ); 
-  return $modules;
+  //return $modules;
 } 
 
 /**
@@ -68,7 +68,51 @@ function essential_connections_profile_details() {
     'description' => 'essential-connections profile',
   );
 }
-
+function _essential_connections_modules() {
+  return array(
+	'ctools','features','strongarm',
+	'ec_base',
+	'ec_protect_critical_users',
+	'ec_user',
+	'ec_permissions_lock',
+	'ec_delegate_menu',
+	'ec_admin_access',
+	'ec_views',
+	'ec_simplemenu',
+	'ec_help',
+	'ec_backup_migrate',
+	'ec_content',
+	//'ec_filefield',
+	//'ec_filefield_post_install',
+	'ec_block',
+	'ec_formats_filters',
+	'ec_htmlpurifier',
+	'ec_imagecache',
+	'ec_og',
+	'ec_messaging_notifications',
+	'ec_blog',
+	'ec_poll',
+	'ec_page',
+	'ec_event',
+	'ec_webform',
+	'ec_imce',
+	'ec_ckeditor',
+	'ec_vertical_tabs',
+	'ec_clickpath',
+	'ec_save_edit',
+	'ec_statistics',
+	'ec_taxonomy',
+	'ec_theme',
+	'ec_theme_acquia_marina',
+	'ec_theme_acquia_prosper',
+	'ec_theme_cti_flex',
+	'ec_theme_garland',
+	'ec_theme_mix_and_match',
+	'ec_theme_zeropoint',
+	'ec_uc',
+	'ec_frontpage',
+  );
+}
 /**
  * Return a list of tasks that this profile supports.
  *
@@ -80,8 +124,8 @@ function essential_connections_profile_details() {
  */
 function essential_connections_profile_task_list() {
   return array(
-    'ec1' => 'Setup 1',
-	'ec1-batch' => 'Batch1',
+    'ec-modules-batch' => 'Install modules',
+	'ec-configure-batch' => 'Configure',
   );
 }
 /**
@@ -108,24 +152,44 @@ function essential_connections_profile_tasks(&$task, $url) {
 	//module_enable(array(
 	//'ec_frontpage',
 	//));
-	
 
 
 	//drupal_flush_all_caches();
     //node_access_rebuild();
 	//drupal_cron_run();
 	
-	variable_set('install_task', 'ec1');
-	
+	//variable_set('install_task', 'ec1');
+	$task = 'ec-modules';	
   }
+  if ($task == 'ec-modules') {
+    $modules = _essential_connections_modules();
+    $files = module_rebuild_cache();
+    // Create batch
+    foreach ($modules as $module) {
+      $batch['operations'][] = array('_install_module_batch', array($module, $files[$module]->info['name']));
+    }    
+    $batch['finished'] = '_essential_connections_profile_batch_finished';
+    $batch['title'] = st('Installing @drupal', array('@drupal' => drupal_install_profile_name()));
+    $batch['error_message'] = st('The installation has encountered an error.');
+
+    // Start a batch, switch to 'intranet-modules-batch' task. We need to
+    // set the variable here, because batch_process() redirects.
+    variable_set('install_task', 'ec-modules-batch');
+    batch_set($batch);
+    batch_process($url, $url);
+    // Jut for cli installs. We'll never reach here on interactive installs.
+    return;
+  }
+  
   // We are running a batch task for this profile so basically do nothing and return page
-  if (in_array($task, array('ec-batch'))) {
+  if (in_array($task, array('ec-modules-batch', 'ec-configure-batch'))) {
     include_once 'includes/batch.inc';
     $output = _batch_page();
   }
-  if($task == 'ec1'){
+  
+  if($task == 'ec-configure'){
     $batch['title'] = st('Configuring @drupal', array('@drupal' => drupal_install_profile_name()));
-    $batch['operations'][] = array('_essential_connections_revert', array());
+    $batch['operations'][] = array('_essential_connections_configure', array());
     $batch['finished'] = '_essential_connections_install_finished';
     variable_set('install_task', 'ec1-batch');
     batch_set($batch);
@@ -142,7 +206,8 @@ function essential_connections_profile_tasks(&$task, $url) {
   }*/
 
 }
-function _essential_connections_revert() {
+function _essential_connections_configure() {
+
 	drupal_flush_all_caches();
     node_access_rebuild();
 
@@ -191,6 +256,14 @@ function _essential_connections_revert() {
 	'ec_uc' => array('user_permission','variable'),
     ); 
     features_revert($revert);
+}
+/**
+ * Finished callback for the modules install batch.
+ *
+ * Advance installer task to language import.
+ */
+function _essential_connections_profile_batch_finished($success, $results) {
+  variable_set('install_task', 'ec-configure');
 }
 function _essential_connections_install_finished() {
   drupal_flush_all_caches();
