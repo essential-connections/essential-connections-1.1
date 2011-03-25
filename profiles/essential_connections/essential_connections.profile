@@ -108,6 +108,35 @@ function essential_connections_profile_tasks(&$task, $url) {
 	//'ec_frontpage',
 	//));
 	
+
+
+	//drupal_flush_all_caches();
+    //node_access_rebuild();
+	//drupal_cron_run();
+	
+	variable_set('install_task', 'ec1');
+	
+  }
+  if($task == 'ec1'){
+    $batch['title'] = st('Configuring @drupal', array('@drupal' => drupal_install_profile_name()));
+    $batch['operations'][] = array('_essential_connections_revert', array());
+    $batch['finished'] = '_essential_connections_install_finished';
+    //variable_set('install_task', 'intranet-configure-batch');
+    batch_set($batch);
+    batch_process($url, $url);
+    // Jut for cli installs. We'll never reach here on interactive installs.
+    return;
+  }
+  
+  /*if($task == 'ec1'){
+	drupal_flush_all_caches();
+	//node_access_rebuild();
+	//$task = 'profile-finished';
+	variable_set('install_task', 'profile-finished');
+  }*/
+
+}
+function _essential_connections_revert() {
 	drupal_flush_all_caches();
     node_access_rebuild();
 
@@ -156,23 +185,8 @@ function essential_connections_profile_tasks(&$task, $url) {
 	'ec_uc' => array('user_permission','variable'),
     ); 
     features_revert($revert);
-
-	//drupal_flush_all_caches();
-    //node_access_rebuild();
-	//drupal_cron_run();
-	
-	//variable_set('install_task', 'ec1');
-  }
-  if($task == 'ec1'){
-	drupal_flush_all_caches();
-	//node_access_rebuild();
-	//$task = 'profile-finished';
-	variable_set('install_task', 'profile-finished');
-  }
-
 }
-
-function _essential_connections_module_install_finished($success, $results) {
-  variable_set('install_task', 'ec1');
-  //drupal_flush_all_caches();
+function _essential_connections_install_finished() {
+  //variable_set('install_task', 'ec1');
+  drupal_flush_all_caches();
 }
