@@ -49,9 +49,9 @@ function essential_connections_profile_modules() {
 	'ec_theme_mix_and_match',
 	'ec_theme_zeropoint',
 	'ec_uc',
-	'ec_frontpage',
+	//'ec_frontpage',
   ); 
-  //return $modules;
+  return $modules;
 } 
 
 /**
@@ -70,46 +70,6 @@ function essential_connections_profile_details() {
 }
 function _essential_connections_modules() {
   return array(
-	'ctools','features','strongarm',
-	'ec_base',
-	'ec_protect_critical_users',
-	'ec_user',
-	'ec_permissions_lock',
-	'ec_delegate_menu',
-	'ec_admin_access',
-	'ec_views',
-	'ec_simplemenu',
-	'ec_help',
-	'ec_backup_migrate',
-	'ec_content',
-	//'ec_filefield',
-	//'ec_filefield_post_install',
-	'ec_block',
-	'ec_formats_filters',
-	'ec_htmlpurifier',
-	'ec_imagecache',
-	'ec_og',
-	'ec_messaging_notifications',
-	'ec_blog',
-	'ec_poll',
-	'ec_page',
-	'ec_event',
-	'ec_webform',
-	'ec_imce',
-	'ec_ckeditor',
-	'ec_vertical_tabs',
-	'ec_clickpath',
-	'ec_save_edit',
-	'ec_statistics',
-	'ec_taxonomy',
-	'ec_theme',
-	'ec_theme_acquia_marina',
-	'ec_theme_acquia_prosper',
-	'ec_theme_cti_flex',
-	'ec_theme_garland',
-	'ec_theme_mix_and_match',
-	'ec_theme_zeropoint',
-	'ec_uc',
 	'ec_frontpage',
   );
 }
@@ -136,23 +96,10 @@ function essential_connections_profile_tasks(&$task, $url) {
   // first run is 'profile'
   if($task == 'profile'){
     //$task = 'ec1';
-    //variable_set('site_frontpage', 'user/login');
-	variable_set('theme_default', 'cti_flex');
-	variable_set('preprocess_css', '1');
-	variable_set('preprocess_js', '1');
-	variable_set('user_picture_path', 'home/profile_pictures');
-
-	$home_path = file_create_path('home');
-	file_check_directory($home_path, 1);
-	chmod($home_path,0777);
-	$picture_path = file_create_path(variable_get('user_picture_path', 'home/profile_pictures'));
-	file_check_directory($picture_path, 1);
-	chmod($picture_path,0777);
 	
 	//module_enable(array(
 	//'ec_frontpage',
 	//));
-
 
 	//drupal_flush_all_caches();
     //node_access_rebuild();
@@ -191,7 +138,7 @@ function essential_connections_profile_tasks(&$task, $url) {
     $batch['title'] = st('Configuring @drupal', array('@drupal' => drupal_install_profile_name()));
     $batch['operations'][] = array('_essential_connections_configure', array());
     $batch['finished'] = '_essential_connections_install_finished';
-    variable_set('install_task', 'ec1-batch');
+    variable_set('install_task', 'ec-configure-batch');
     batch_set($batch);
     batch_process($url, $url);
     // Jut for cli installs. We'll never reach here on interactive installs.
@@ -207,6 +154,19 @@ function essential_connections_profile_tasks(&$task, $url) {
 
 }
 function _essential_connections_configure() {
+
+    //variable_set('site_frontpage', 'user/login');
+	variable_set('theme_default', 'cti_flex');
+	variable_set('preprocess_css', '1');
+	variable_set('preprocess_js', '1');
+	variable_set('user_picture_path', 'home/profile_pictures');
+
+	$home_path = file_create_path('home');
+	file_check_directory($home_path, 1);
+	chmod($home_path,0777);
+	$picture_path = file_create_path(variable_get('user_picture_path', 'home/profile_pictures'));
+	file_check_directory($picture_path, 1);
+	chmod($picture_path,0777);
 
 	drupal_flush_all_caches();
     node_access_rebuild();
