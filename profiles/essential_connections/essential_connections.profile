@@ -175,7 +175,7 @@ function _essential_connections_configure() {
     }
 
     $revert = array(
-	'ec_base' => array('user_permission','variable'),
+	'ec_base' => array('user_permission','variable','menu_links','menu_custom'),
 	'ec_protect_critical_users' => array('user_permission','variable'),
 	'ec_user' => array('user_permission','variable'),
 	'ec_permissions_lock' => array('user_permission','variable'),
@@ -191,12 +191,12 @@ function _essential_connections_configure() {
 	'ec_formats_filters' => array('user_permission','variable'),
 	'ec_htmlpurifier' => array('user_permission','variable'),
 	'ec_imagecache' => array('user_permission','variable'),
-	'ec_og' => array('user_permission','variable'),
+	'ec_og' => array('user_permission','variable','content'),
 	'ec_messaging_notifications' => array('user_permission','variable'),
-	'ec_blog' => array('user_permission','variable'),
+	'ec_blog' => array('content','fieldgroup','user_permission','variable'),
 	'ec_poll' => array('user_permission','variable'),
-	'ec_page' => array('user_permission','variable'),
-	'ec_event' => array('user_permission','variable'),
+	'ec_page' => array('content','fieldgroup','user_permission','variable'),
+	'ec_event' => array('content','fieldgroup','user_permission','variable'),
 	'ec_webform' => array('user_permission','variable'),
 	'ec_imce' => array('user_permission','variable'),
 	'ec_ckeditor' => array('user_permission','variable'),
@@ -212,7 +212,8 @@ function _essential_connections_configure() {
 	'ec_theme_garland' => array('user_permission','variable'),
 	'ec_theme_mix_and_match' => array('user_permission','variable'),
 	'ec_theme_zeropoint' => array('user_permission','variable'),
-	'ec_uc' => array('user_permission','variable'),
+	'ec_uc' => array('user_permission','variable','menu_links'),
+	'ec_frontpage' => array('menu_links'),
     ); 
     features_revert($revert);
 }
