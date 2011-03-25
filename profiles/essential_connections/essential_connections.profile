@@ -10,6 +10,26 @@
 function essential_connections_profile_modules() {
   $modules = array( 
 	'ctools','features','strongarm',
+  ); 
+  return $modules;
+} 
+
+/**
+ * Return a description of the profile for the initial installation screen.
+ *
+ * @return
+ *   An array with keys 'name' and 'description' describing this profile,
+ *   and optional 'language' to override the language selection for
+ *   language-specific profiles.
+ */
+function essential_connections_profile_details() {
+  return array(
+    'name' => 'essential-connections site',
+    'description' => 'essential-connections profile',
+  );
+}
+function _essential_connections_modules() {
+  return array(
 	'ec_base',
 	'ec_protect_critical_users',
 	'ec_user',
@@ -49,27 +69,6 @@ function essential_connections_profile_modules() {
 	'ec_theme_mix_and_match',
 	'ec_theme_zeropoint',
 	'ec_uc',
-	//'ec_frontpage',
-  ); 
-  return $modules;
-} 
-
-/**
- * Return a description of the profile for the initial installation screen.
- *
- * @return
- *   An array with keys 'name' and 'description' describing this profile,
- *   and optional 'language' to override the language selection for
- *   language-specific profiles.
- */
-function essential_connections_profile_details() {
-  return array(
-    'name' => 'essential-connections site',
-    'description' => 'essential-connections profile',
-  );
-}
-function _essential_connections_modules() {
-  return array(
 	'ec_frontpage',
   );
 }
@@ -215,7 +214,7 @@ function _essential_connections_configure() {
 	'ec_theme_zeropoint' => array('user_permission','variable'),
 	'ec_uc' => array('user_permission','variable'),
     ); 
-    //features_revert($revert);
+    features_revert($revert);
 }
 /**
  * Finished callback for the modules install batch.
