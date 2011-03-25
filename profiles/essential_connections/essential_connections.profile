@@ -161,7 +161,7 @@ function essential_connections_profile_tasks(&$task, $url) {
     //node_access_rebuild();
 	//drupal_cron_run();
 	
-	variable_set('install_task', 'ec1');
+	//variable_set('install_task', 'ec1');
   }
   if($task == 'ec1'){
 	drupal_flush_all_caches();
@@ -173,6 +173,6 @@ function essential_connections_profile_tasks(&$task, $url) {
 }
 
 function _essential_connections_module_install_finished($success, $results) {
-  //variable_set('install_task', 'watershednow-configure');
-  drupal_flush_all_caches();
+  variable_set('install_task', 'ec1');
+  //drupal_flush_all_caches();
 }
