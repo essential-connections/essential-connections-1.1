@@ -46,13 +46,6 @@ function ec_statistics_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'statistics_day_timestamp';
-  $strongarm->value = 1298489231;
-
-  $export['statistics_day_timestamp'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'statistics_enable_access_log';
   $strongarm->value = '1';
 
@@ -71,13 +64,6 @@ function ec_statistics_strongarm() {
   $strongarm->value = 0;
 
   $export['statspro_end'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'statspro_last_run';
-  $strongarm->value = 1298519904;
-
-  $export['statspro_last_run'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;

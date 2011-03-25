@@ -49,6 +49,7 @@ function essential_connections_profile_modules() {
 	'ec_theme_mix_and_match',
 	'ec_theme_zeropoint',
 	'ec_uc',
+	'ec_frontpage',
   ); 
   return $modules;
 } 
@@ -103,15 +104,13 @@ function essential_connections_profile_tasks(&$task, $url) {
 	file_check_directory($picture_path, 1);
 	chmod($picture_path,0777);
 	
-	module_enable(array(
-	//'ec_filefield_post_install',
-	'ec_frontpage',
-	));
+	//module_enable(array(
+	//'ec_frontpage',
+	//));
 	
-	//module_load_install('ec_filefield_post_install');
-	
+	node_access_rebuild();
 	drupal_flush_all_caches();
-    node_access_rebuild();
+    
 
     if (function_exists('strongarm_init')) {
       strongarm_init();
@@ -159,9 +158,9 @@ function essential_connections_profile_tasks(&$task, $url) {
     ); 
     features_revert($revert);
 
-	//drupal_flush_all_caches();
+	drupal_flush_all_caches();
     //node_access_rebuild();
-	drupal_cron_run();
+	//drupal_cron_run();
   }
   //if($task == 'ec1'){
 	//drupal_flush_all_caches();
