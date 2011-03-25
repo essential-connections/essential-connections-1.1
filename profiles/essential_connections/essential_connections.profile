@@ -79,8 +79,7 @@ function essential_connections_profile_details() {
  */
 function essential_connections_profile_task_list() {
   return array(
-    'ec1' => st('Setup 1'),
-	'ec2' => st('Setup 2'),
+    'ec1' => 'Setup 1',
   );
 }
 /**
@@ -90,7 +89,7 @@ function essential_connections_profile_tasks(&$task, $url) {
   
   // first run is 'profile'
   if($task == 'profile'){
-    $task = 'ec1';
+    //$task = 'ec1';
     //variable_set('site_frontpage', 'user/login');
 	variable_set('theme_default', 'cti_flex');
 	variable_set('preprocess_css', '1');
@@ -162,12 +161,12 @@ function essential_connections_profile_tasks(&$task, $url) {
 
 	//drupal_flush_all_caches();
     //node_access_rebuild();
-	
+	drupal_cron_run();
   }
-  if($task == 'ec1'){
-	drupal_flush_all_caches();
+  //if($task == 'ec1'){
+	//drupal_flush_all_caches();
 	//node_access_rebuild();
-	$task = 'profile-finished';
-  }
+	//$task = 'profile-finished';
+  //}
 
 }
