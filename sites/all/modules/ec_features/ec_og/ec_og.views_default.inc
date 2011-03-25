@@ -270,7 +270,7 @@ return FALSE;
   $handler->override_option('header_empty', 0);
   $handler->override_option('empty', 'No results');
   $handler->override_option('empty_format', '1');
-  $handler->override_option('use_ajax', '1');
+  $handler->override_option('use_ajax', '0');
   $handler->override_option('items_per_page', 25);
   $handler->override_option('use_pager', '1');
   $handler->override_option('distinct', 0);
