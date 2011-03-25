@@ -215,7 +215,7 @@ function _essential_connections_configure() {
 	'ec_theme_zeropoint' => array('user_permission','variable'),
 	'ec_uc' => array('user_permission','variable'),
     ); 
-    features_revert($revert);
+    //features_revert($revert);
 }
 /**
  * Finished callback for the modules install batch.
