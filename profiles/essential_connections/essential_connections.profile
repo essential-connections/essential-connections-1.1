@@ -87,10 +87,10 @@ function essential_connections_profile_task_list() {
  * Implementation of hook_profile_tasks().
  */
 function essential_connections_profile_tasks(&$task, $url) {
-  watchdog('ec_install', 'task:'.$task, array(), WATCHDOG_INFO,NULL);
   
   // first run is 'profile'
   if($task == 'profile'){
+    $task = 'ec1';
     //variable_set('site_frontpage', 'user/login');
 	variable_set('theme_default', 'cti_flex');
 	variable_set('preprocess_css', '1');
@@ -164,10 +164,10 @@ function essential_connections_profile_tasks(&$task, $url) {
     //node_access_rebuild();
 	
   }
-  if($task == 'ec2'){
-    watchdog('ec_install', 'task ec2:'.$task, array(), WATCHDOG_INFO,NULL);
+  if($task == 'ec1'){
 	drupal_flush_all_caches();
 	//node_access_rebuild();
+	$task = 'profile-finished';
   }
 
 }
