@@ -156,7 +156,7 @@ function ec_base_menu_link_alter(&$item, $menu) {
   switch($item['link_path']) {
     case 'http://help.essential-connections.com':
 	  $item['weight'] = 9999;
-	  $item['access callback'] = 'ec_base_help_access';
+	  //$item['access callback'] = 'ec_base_help_access';
 	break;
     case 'admin':
 	  $item['weight'] = 999;

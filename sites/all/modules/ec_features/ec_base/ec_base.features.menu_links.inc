@@ -32,7 +32,7 @@ function ec_base_menu_default_menu_links() {
     'router_path' => 'user/login',
     'link_title' => 'Log in',
     'options' => array(),
-    'module' => 'system',
+    'module' => 'menu',
     'hidden' => '0',
     'external' => '0',
     'has_children' => '0',
