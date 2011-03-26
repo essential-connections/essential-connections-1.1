@@ -32,13 +32,14 @@ function ec_backup_migrate_menu() {
  */
  
 function ec_backup_migrate_menu_link_alter(&$item, $menu) {
-  dpm($item);
-  global $user;
+  
   switch($item['link_path']) {
     case 'admin/content/backup_migrate':
 	  $item['title'] = 'Backup';
 	break;
     case 'admin/content/backup_migrate/restore':
+	  dpm($item);
+	  $item['hidden'] = 1;
 	  $item['access callback'] = 'ec_backup_migrate_backup_access';
 	break;
     case 'admin/content/backup_migrate/export/advanced':
