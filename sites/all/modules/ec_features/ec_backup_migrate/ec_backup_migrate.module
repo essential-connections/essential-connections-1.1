@@ -30,7 +30,7 @@ function ec_backup_migrate_menu() {
 /**
  * Implementation of hook_menu_link_alter().
  */
- 
+ /*
 function ec_backup_migrate_menu_link_alter(&$item, $menu) {
   
   switch($item['link_path']) {
@@ -50,7 +50,7 @@ function ec_backup_migrate_menu_link_alter(&$item, $menu) {
 function ec_backup_migrate_backup_access() {
 	return user_access('administer backup and migrate');
 }
-
+*/
 
 /**
  * Implementation of hook_form_alter().
