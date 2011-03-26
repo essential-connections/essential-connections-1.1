@@ -32,7 +32,7 @@ function ec_backup_migrate_menu() {
  */
  
 function ec_backup_migrate_menu_link_alter(&$item, $menu) {
-  dpm($item));
+  dpm($item);
   global $user;
   switch($item['link_path']) {
     case 'admin/content/backup_migrate':
