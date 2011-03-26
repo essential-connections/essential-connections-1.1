@@ -156,11 +156,7 @@ function ec_base_menu_link_alter(&$item, $menu) {
   switch($item['link_path']) {
     case 'http://help.essential-connections.com':
 	  $item['weight'] = 9999;
-	  if($user->uid == 0){
-		$item['hidden'] = 1;
-	  }else{
-	    $item['hidden'] = 0;
-	  }
+	  $item['access callback'] = 'ec_base_help_access';
 	break;
     case 'admin':
 	  $item['weight'] = 999;
@@ -173,11 +169,6 @@ function ec_base_menu_link_alter(&$item, $menu) {
 	break;	
     case 'og':
 	  $item['weight'] = 10;
-	  if($user->uid == 0){
-		$item['hidden'] = 1;
-	  }else{
-	    $item['hidden'] = 0;
-	  }
 	break;
     case 'content':
 	  $item['weight'] = 9;
@@ -192,6 +183,9 @@ function ec_base_menu_link_alter(&$item, $menu) {
 	  $item['weight'] = -9999;
 	break;
   }
+}
+function ec_base_help_access() {
+	return user_access('access help');
 }
 
 /**

@@ -244,7 +244,7 @@ function _essential_connections_configure() {
 	'ec_uc' => array('user_permission','variable','menu_links'),
 	'ec_frontpage' => array('menu_links'),
     ); 
-    //features_revert($revert);
+    features_revert($revert);
 }
 /**
  * Finished callback for the modules install batch.
