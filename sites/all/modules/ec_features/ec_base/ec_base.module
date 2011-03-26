@@ -158,6 +158,8 @@ function ec_base_menu_link_alter(&$item, $menu) {
 	  $item['weight'] = 9999;
 	  if($user->uid == 0){
 		$item['hidden'] = 1;
+	  }else{
+	    $item['hidden'] = 0;
 	  }
 	break;
     case 'admin':
@@ -173,6 +175,8 @@ function ec_base_menu_link_alter(&$item, $menu) {
 	  $item['weight'] = 10;
 	  if($user->uid == 0){
 		$item['hidden'] = 1;
+	  }else{
+	    $item['hidden'] = 0;
 	  }
 	break;
     case 'content':
