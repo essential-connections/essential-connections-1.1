@@ -246,23 +246,14 @@ function ec_user_views_default_views() {
     ),
   ));
   $handler->override_option('access', array(
-    'type' => 'role',
-    'role' => array(
-      '2' => 2,
-    ),
+    'type' => 'perm',
+    'perm' => 'access user profiles',
   ));
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
   $handler->override_option('title', 'Users');
-  $handler->override_option('empty', '<?php
-$output = \'There are no users\';
-if(user_access(\'create users\')){
-$output .=\'<ul><li>\'.l(\'Add User\',\'user/add\').\'</li></ul>\';
-}
-print $output;
-?>');
-  $handler->override_option('empty_format', '3');
+  $handler->override_option('empty_format', '2');
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('items_per_page', 50);
   $handler->override_option('use_pager', '1');
@@ -762,6 +753,7 @@ print $output;
     'title' => 'Users',
     'description' => 'Administer users',
     'weight' => '0',
+    'name' => 'navigation',
   ));
   $handler->override_option('tab_options', array(
     'type' => 'none',

@@ -209,7 +209,7 @@ dpm($form);
       $form['menu']['link_path']['#description'] = 'The path this menu item links to. This can be an internal path such as <em>content/mypage</em> or an external URL such as <em>http://essential-connections.com</em>. Enter <em>&lt;front&gt;</em> to link to the front page.';
       break;
     case 'user_profile_form':
-	  $form['messaging']['og_notifications_autosubscribe']['#description'] = '';
+	  $form['messaging']['og_notifications_autosubscribe']['#description'] = 'Checking this box allows you to automatically subscribe to all content in any group that you join.';
 	  break;
   }
   

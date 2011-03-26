@@ -2,8 +2,14 @@
 
 include_once('ec_content.features.inc');
 
+function ec_content_preprocess_node(&$variables) {
+  //if(arg(0) == 'node' && arg(1) > 0 && !arg(2)){
+    if($variables['node']->field_show_auth_info['0']['value'] == 1){
+      $variables['submitted'] = FALSE;
+    }
+  //}
+}
 
-// change to viewfield?
 function ec_content_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
 
   switch ($op) {

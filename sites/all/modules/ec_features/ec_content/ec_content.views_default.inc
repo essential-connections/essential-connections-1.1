@@ -76,19 +76,10 @@ function ec_content_views_default_views() {
         'button' => 'Override',
       ),
     ),
-    'last_comment_timestamp' => array(
-      'id' => 'last_comment_timestamp',
-      'table' => 'node_comment_statistics',
-      'field' => 'last_comment_timestamp',
-      'label' => 'Last post',
-      'date_format' => 'small',
-      'custom_date_format' => '',
-      'relationship' => 'none',
-    ),
     'group_nid' => array(
-      'label' => '',
+      'label' => 'Groups',
       'alter' => array(
-        'alter_text' => 1,
+        'alter_text' => 0,
         'text' => '<em>groups:</em>
 [group_nid]',
         'make_link' => 0,
@@ -105,9 +96,9 @@ function ec_content_views_default_views() {
         'strip_tags' => 0,
         'html' => 0,
       ),
-      'type' => 'separator',
+      'type' => 'ul',
       'separator' => ', ',
-      'empty' => '',
+      'empty' => 'none',
       'exclude' => 0,
       'id' => 'group_nid',
       'table' => 'og_ancestry',
@@ -120,7 +111,7 @@ function ec_content_views_default_views() {
     'tid' => array(
       'label' => 'Categories',
       'alter' => array(
-        'alter_text' => 1,
+        'alter_text' => 0,
         'text' => '<em>categories:</em>
 [tid]',
         'make_link' => 0,
@@ -137,14 +128,14 @@ function ec_content_views_default_views() {
         'strip_tags' => 0,
         'html' => 0,
       ),
-      'type' => 'separator',
+      'type' => 'ul',
       'separator' => ', ',
-      'empty' => '',
+      'empty' => 'none',
       'link_to_taxonomy' => 1,
-      'limit' => 1,
+      'limit' => 0,
       'vids' => array(
-        '2' => 2,
-        '1' => 0,
+        '3' => 0,
+        '2' => 0,
       ),
       'exclude' => 0,
       'id' => 'tid',
@@ -177,96 +168,6 @@ function ec_content_views_default_views() {
       'suffix' => 'new',
       'link_to_comment' => 1,
       'no_empty' => 1,
-      'relationship' => 'none',
-    ),
-    'phpcode' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'strip_tags' => 0,
-        'html' => 0,
-      ),
-      'value' => '<?php
-//print count($data->node_data_field_file_field_file_fid);
-//print var_export($data);
-$count = 0;
-foreach($data->node_data_field_file_field_file_fid as $k => $v){
-if($v[\'fid\'] > 0){
-$count ++;
-}
-}
-print(\'<em>files:</em>\'.$count.\'<br />\');
-$count = 0;
-foreach($data->node_data_field_image_field_image_fid as $k => $v){
-if($v[\'fid\'] > 0){
-$count ++;
-}
-}
-print(\'<em>images:</em>\'.$count.\'<br />\');
-$count = 0;
-foreach($data->node_data_field_video_field_video_fid as $k => $v){
-if($v[\'fid\'] > 0){
-$count ++;
-}
-}
-print(\'<em>videos:</em>\'.$count);
-?>',
-      'exclude' => 0,
-      'id' => 'phpcode',
-      'table' => 'customfield',
-      'field' => 'phpcode',
-      'override' => array(
-        'button' => 'Override',
-      ),
-      'relationship' => 'none',
-    ),
-    'field_file_fid' => array(
-      'label' => 'Files',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'strip_tags' => 0,
-        'html' => 0,
-      ),
-      'link_to_node' => 0,
-      'label_type' => 'widget',
-      'format' => 'default',
-      'multiple' => array(
-        'group' => 1,
-        'multiple_number' => '',
-        'multiple_from' => '',
-        'multiple_reversed' => 0,
-      ),
-      'exclude' => 1,
-      'id' => 'field_file_fid',
-      'table' => 'node_data_field_file',
-      'field' => 'field_file_fid',
-      'override' => array(
-        'button' => 'Override',
-      ),
       'relationship' => 'none',
     ),
     'field_image_fid' => array(
@@ -338,6 +239,36 @@ print(\'<em>videos:</em>\'.$count);
       'id' => 'field_video_fid',
       'table' => 'node_data_field_video',
       'field' => 'field_video_fid',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
+    'last_updated' => array(
+      'label' => 'Updated',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'strip_tags' => 0,
+        'html' => 0,
+      ),
+      'date_format' => 'small',
+      'custom_date_format' => '',
+      'exclude' => 0,
+      'id' => 'last_updated',
+      'table' => 'node_comment_statistics',
+      'field' => 'last_updated',
       'override' => array(
         'button' => 'Override',
       ),
@@ -495,10 +426,8 @@ print(\'<em>videos:</em>\'.$count);
     ),
   ));
   $handler->override_option('access', array(
-    'type' => 'role',
-    'role' => array(
-      '2' => 2,
-    ),
+    'type' => 'perm',
+    'perm' => 'access content',
   ));
   $handler->override_option('cache', array(
     'type' => 'none',
@@ -518,12 +447,13 @@ print(\'<em>videos:</em>\'.$count);
       'title' => 'title',
       'name' => 'name',
       'comment_count' => 'comment_count',
-      'last_comment_timestamp' => 'last_comment_timestamp',
       'group_nid' => 'group_nid',
-      'tid' => 'group_nid',
+      'tid' => 'tid',
       'timestamp' => 'title',
       'new_comments' => 'comment_count',
-      'phpcode' => 'phpcode',
+      'field_image_fid' => 'field_image_fid',
+      'field_video_fid' => 'field_video_fid',
+      'last_updated' => 'last_updated',
     ),
     'info' => array(
       'type' => array(
@@ -542,12 +472,8 @@ print(\'<em>videos:</em>\'.$count);
         'sortable' => 1,
         'separator' => '<br />',
       ),
-      'last_comment_timestamp' => array(
-        'sortable' => 1,
-        'separator' => '&nbsp;',
-      ),
       'group_nid' => array(
-        'separator' => '<br />',
+        'separator' => '',
       ),
       'tid' => array(
         'separator' => '',
@@ -558,11 +484,18 @@ print(\'<em>videos:</em>\'.$count);
       'new_comments' => array(
         'separator' => '',
       ),
-      'phpcode' => array(
+      'field_image_fid' => array(
+        'separator' => '',
+      ),
+      'field_video_fid' => array(
+        'separator' => '',
+      ),
+      'last_updated' => array(
+        'sortable' => 1,
         'separator' => '',
       ),
     ),
-    'default' => 'last_comment_timestamp',
+    'default' => 'last_updated',
   ));
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->override_option('path', 'content');
