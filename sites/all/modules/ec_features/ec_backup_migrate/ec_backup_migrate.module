@@ -30,21 +30,26 @@ function ec_backup_migrate_menu() {
 /**
  * Implementation of hook_menu_link_alter().
  */
- /*
+ 
 function ec_backup_migrate_menu_link_alter(&$item, $menu) {
   //drupal_set_message('menu:<pre>'.print_r($item).'</pre>' );
   global $user;
   switch($item['link_path']) {
-    case '':
-	  $item['weight'] = 9999;
-	  //$item['access callback'] = 'ec_base_help_access';
+    case 'admin/content/backup_migrate':
+	  $item['title'] = 'Backup';
+	break;
+    case 'admin/content/backup_migrate/restore':
+	  $item['access callback'] = 'ec_backup_migrate_backup_access';
+	break;
+    case 'admin/content/backup_migrate/export/advanced':
+	  $item['access callback'] = 'ec_backup_migrate_backup_access';
 	break;
   }
 }
 function ec_backup_migrate_backup_access() {
-	return user_access('access help');
+	return user_access('administer backup and migrate');
 }
-*/
+
 
 /**
  * Implementation of hook_form_alter().
