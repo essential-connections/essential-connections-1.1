@@ -192,7 +192,7 @@ function ec_base_help_access() {
  * Implementation of hook_form_alter().
  */
 function ec_base_form_alter(&$form, $form_state, $form_id) {
-dpm($form);
+  //dpm($form);
   $node = $form['#node'];
 
   // for all node edit forms
@@ -221,7 +221,7 @@ dpm($form);
 function ec_base_link($type, $object, $teaser = FALSE) {
   $links = array();
   global $user;
-  if ($type == 'node' && user_access('edit any '.$object->type.' content')) {
+  if ($type == 'node' && (user_access('edit any '.$object->type.' content') || user_access('administer nodes'))) {
     $links['edit'] = array(
       'title' => '[edit '.$object->title.']',
       'href' => 'node/' . $object->nid . '/edit',
