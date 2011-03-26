@@ -70,6 +70,7 @@ function essential_connections_profile_details() {
 }
 function _essential_connections_modules() {
   return array(
+	'ctools','features','strongarm',
 	'ec_base',
 	'ec_protect_critical_users',
 	'ec_user',
@@ -141,8 +142,8 @@ function essential_connections_profile_tasks(&$task, $url) {
     //node_access_rebuild();
 	//drupal_cron_run();
 	
-	variable_set('install_task', 'ec-configure');
-	//$task = 'ec-modules';	
+	//variable_set('install_task', 'ec-configure');
+	$task = 'ec-modules';	
   }
   if ($task == 'ec-modules') {
     $modules = _essential_connections_modules();
@@ -253,7 +254,7 @@ function _essential_connections_module_batch_finished($success, $results) {
   variable_set('install_task', 'ec-configure');
 }
 function _essential_connections_install_finished() {
-  drupal_flush_all_caches();
+  //drupal_flush_all_caches();
   //drupal_cron_run();
   variable_set('install_task', 'profile-finished');
 }
