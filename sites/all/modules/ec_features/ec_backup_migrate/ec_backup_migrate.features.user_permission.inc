@@ -39,7 +39,9 @@ function ec_backup_migrate_user_default_permissions() {
   // Exported permission: perform backup
   $permissions['perform backup'] = array(
     'name' => 'perform backup',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'administrator',
+    ),
   );
 
   // Exported permission: restore from backup

@@ -111,6 +111,7 @@ function _essential_connections_modules() {
 	'ec_theme_zeropoint',
 	'ec_uc',
 	'ec_frontpage',
+	'ec_seo',
   );
 }
 /**
@@ -243,6 +244,7 @@ function _essential_connections_configure() {
 	'ec_theme_zeropoint' => array('user_permission','variable'),
 	'ec_uc' => array('user_permission','variable','menu_links'),
 	'ec_frontpage' => array('menu_links'),
+	'ec_seo' => array('user_permission'),
     ); 
     features_revert($revert);
 }
