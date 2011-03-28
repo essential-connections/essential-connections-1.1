@@ -169,12 +169,15 @@ function ec_base_menu_link_alter(&$item, $menu) {
 	break;	
     case 'og':
 	  $item['weight'] = 10;
+	  $item['access callback'] = 'ec_base_auth_access';
 	break;
     case 'content':
 	  $item['weight'] = 9;
+	  $item['access callback'] = 'ec_base_auth_access';
 	break;
     case 'users':
 	  $item['weight'] = 8;
+	  $item['access callback'] = 'ec_base_auth_access';
 	break;
     case 'tracker':
 	  $item['hidden'] = 1;
@@ -185,8 +188,9 @@ function ec_base_menu_link_alter(&$item, $menu) {
 	
   }
 }
-function ec_base_help_access() {
-	return user_access('access help');
+function ec_base_auth_access() {
+	global $user;
+	return ($user-uid > 0) ? TRUE:FALSE;
 }
 
 /**
