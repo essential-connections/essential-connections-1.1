@@ -86,6 +86,8 @@ function ec_ckeditor_post_install_install() {
       "*.edit-user-registration-help\n".
       "*.edit-user-picture-guidelines\n";
 
+      $arr['ckeditor_path'] = "%m/ckeditor";
+      
       $result = db_query("REPLACE INTO {ckeditor_settings} (name, settings) VALUES ('%s', '%s')", "CKEditor Global Profile", serialize($arr));
 	if($result != 1) watchdog('ec_ckeditor_post_install', 'problem replacing ckeditor_settings CKEditor Global Profile in hook_install', array(), WATCHDOG_ERROR,NULL);
   
