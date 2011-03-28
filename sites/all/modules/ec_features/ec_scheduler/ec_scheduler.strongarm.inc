@@ -51,7 +51,7 @@ function ec_scheduler_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_publish_required_blog';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
 
   $export['scheduler_publish_required_blog'] = $strongarm;
   $strongarm = new stdClass;

@@ -15,7 +15,10 @@ function ec_scheduler_user_default_permissions() {
   // Exported permission: schedule (un)publishing of nodes
   $permissions['schedule (un)publishing of nodes'] = array(
     'name' => 'schedule (un)publishing of nodes',
-    'roles' => array(),
+    'roles' => array(
+      '0' => 'administrator',
+      '1' => 'manager',
+    ),
   );
 
   return $permissions;
