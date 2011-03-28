@@ -19,9 +19,7 @@ function ec_vertical_tabs_strongarm() {
     6 => 'author',
     7 => 'options',
     8 => 'comment_settings',
-    9 => 'xmlsitemap',
-    10 => 'path',
-    11 => 'signup',
+    9 => 'path',
   );
 
   $export['vertical_tabs_fieldsets_blog'] = $strongarm;
@@ -55,10 +53,8 @@ function ec_vertical_tabs_strongarm() {
     5 => 'revision_information',
     6 => 'author',
     7 => 'options',
-    8 => 'signup',
-    9 => 'comment_settings',
-    10 => 'path',
-    11 => 'xmlsitemap',
+    8 => 'comment_settings',
+    9 => 'path',
   );
 
   $export['vertical_tabs_fieldsets_event'] = $strongarm;
@@ -82,15 +78,13 @@ function ec_vertical_tabs_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'vertical_tabs_fieldsets_group';
   $strongarm->value = array(
-    0 => 'custom_breadcrumbs',
-    1 => 'menu',
-    2 => 'notifications',
-    3 => 'book',
-    4 => 'revision_information',
-    5 => 'author',
-    6 => 'options',
-    7 => 'comment_settings',
-    8 => 'path',
+    0 => 'menu',
+    1 => 'notifications',
+    2 => 'author',
+    3 => 'revision_information',
+    4 => 'options',
+    5 => 'path',
+    6 => 'comment_settings',
   );
 
   $export['vertical_tabs_fieldsets_group'] = $strongarm;
@@ -108,9 +102,7 @@ function ec_vertical_tabs_strongarm() {
     6 => 'author',
     7 => 'options',
     8 => 'comment_settings',
-    9 => 'xmlsitemap',
-    10 => 'path',
-    11 => 'signup',
+    9 => 'path',
   );
 
   $export['vertical_tabs_fieldsets_page'] = $strongarm;
@@ -119,15 +111,13 @@ function ec_vertical_tabs_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'vertical_tabs_fieldsets_poll';
   $strongarm->value = array(
-    0 => 'custom_breadcrumbs',
-    1 => 'settings',
-    2 => 'menu',
-    3 => 'book',
-    4 => 'author',
-    5 => 'revision_information',
-    6 => 'options',
-    7 => 'comment_settings',
-    8 => 'path',
+    0 => 'settings',
+    1 => 'menu',
+    2 => 'revision_information',
+    3 => 'author',
+    4 => 'options',
+    5 => 'path',
+    6 => 'comment_settings',
   );
 
   $export['vertical_tabs_fieldsets_poll'] = $strongarm;
@@ -136,15 +126,13 @@ function ec_vertical_tabs_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'vertical_tabs_fieldsets_webform';
   $strongarm->value = array(
-    0 => 'notifications',
-    1 => 'custom_breadcrumbs',
-    2 => 'menu',
-    3 => 'book',
-    4 => 'author',
-    5 => 'revision_information',
-    6 => 'options',
-    7 => 'comment_settings',
-    8 => 'path',
+    0 => 'menu',
+    1 => 'notifications',
+    2 => 'author',
+    3 => 'revision_information',
+    4 => 'options',
+    5 => 'path',
+    6 => 'comment_settings',
   );
 
   $export['vertical_tabs_fieldsets_webform'] = $strongarm;
