@@ -383,5 +383,40 @@ This is an automated message, please do not reply.';
   $strongarm->value = '0';
 
   $export['user_signatures'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'views_send_debug';
+  $strongarm->value = 1;
+
+  $export['views_send_debug'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'views_send_spool_expire';
+  $strongarm->value = '0';
+
+  $export['views_send_spool_expire'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'views_send_throttle';
+  $strongarm->value = '100';
+
+  $export['views_send_throttle'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'views_send_to_mail_users:page_1';
+  $strongarm->value = 'users_mail';
+
+  $export['views_send_to_mail_users:page_1'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'views_send_to_name_users:page_1';
+  $strongarm->value = 'users_name';
+
+  $export['views_send_to_name_users:page_1'] = $strongarm;
   return $export;
 }

@@ -37,6 +37,12 @@ function ec_user_user_default_permissions() {
     ),
   );
 
+  // Exported permission: administer views_send
+  $permissions['administer views_send'] = array(
+    'name' => 'administer views_send',
+    'roles' => array(),
+  );
+
   // Exported permission: assign user roles
   $permissions['assign user roles'] = array(
     'name' => 'assign user roles',
@@ -76,6 +82,15 @@ function ec_user_user_default_permissions() {
   $permissions['delete own account'] = array(
     'name' => 'delete own account',
     'roles' => array(),
+  );
+
+  // Exported permission: mass mailing with views_send
+  $permissions['mass mailing with views_send'] = array(
+    'name' => 'mass mailing with views_send',
+    'roles' => array(
+      '0' => 'administrator',
+      '1' => 'manager',
+    ),
   );
 
   // Exported permission: search user profiles

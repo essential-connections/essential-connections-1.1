@@ -389,6 +389,35 @@ function ec_user_views_default_views() {
       'field' => 'name',
       'relationship' => 'none',
     ),
+    'mail' => array(
+      'label' => 'E-mail',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'strip_tags' => 0,
+        'html' => 0,
+      ),
+      'link_to_user' => '0',
+      'exclude' => 0,
+      'id' => 'mail',
+      'table' => 'users',
+      'field' => 'mail',
+      'override' => array(
+        'button' => 'Override',
+      ),
+      'relationship' => 'none',
+    ),
     'status' => array(
       'label' => 'Active',
       'alter' => array(
@@ -679,12 +708,13 @@ print $output;
     'columns' => array(
       'picture' => 'picture',
       'name' => 'name',
+      'mail' => 'mail',
       'status' => 'status',
       'rid' => 'rid',
       'created' => 'created',
       'access' => 'access',
-      'edit_node' => 'edit_node',
       'contact' => 'name',
+      'phpcode' => 'phpcode',
     ),
     'info' => array(
       'picture' => array(
@@ -694,6 +724,10 @@ print $output;
       'name' => array(
         'sortable' => 1,
         'separator' => '  ',
+      ),
+      'mail' => array(
+        'sortable' => 1,
+        'separator' => '',
       ),
       'status' => array(
         'sortable' => 1,
@@ -710,10 +744,10 @@ print $output;
         'sortable' => 1,
         'separator' => '',
       ),
-      'edit_node' => array(
+      'contact' => array(
         'separator' => '',
       ),
-      'contact' => array(
+      'phpcode' => array(
         'separator' => '',
       ),
     ),
@@ -734,16 +768,20 @@ print $output;
       'views_bulk_operations_profile_action' => 'views_bulk_operations_profile_action',
       'views_bulk_operations_user_roles_action' => 'views_bulk_operations_user_roles_action',
       'og_promote_user_action' => 'og_promote_user_action',
+      'views_send_mail_action' => 'views_send_mail_action',
       'og_subscribe_user_action' => 'og_subscribe_user_action',
       'user_user_operations_unblock' => 'user_user_operations_unblock',
       'og_unsubscribe_user_action' => 'og_unsubscribe_user_action',
       'user_block_ip_action' => 0,
       'user_block_user_action' => 0,
+      'nodewords_admin_mass_update:3925bd6c9edcf332c87f461396305366' => 0,
       'token_actions_message_action' => 0,
       'views_bulk_operations_script_action' => 0,
       'views_bulk_operations_argument_selector_action' => 0,
       'token_actions_goto_action' => 0,
       'system_goto_action' => 0,
+      'system_send_email_action' => 0,
+      'token_actions_send_email_action' => 0,
     ),
   ));
   $handler = $view->new_display('page', 'Page', 'page_1');

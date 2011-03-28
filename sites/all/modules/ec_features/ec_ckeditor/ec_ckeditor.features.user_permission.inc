@@ -18,9 +18,7 @@ function ec_ckeditor_user_default_permissions() {
   // Exported permission: administer ckeditor
   $permissions['administer ckeditor'] = array(
     'name' => 'administer ckeditor',
-    'roles' => array(
-      '0' => 'administrator',
-    ),
+    'roles' => array(),
   );
 
   return $permissions;
