@@ -72,10 +72,9 @@ function ec_ckeditor_post_install_install() {
       $arr = array();
 
       $arr['excl_mode'] = 1;
-      $arr['excl'] = variable_get("ckeditor_exclude",
-      "admin/build/block/add.edit-body\n".
-      "*@node/add/*.edit-body\n"
-      );
+      $arr['excl'] = 
+	  "admin/build/block/add.edit-body\n".
+      "*@node/add/*.edit-body\n";
 
       //force by default simple toolbar on selected textareas
       $arr['simple_incl_mode'] = 1;
@@ -86,13 +85,10 @@ function ec_ckeditor_post_install_install() {
       "*.edit-page-help\n".
       "*.edit-user-registration-help\n".
       "*.edit-user-picture-guidelines\n";
-      if ($editor_path) {
-        $arr['ckeditor_path']=$editor_path;
-      }
 
       $result = db_query("REPLACE INTO {ckeditor_settings} (name, settings) VALUES ('%s', '%s')", "CKEditor Global Profile", serialize($arr));
 	if($result != 1) watchdog('ec_ckeditor_post_install', 'problem replacing ckeditor_settings CKEditor Global Profile in hook_install', array(), WATCHDOG_ERROR,NULL);
-  }
+  
 	
   /*
   $result = db_query("REPLACE INTO {ckeditor_role} (name, rid) VALUES ('Advanced1', 2),('Default1', 1)");
