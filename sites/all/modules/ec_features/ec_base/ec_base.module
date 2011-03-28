@@ -190,7 +190,7 @@ function ec_base_menu_link_alter(&$item, $menu) {
 }
 function ec_base_auth_access() {
 	global $user;
-	return ($user-uid > 0) ? TRUE:FALSE;
+	return FALSE;//($user-uid > 0) ? TRUE:FALSE;
 }
 
 /**
