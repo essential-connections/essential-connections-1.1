@@ -112,6 +112,7 @@ function _essential_connections_modules() {
 	'ec_uc',
 	'ec_frontpage',
 	'ec_seo',
+	'ec_scheduler',
   );
 }
 /**
@@ -245,6 +246,7 @@ function _essential_connections_configure() {
 	'ec_uc' => array('user_permission','variable','menu_links'),
 	'ec_frontpage' => array('menu_links'),
 	'ec_seo' => array('user_permission'),
+	'ec_scheduler' => array('user_permission','variable'),
     ); 
     features_revert($revert);
 }

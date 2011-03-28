@@ -54,6 +54,8 @@ function ec_admin_access_strongarm() {
 	42 => 'admin/reports/page-not-found',
 	43 => 'admin/reports/pages',
 	44 => 'admin/reports/browscap',
+	45 => 'admin/settings/scheduler',
+	46 => 'admin/settings/search404',
   );
 
   $export['ec_denied_admin_paths'] = $strongarm;

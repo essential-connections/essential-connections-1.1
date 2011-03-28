@@ -204,6 +204,15 @@ function ec_base_user_default_permissions() {
       '1' => 'manager',
     ),
   );
+  
+   // Exported permission: search content
+  $permissions['search content'] = array(
+    'name' => 'search content',
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
+  );
 
   return $permissions;
 }
