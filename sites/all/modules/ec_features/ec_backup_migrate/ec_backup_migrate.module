@@ -38,7 +38,7 @@ function ec_backup_migrate_menu_link_alter(&$item, $menu) {
 	  $item['title'] = 'Backup';
 	break;
     case 'admin/content/backup_migrate/restore':
-	  dpm($item);
+	  //dpm($item);
 	  $item['hidden'] = 1;
 	  $item['access callback'] = 'ec_backup_migrate_backup_access';
 	break;
@@ -56,7 +56,7 @@ function ec_backup_migrate_backup_access() {
  * Implementation of hook_form_alter().
  */
 function ec_backup_migrate_form_alter(&$form, $form_state, $form_id) {
-  dpm($form);
+  //dpm($form);
 
   //switch($form_id){
     //case 'user_profile_form':
