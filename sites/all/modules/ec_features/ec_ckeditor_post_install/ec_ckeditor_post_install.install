@@ -91,6 +91,8 @@ function ec_ckeditor_post_install_install() {
       $result = db_query("REPLACE INTO {ckeditor_settings} (name, settings) VALUES ('%s', '%s')", "CKEditor Global Profile", serialize($arr));
 	if($result != 1) watchdog('ec_ckeditor_post_install', 'problem replacing ckeditor_settings CKEditor Global Profile in hook_install', array(), WATCHDOG_ERROR,NULL);
   
+  module_load_include('inc', 'ckeditor', 'includes/ckeditor.admin');
+  ckeditor_rebuild_selectors();
 	
   /*
   $result = db_query("REPLACE INTO {ckeditor_role} (name, rid) VALUES ('Advanced1', 2),('Default1', 1)");

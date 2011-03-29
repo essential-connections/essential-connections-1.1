@@ -15,7 +15,7 @@ function ec_imagecache_post_install_install() {
 ,'a:3:{s:5:"width";s:2:"85";s:6:"height";s:2:"85";s:7:"upscale";i:0;}'
 ,'a:3:{s:5:"width";s:2:"50";s:6:"height";s:2:"50";s:7:"upscale";i:0;}'
 ,'a:3:{s:5:"width";s:3:"200";s:6:"height";s:0:"";s:7:"upscale";i:0;}'
-,'a:3:{s:5:"width";s:3:"475";s:6:"height";s:0:"";s:7:"upscale";i:0;}'
+,'a:3:{s:5:"width";s:3:"475";s:6:"height";s:0:"303";s:7:"upscale";i:0;}'
 ,'a:3:{s:5:"width";s:4:"100%";s:6:"height";s:4:"100%";s:7:"upscale";i:0;}'
 ,'a:4:{s:5:"width";s:3:"475";s:6:"height";s:3:"303";s:7:"xoffset";s:6:"center";s:7:"yoffset";s:6:"center";}'
 );

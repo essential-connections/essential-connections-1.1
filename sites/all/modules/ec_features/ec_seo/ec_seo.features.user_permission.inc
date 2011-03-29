@@ -30,6 +30,14 @@ function ec_seo_user_default_permissions() {
       '1' => 'manager',
     ),
   );
+  
+  // Exported permission: administer google analytics
+  $permissions['administer google analytics'] = array(
+    'name' => 'administer google analytics',
+    'roles' => array(
+      '0' => 'administrator',
+    ),
+  );
 
   return $permissions;
 }
