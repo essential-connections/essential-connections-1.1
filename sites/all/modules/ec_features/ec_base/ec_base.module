@@ -50,7 +50,7 @@ function ec_base_preprocess_node(&$variables) {
 /**
  * Implementation of hook_simplemenu_tree_alter().
  */
-function ec_base_simplemenu_tree_alter(&$tree) {
+/*function ec_base_simplemenu_tree_alter(&$tree) {
   drupal_set_message('<b>ftree:</b><pre>'.print_r($tree, TRUE) .'</pre>');
 
   // Automatically include action files.
@@ -58,7 +58,7 @@ function ec_base_simplemenu_tree_alter(&$tree) {
   //if ($files) foreach ($files as $file) {
   //  require_once($file->filename);
   //}
-}
+}*/
 
 
 /**

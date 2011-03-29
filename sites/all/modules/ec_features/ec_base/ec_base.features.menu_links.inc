@@ -25,19 +25,19 @@ function ec_base_menu_default_menu_links() {
     'expanded' => '0',
     'weight' => '50',
   );
-  // Exported menu link: navigation:logout
-  $menu_links['navigation:login'] = array(
-    'menu_name' => 'navigation',
+  // Exported menu link: secondary-links:logout
+  $menu_links['secondary-links:login'] = array(
+    'menu_name' => 'secondary-links',
     'link_path' => 'user/login',
     'router_path' => 'user/login',
     'link_title' => 'Log in',
     'options' => array(),
-    'module' => 'menu',
+    'module' => 'system',
     'hidden' => '0',
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-9999',
+    'weight' => '50',
   );
   // Translatables
   // Included for use with string extractors like potx.

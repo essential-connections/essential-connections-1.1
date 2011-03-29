@@ -16,8 +16,7 @@ function ec_simplemenu_user_default_permissions() {
   $permissions['view simplemenu'] = array(
     'name' => 'view simplemenu',
     'roles' => array(
-      '0' => 'anonymous user',
-      '1' => 'authenticated user',
+      '0' => 'authenticated user',
     ),
   );
 
