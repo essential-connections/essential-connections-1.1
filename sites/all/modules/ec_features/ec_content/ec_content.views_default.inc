@@ -427,11 +427,8 @@ function ec_content_views_default_views() {
     ),
   ));
   $handler->override_option('access', array(
-    'type' => 'php',
-    'code' => '<?php
-global $user;
-return (user_access(\'access content\') && $user->uid > 0) ? TRUE:FALSE;
-?>',
+    'type' => 'perm',
+    'perm' => 'access content',
   ));
   $handler->override_option('cache', array(
     'type' => 'none',

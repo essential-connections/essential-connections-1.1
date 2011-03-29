@@ -247,11 +247,8 @@ function ec_user_views_default_views() {
     ),
   ));
   $handler->override_option('access', array(
-    'type' => 'php',
-    'code' => '<?php
-global $user;
-return (user_access(\'access user profiles\') && $user->uid > 0) ? TRUE:FALSE;
-?>',
+    'type' => 'perm',
+    'perm' => 'access user profiles',
   ));
   $handler->override_option('cache', array(
     'type' => 'none',
