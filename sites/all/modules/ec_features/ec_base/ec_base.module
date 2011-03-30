@@ -222,7 +222,7 @@ function ec_base_form_alter(&$form, $form_state, $form_id) {
 
     //$form['body_field']['teaser_include']['#type'] = 'hidden';
     //$form['body_field']['#after_build'] = NULL;
-    $form['body_field']['teaser_js'] = NULL;
+    //$form['body_field']['teaser_js'] = NULL;
     $form['body_field']['teaser_include'] = NULL;
 		
     $form['buttons']['#prefix'] = "<div style='position:fixed;bottom:0;left:100;background: #FFFFFF;background-position: 50 10;border: 1px solid #CCCCCC;' >";
