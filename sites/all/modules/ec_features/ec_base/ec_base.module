@@ -220,7 +220,7 @@ function ec_base_form_alter(&$form, $form_state, $form_id) {
     //    drupal_set_message('<pre>form - ' . print_r($form, TRUE) . '</pre>');
     //}
 
-    //$form['body_field']['teaser_include']['#type'] = 'hidden';
+    $form['body_field']['teaser_include']['#type'] = 'hidden';
     //$form['body_field']['#after_build'] = NULL;
     //$form['body_field']['teaser_js'] = NULL;
     //$form['body_field']['teaser_include'] = NULL;
