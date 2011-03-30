@@ -190,6 +190,11 @@ function _essential_connections_configure() {
 	variable_set('preprocess_css', '1');
 	variable_set('preprocess_js', '1');
 	variable_set('user_picture_path', 'home/profile_pictures');
+	
+	variable_set('node_options_blog', array(
+    0 => 'status',
+    1 => 'revision',
+    ));
 
 	$home_path = file_create_path('home');
 	file_check_directory($home_path, 1);

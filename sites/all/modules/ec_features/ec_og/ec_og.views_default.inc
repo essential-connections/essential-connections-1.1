@@ -256,7 +256,7 @@ function ec_og_views_default_views() {
     'code' => '<?php
 global $user;
 $node = node_load(arg(1));
-if(user_access(\'administer nodes\') || user_access(\'manage groups\') || og_is_group_admin($node, $user)){
+if( (user_access(\'administer nodes\') || user_access(\'manage groups\') || og_is_group_admin($node, $user)) && og_is_group_type($node->type) ){
   return TRUE;
 }
 return FALSE;
