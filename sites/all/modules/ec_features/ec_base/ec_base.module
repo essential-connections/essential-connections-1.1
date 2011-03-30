@@ -217,7 +217,7 @@ function ec_base_form_alter(&$form, $form_state, $form_id) {
   // for all node edit forms
   if($form_id == $node->type."_node_form"){
     if($user->uid == 1){
-        drupal_set_message('<pre>form - ' . ($form['body_field'], TRUE) . '</pre>');
+        drupal_set_message('<pre>form - ' . print_r($form['body_field'], TRUE) . '</pre>');
     }
 
     $form['body_field']['teaser_include']['#type'] = 'hidden';
