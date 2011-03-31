@@ -6,6 +6,7 @@ function ec_feeds_post_install_install() {
 	$node = new stdClass();
 	$node->type = 'feed';
 	$node->title = 'Guides';
+	$node->promote = 1;
 	$node->feeds['FeedsHTTPFetcher']['source'] = 'http://help.essential-connections.com/guides/rss.xml';
 	node_save($node);
 	
