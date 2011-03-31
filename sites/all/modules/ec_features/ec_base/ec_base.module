@@ -234,7 +234,7 @@ function ec_base_form_alter(&$form, $form_state, $form_id) {
   $node = $form['#node'];
   global $user;
     //if($user->uid == 1){
-        drupal_set_message('<pre>form - ' . print_r($form, TRUE) . '</pre>');
+        //drupal_set_message('<pre>form - ' . print_r($form, TRUE) . '</pre>');
     //}  
 	
   // for all node edit forms
