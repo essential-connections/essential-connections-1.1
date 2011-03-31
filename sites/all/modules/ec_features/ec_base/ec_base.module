@@ -198,6 +198,10 @@ function ec_base_menu_link_alter(&$item, $menu) {
     case 'logout':
 	  $item['weight'] = -9999;
 	break;
+    case 'admin/user/user_import/configure':
+	  //$item['access callback'] = 'ec_user_import_deny_access';
+	  $item['hidden'] = 1;
+	break;
 	
   }
 }
@@ -213,12 +217,12 @@ function ec_base_form_alter(&$form, $form_state, $form_id) {
   //dpm($form);
   $node = $form['#node'];
   global $user;
-  
+    //if($user->uid == 1){
+        drupal_set_message('<pre>form - ' . print_r($form, TRUE) . '</pre>');
+    //}  
+	
   // for all node edit forms
   if($form_id == $node->type."_node_form"){
-    //if($user->uid == 1){
-    //    drupal_set_message('<pre>form - ' . print_r($form, TRUE) . '</pre>');
-    //}
 
     //$form['body_field']['teaser_include']['#type'] = 'hidden';
     //$form['body_field']['#after_build'] = NULL;

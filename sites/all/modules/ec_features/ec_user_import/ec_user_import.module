@@ -26,9 +26,9 @@ function ec_user_import_form_alter(&$form, $form_state, $form_id) {
 
   $node = $form['#node'];
   global $user;
-    if($user->uid == 1){
-        drupal_set_message('<pre>form - ' . print_r($form, TRUE) . '</pre>');
-    }  
+    //if($user->uid == 1){
+        //drupal_set_message('<pre>form - ' . print_r($form, TRUE) . '</pre>');
+    //}  
 
   switch($form_id){
     case 'menu_edit_item':
