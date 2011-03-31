@@ -240,6 +240,9 @@ function ec_base_form_alter(&$form, $form_state, $form_id) {
     case 'user_profile_form':
 	  $form['messaging']['og_notifications_autosubscribe']['#description'] = 'Checking this box allows you to automatically subscribe to all content in any group that you join.';
 	  break;
+	case 'user_import_add_form':
+	  $form['ftp']['#type'] = 'hidden';
+	  break;
   }
   
 }
