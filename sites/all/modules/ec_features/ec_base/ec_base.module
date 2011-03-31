@@ -261,7 +261,7 @@ function ec_base_form_alter(&$form, $form_state, $form_id) {
 	  break;
 	case 'backup_migrate_ui_manual_quick_backup_form':
 	  unset($form['advanced']);
-	  $form['ftp']['#type'] = 'hidden';
+	  $form['quickbackup']['destination_id']['#options'] = array('download' => 'Download');
 	  break;
   }
   
