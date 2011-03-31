@@ -1,0 +1,3 @@
+<?php
+
+include_once('ec_profile_csv.features.inc');

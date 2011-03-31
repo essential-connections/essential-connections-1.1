@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * Implementation of hook_menu_link_alter().
+ */
+function ec_user_import_menu_link_alter(&$item, $menu) {
+  //drupal_set_message('menu:<pre>'.print_r($item).'</pre>' );
+  global $user;
+  switch($item['link_path']) {
+    case 'admin/user/user_import/configure':
+	  $item['access callback'] = 'ec_user_import_deny_access';
+	break;
+	
+  }
+}
+function ec_user_import_deny_access() {
+	global $user;
+	return FALSE;//($user-uid > 0) ? TRUE:FALSE;
+}
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function ec_user_import_form_alter(&$form, $form_state, $form_id) {
+
+  $node = $form['#node'];
+  global $user;
+    if($user->uid == 1){
+        drupal_set_message('<pre>form - ' . print_r($form, TRUE) . '</pre>');
+    }  
+
+  switch($form_id){
+    case 'menu_edit_item':
+      $form['menu']['link_path']['#description'] = 'The path this menu item links to. This can be an internal path such as <em>content/mypage</em> or an external URL such as <em>http://essential-connections.com</em>. Enter <em>&lt;front&gt;</em> to link to the front page.';
+      break;
+    case 'user_profile_form':
+	  $form['messaging']['og_notifications_autosubscribe']['#description'] = 'Checking this box allows you to automatically subscribe to all content in any group that you join.';
+	  break;
+  }
+  
+}
