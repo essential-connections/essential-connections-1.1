@@ -11,7 +11,7 @@ function ec_feeds_post_install_install() {
 	node_save($node);
 	
 	// Using Batch API (user will see a progress bar).
-	//feeds_batch_set(t('Importing'), 'import', 'my_importer_id', $node->nid);
+	feeds_batch_set(t('Importing Guides'), 'import', 'my_importer_id', $node->nid);
 	// Not using Batch API (complete import within current page load)
 	//while (FEEDS_BATCH_COMPLETE != feeds_source('my_importer_id', $node->nid)->import());
   
