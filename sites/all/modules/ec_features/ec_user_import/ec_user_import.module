@@ -9,6 +9,7 @@ function ec_user_import_menu_link_alter(&$item, $menu) {
   switch($item['link_path']) {
     case 'admin/user/user_import/configure':
 	  $item['access callback'] = 'ec_user_import_deny_access';
+	  $item['hidden'] = 1;
 	break;
 	
   }
