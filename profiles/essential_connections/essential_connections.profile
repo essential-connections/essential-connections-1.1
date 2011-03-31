@@ -113,9 +113,9 @@ function _essential_connections_modules() {
 	'ec_frontpage',
 	'ec_seo',
 	'ec_scheduler',
-	'ec_profile_csv',
-	'ec_user_import',
-	'ec_feeds',
+	//'ec_profile_csv',
+	//'ec_user_import',
+	//'ec_feeds',
   );
 }
 /**
@@ -255,9 +255,9 @@ function _essential_connections_configure() {
 	'ec_frontpage' => array('menu_links'),
 	'ec_seo' => array('user_permission'),
 	'ec_scheduler' => array('user_permission','variable'),
-	'ec_profile_csv' => array('user_permission','variable','menu_links'),
-	'ec_user_import' => array('user_permission'),
-	'ec_feeds' => array('user_permission'),
+	//'ec_profile_csv' => array('user_permission','variable','menu_links'),
+	//'ec_user_import' => array('user_permission'),
+	//'ec_feeds' => array('user_permission'),
     ); 
     features_revert($revert);
 }
