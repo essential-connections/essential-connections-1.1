@@ -1,5 +1,7 @@
 core = "6.x"
-dependencies[] = "ec_feeds"
+dependencies[] = "feeds"
+dependencies[] = "feeds_import"
+dependencies[] = "feeds_news"
 description = "a hook_install after feeds is installed"
 name = "ec_feeds_post_install"
 package = "Features"

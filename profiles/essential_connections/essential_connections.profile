@@ -113,9 +113,9 @@ function _essential_connections_modules() {
 	'ec_frontpage',
 	'ec_seo',
 	'ec_scheduler',
-	//'ec_profile_csv',
-	//'ec_user_import',
-	//'ec_feeds',
+	'ec_profile_csv',
+	'ec_user_import',
+	'ec_feeds',
   );
 }
 /**
