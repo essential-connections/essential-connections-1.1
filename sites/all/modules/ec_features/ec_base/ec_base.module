@@ -162,8 +162,28 @@ function ec_base_menu() {
 function ec_base_menu_alter(&$items) {
   
   $items['admin/user/user_import/configure']['access callback'] = 'ec_base_user_import_configure_access';
+
+  $items['admin/content/backup_migrate/restore']['access callback'] = 'ec_base_backup_migrate_restore_access';
+  $items['admin/content/backup_migrate/export/advanced']['access callback'] = 'ec_base_backup_migrate_advanced_access';
   
 }
+function ec_base_auth_access() {
+	global $user;
+	return FALSE;//($user-uid > 0) ? TRUE:FALSE;
+}
+function ec_base_user_import_configure_access() {
+	global $user;
+	return ($user->uid == 1) ? TRUE:FALSE;
+}
+function ec_base_backup_migrate_restore_access() {
+	global $user;
+	return ($user->uid == 1) ? TRUE:FALSE;
+}
+function ec_base_backup_migrate_advanced_access() {
+	global $user;
+	return ($user->uid == 1) ? TRUE:FALSE;
+}
+
 /**
  * Implementation of hook_menu_link_alter().
  */
@@ -205,14 +225,6 @@ function ec_base_menu_link_alter(&$item, $menu) {
 	
   }
 }
-function ec_base_auth_access() {
-	global $user;
-	return FALSE;//($user-uid > 0) ? TRUE:FALSE;
-}
-function ec_base_user_import_configure_access() {
-	global $user;
-	return ($user->uid == 1) ? TRUE:FALSE;
-}
 
 /**
  * Implementation of hook_form_alter().
@@ -247,8 +259,13 @@ function ec_base_form_alter(&$form, $form_state, $form_id) {
 	case 'user_import_add_form':
 	  $form['ftp']['#type'] = 'hidden';
 	  break;
+	case 'backup_migrate_ui_manual_quick_backup_form':
+	  unset($form['advanced']);
+	  $form['ftp']['#type'] = 'hidden';
+	  break;
   }
   
+
 }
 
 /**

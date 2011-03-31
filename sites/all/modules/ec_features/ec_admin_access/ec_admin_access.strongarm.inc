@@ -42,8 +42,6 @@ function ec_admin_access_strongarm() {
 	30 => 'admin/build/modules',
 	31 => 'admin/settings/admin',
 	32 => 'admin/settings/site-information',
-	33 => 'admin/content/backup_migrate/export/advanced',
-	34 => 'admin/content/backup_migrate/restore',
 	35 => 'admin/content/node-settings',
 	36 => 'admin/content/rss-publishing',
 	37 => 'admin/settings/performance',
