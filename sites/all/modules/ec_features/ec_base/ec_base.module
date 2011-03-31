@@ -159,7 +159,11 @@ function ec_base_menu() {
 
   return $items;
 }
-
+function ec_base_menu_alter(&$items) {
+  
+  $items['admin/user/user_import/configure']['access callback'] = 'ec_base_user_import_configure_access';
+  
+}
 /**
  * Implementation of hook_menu_link_alter().
  */
@@ -182,15 +186,15 @@ function ec_base_menu_link_alter(&$item, $menu) {
 	break;	
     case 'og':
 	  $item['weight'] = 10;
-	  $item['access callback'] = 'ec_base_auth_access';
+	  //$item['access callback'] = 'ec_base_auth_access';
 	break;
     case 'content':
 	  $item['weight'] = 9;
-	  $item['access callback'] = 'ec_base_auth_access';
+	  //$item['access callback'] = 'ec_base_auth_access';
 	break;
     case 'users':
 	  $item['weight'] = 8;
-	  $item['access callback'] = 'ec_base_auth_access';
+	  //$item['access callback'] = 'ec_base_auth_access';
 	break;
     case 'tracker':
 	  $item['hidden'] = 1;
@@ -198,16 +202,16 @@ function ec_base_menu_link_alter(&$item, $menu) {
     case 'logout':
 	  $item['weight'] = -9999;
 	break;
-    case 'admin/user/user_import/configure':
-	  //$item['access callback'] = 'ec_user_import_deny_access';
-	  $item['hidden'] = 1;
-	break;
 	
   }
 }
 function ec_base_auth_access() {
 	global $user;
 	return FALSE;//($user-uid > 0) ? TRUE:FALSE;
+}
+function ec_base_user_import_configure_access() {
+	global $user;
+	return ($user->uid == 1) ? TRUE:FALSE;
 }
 
 /**
