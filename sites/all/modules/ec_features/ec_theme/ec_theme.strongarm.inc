@@ -24,6 +24,8 @@ function ec_theme_strongarm() {
     'toggle_node_info_blog' => 1,
     'toggle_node_info_book' => 1,
     'toggle_node_info_event' => 1,
+	'toggle_node_info_feed' => 0,
+	'toggle_node_info_feed_item' => 0,
     'toggle_node_info_forum' => 1,
     'toggle_node_info_group' => 0,
     'toggle_node_info_guidance' => 0,
