@@ -18,7 +18,7 @@ function ec_profile_csv_menu() {
   );
   $items['admin/user/profile_csv_export'] = array(
     'title'            => 'User Export',
-    'type'             => MENU_SUGGESTED_ITEM, // Optional
+    'type'             => MENU_NORMAL_ITEM,
     'page callback'    => 'profile_csv_page',
     'access arguments' => array(PROFILE_CSV_PERM_DOWNLOAD),
   );
