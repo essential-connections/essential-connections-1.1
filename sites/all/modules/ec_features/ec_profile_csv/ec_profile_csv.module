@@ -4,8 +4,8 @@ include_once('ec_profile_csv.features.inc');
 
 
 function ec_profile_csv_menu_alter(&$items) {
-  global $user;
-  if($user->uid == 1) dpm($items['admin/settings/profile_csv']);
+  //global $user;
+  //if($user->uid == 1) dpm($items['admin/settings/profile_csv']);
   
   
 }
@@ -13,4 +13,14 @@ function ec_profile_csv_admin_access() {
 	global $user;
 	return ($user->uid == 1) ? TRUE:FALSE;
 }
-
+/**
+* Implementation of hook_menu_link_alter()
+*/
+function ec_profile_csv_menu_link_alter(&$item, $menu) {
+  global $user;
+  if($user->uid == 1){
+    if ($item['link_path'] == 'admin/settings/profile_csv') {
+      dpm($item);
+    }
+  }
+}
