@@ -79,6 +79,10 @@ function ec_base_footer($main = 0) {
  */
 function ec_base_help($path, $arg) {
   $output = '';
+  
+  if($path == 'node'){
+    drupal_goto('/');
+  }
 
   if(!(variable_get('ec_caches_cleared','0') == '1')){
     variable_set('ec_caches_cleared','1');
