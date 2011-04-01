@@ -19,7 +19,8 @@ function ec_profile_csv_menu_link_alter(&$item, $menu) {
   global $user;
   //if($user->uid == 1){
     if ($item['link_path'] == 'admin/settings/profile_csv') {
-      dpm($item);
+      //dpm($item);
+	  $item['link_path'] == 'admin/user/profile_csv'
     }
   //}
 }
