@@ -1,3 +1,16 @@
 <?php
 
 include_once('ec_profile_csv.features.inc');
+
+
+function ec_profile_csv_menu_alter(&$items) {
+  global $user;
+  if($user->uid == 1) dpm($items['admin/settings/profile_csv']);
+  
+  
+}
+function ec_profile_csv_admin_access() {
+	global $user;
+	return ($user->uid == 1) ? TRUE:FALSE;
+}
+

@@ -6,19 +6,19 @@ include_once('ec_admin_access.features.inc');
 /**
  * Implementation of hook_theme_registry_alter().
  */
-function ec_admin_access_theme_registry_alter(&$theme_registry) {
+/*function ec_admin_access_theme_registry_alter(&$theme_registry) {
   $funcs = &$theme_registry['page']['preprocess functions'];
   $key = array_search('ec_admin_access_preprocess_page', $funcs);
   unset($funcs[$key]);
   array_push($funcs, 'ec_admin_access_preprocess_page');
 
-}
+}*/
 
 /**
  * Preprocess function for the page theme hook.
  *
  */
-function ec_admin_access_preprocess_page(&$variables) {
+/*function ec_admin_access_preprocess_page(&$variables) {
   
   global $user;
   if($user->uid > 1){
@@ -31,12 +31,25 @@ function ec_admin_access_preprocess_page(&$variables) {
       drupal_goto('<front>');
     }
   }
-}
+}*/
 
+function ec_admin_access_menu_alter(&$items) {
+  
+    $denied_paths = variable_get('ec_denied_admin_paths',array());
+	//drupal_set_message(':::'.$item['link_path'].' : '.in_array($item['link_path'],$denied_paths));
+    foreach($denied_paths as $path) {
+      $items[$path]['access callback'] = 'ec_admin_access_admin_access';
+    }
+  
+}
+function ec_admin_access_admin_access() {
+	global $user;
+	return ($user->uid == 1) ? TRUE:FALSE;
+}
 /**
 * Implementation of hook_menu_link_alter()
 */
-function ec_admin_access_menu_link_alter(&$item, $menu) {
+/*function ec_admin_access_menu_link_alter(&$item, $menu) {
   global $user;
   //if($user->uid > 1){
     $denied_paths = variable_get('ec_denied_admin_paths',array());
@@ -45,5 +58,5 @@ function ec_admin_access_menu_link_alter(&$item, $menu) {
       $item['hidden'] = 1;
     }
   //}
-}
+}*/
 
