@@ -20,7 +20,7 @@ function ec_base_preprocess_page(&$variables) {
   $path = implode("/", arg());
   
   if($path == 'node'){
-    drupal_goto('/');
+    drupal_goto('');
   }
   
   if((arg(0) == 'admin' || arg(0) == 'administer' || arg(0) == 'administration') && arg(2) != 'block'){
