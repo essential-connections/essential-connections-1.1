@@ -7,7 +7,7 @@ function ec_theme_mix_and_match_form_alter(&$form, $form_state, $form_id) {
   switch($form_id){
     case 'system_themes_form':
 
-        $form['mix_and_match']['info']['#value']['description'] = '';
+        //$form['mix_and_match']['info']['#value']['description'] = '';
 
         $form['mix_and_match']['info']['#value']['version'] = '';
       
