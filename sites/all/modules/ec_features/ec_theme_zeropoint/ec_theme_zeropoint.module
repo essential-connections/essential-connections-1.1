@@ -13,7 +13,7 @@ function ec_theme_zeropoint_form_alter(&$form, $form_state, $form_id) {
         
         //$form['zeropoint']['info']['#value']['description'] = '';
 
-        $form['zeropoint']['info']['#value']['version'] = '';
+        //$form['zeropoint']['info']['#value']['version'] = '';
       
       break;
     case 'system_theme_settings':

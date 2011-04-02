@@ -11,9 +11,9 @@ function ec_theme_acquia_prosper_form_alter(&$form, $form_state, $form_id) {
   switch($form_id){
     case 'system_themes_form':
 
-        //$form['acquia_prosper']['info']['#value']['description'] = '';
+        $form['acquia_prosper']['info']['#value']['description'] = '';
 
-        $form['acquia_prosper']['info']['#value']['version'] = '';
+        //$form['acquia_prosper']['info']['#value']['version'] = '';
 
         unset($form['fusion_starter']);
         unset($form['fusion_core']);

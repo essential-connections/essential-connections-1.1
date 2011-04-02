@@ -13,7 +13,7 @@ function ec_theme_cti_flex_form_alter(&$form, $form_state, $form_id) {
 
         //$form['cti_flex']['info']['#value']['description'] = '';
 
-        $form['cti_flex']['info']['#value']['version'] = '';
+        //$form['cti_flex']['info']['#value']['version'] = '';
 
         unset($form['zen']);
         unset($form['STARTERKIT']);
