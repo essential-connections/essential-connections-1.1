@@ -199,6 +199,15 @@ function _essential_connections_configure() {
     0 => 'status',
     1 => 'revision',
     ));
+	
+	variable_set('page_title_type_blog_showfield', '1');
+	variable_set('page_title_type_event_showfield', '1');
+	variable_set('page_title_type_group_showfield', '1');
+	variable_set('page_title_type_page_showfield', '1');
+	variable_set('page_title_type_poll_showfield', '1');
+	variable_set('page_title_type_webform_showfield', '1');
+	variable_set('page_title_type_feed_showfield', '1');
+	
 
 	$home_path = file_create_path('home');
 	file_check_directory($home_path, 1);

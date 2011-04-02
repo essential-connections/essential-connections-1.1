@@ -22,13 +22,6 @@ function ec_simplemenu_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'simplemenu_css_filename';
-  $strongarm->value = '';
-
-  $export['simplemenu_css_filename'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'simplemenu_detect_popup';
   $strongarm->value = 1;
 
