@@ -19,6 +19,7 @@ function ec_base_preprocess_page(&$variables) {
 
   $path = implode("/", arg());
   
+  // keep default drupal page 'Welcome to your new Drupal site' from ever showing
   if($path == 'node'){
     drupal_goto('');
   }
@@ -92,12 +93,14 @@ function ec_base_help($path, $arg) {
     variable_set('ec_caches_cleared','1');
 	drupal_flush_all_caches();
 
+		/*
 		$node = new stdClass();
 		$node->type = 'page';
 		$node->title = 'Welcome';
 		$node->promote = 1;
 		$node->sticky = 1;
 		node_save($node);
+		*/
 	
 	if(module_exists('feeds')){
 		$node = new stdClass();
