@@ -273,23 +273,6 @@ function _essential_connections_configure() {
     ); 
     features_revert($revert);
 	
-	////
-	
-	if(module_exists('feeds')){
-		$node = new stdClass();
-		$node->type = 'feed';
-		$node->title = 'Guides';
-		$node->promote = 1;
-		$node->feeds['FeedsHTTPFetcher']['source'] = 'http://help.essential-connections.com/guides/rss.xml';
-		node_save($node);
-		
-		// Using Batch API (user will see a progress bar).
-		feeds_batch_set(t('Importing Guides'), 'import', 'my_importer_id', $node->nid);
-		// Not using Batch API (complete import within current page load)
-		//while (FEEDS_BATCH_COMPLETE != feeds_source('my_importer_id', $node->nid)->import());
-	
-	}
-	
 }
 /**
  * Finished callback for the modules install batch.
