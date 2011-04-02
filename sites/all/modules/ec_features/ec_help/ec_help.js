@@ -39,7 +39,7 @@ Drupal.behaviors.feedbacktab = function(context) {
   });*/
   $('.ec-help-link').click(function() {
     var path = $(this).attr('href');
-    help = window.open(path,'help','location=0,status=1,scrollbars=1,resizable=1,width=300,height=500');
+    help = window.open(path,'help','location=0,status=1,scrollbars=1,resizable=1,width=400,height=500');
     help.focus();
     //help.moveTo(0,0);
     return false;
