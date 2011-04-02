@@ -205,6 +205,7 @@ function _essential_connections_configure() {
 	variable_set('page_title_type_group_showfield', '1');
 	variable_set('page_title_type_page_showfield', '1');
 	variable_set('page_title_type_poll_showfield', '1');
+	variable_set('page_title_type_product_showfield', '1');
 	variable_set('page_title_type_webform_showfield', '1');
 	variable_set('page_title_type_feed_showfield', '1');
 	
@@ -271,6 +272,24 @@ function _essential_connections_configure() {
 	'ec_feeds' => array('user_permission'),
     ); 
     features_revert($revert);
+	
+	////
+	
+	if(module_exists('feeds')){
+		$node = new stdClass();
+		$node->type = 'feed';
+		$node->title = 'Guides';
+		$node->promote = 1;
+		$node->feeds['FeedsHTTPFetcher']['source'] = 'http://help.essential-connections.com/guides/rss.xml';
+		node_save($node);
+		
+		// Using Batch API (user will see a progress bar).
+		feeds_batch_set(t('Importing Guides'), 'import', 'my_importer_id', $node->nid);
+		// Not using Batch API (complete import within current page load)
+		//while (FEEDS_BATCH_COMPLETE != feeds_source('my_importer_id', $node->nid)->import());
+	
+	}
+	
 }
 /**
  * Finished callback for the modules install batch.
