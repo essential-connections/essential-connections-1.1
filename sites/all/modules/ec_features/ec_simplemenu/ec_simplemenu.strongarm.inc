@@ -73,21 +73,26 @@ function ec_simplemenu_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'simplemenu_exclusions';
   $strongarm->value = array(
-    'acquia_marina' => 0,
-    'acquia_prosper' => 0,
-    'bluemarine' => 0,
-    'chameleon' => 0,
-    'cti_flex' => 0,
-    'fusion_core' => 0,
-    'fusion_starter' => 0,
-    'garland' => 0,
-    'marvin' => 0,
-    'minnelli' => 0,
-    'pushbutton' => 0,
-    'STARTERKIT' => 0,
-    'zen' => 0,
-    'zen_classic' => 0,
-    'zeropoint' => 0,
+    'acquia_marina' => 'acquia_marina',
+    'acquia_prosper' => 'acquia_prosper',
+    'adaptivetheme' => 'adaptivetheme',
+    'adaptivetheme_admin' => 'adaptivetheme_admin',
+    'adaptivetheme_subtheme' => 'adaptivetheme_subtheme',
+    'cti_flex' => 'cti_flex',
+    'fusion_core' => 'fusion_core',
+    'fusion_starter' => 'fusion_starter',
+    'mix_and_match' => 'mix_and_match',
+    'pixture_reloaded' => 'pixture_reloaded',
+    'STARTERKIT' => 'STARTERKIT',
+    'zen' => 'zen',
+    'zen_classic' => 'zen_classic',
+    'zeropoint' => 'zeropoint',
+    'bluemarine' => 'bluemarine',
+    'chameleon' => 'chameleon',
+    'marvin' => 'marvin',
+    'garland' => 'garland',
+    'minnelli' => 'minnelli',
+    'pushbutton' => 'pushbutton',
   );
 
   $export['simplemenu_exclusions'] = $strongarm;
@@ -144,25 +149,6 @@ function ec_simplemenu_strongarm() {
   );
 
   $export['simplemenu_menus'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'simplemenu_multi_menu_theme_function';
-  $strongarm->value = array(
-    'cti_flex' => 'zen_menu_item_link',
-    'zeropoint' => 'dhtml_menu_theme_menu_item_link',
-    'acquia_prosper' => 'theme_menu_item_link',
-    'garland' => 'dhtml_menu_theme_menu_item_link',
-    'pushbutton' => 'dhtml_menu_theme_menu_item_link',
-    'mix_and_match' => 'theme_menu_item_link',
-    'minnelli' => 'theme_menu_item_link',
-    'adaptivetheme' => 'theme_menu_item_link',
-    'adaptivetheme_subtheme' => 'theme_menu_item_link',
-    'adaptivetheme_admin' => 'theme_menu_item_link',
-    'pixture_reloaded' => 'theme_menu_item_link',
-  );
-
-  $export['simplemenu_multi_menu_theme_function'] = $strongarm;
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
