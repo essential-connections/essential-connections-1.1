@@ -44,6 +44,17 @@ function ec_user_menu() {
     'access arguments' => array('create users'),
     'menu_name' => 'menu-administration',
   );
+ 
+  $items['admin/user/create'] = array(
+    'title' => 'Add user',
+	'page callback' => 'user_admin',
+    'page arguments' => array('create'),
+    'access arguments' => array('administer users'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'user.admin.inc',
+	'file path' => drupal_get_path('module', 'user'),
+	'menu_name' => 'menu-administration',
+  );
 
   
   /*

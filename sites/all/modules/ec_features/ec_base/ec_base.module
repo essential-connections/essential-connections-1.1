@@ -136,6 +136,14 @@ function ec_base_menu() {
   $items = array();
 
     global $user;
+	
+  $items['user/login'] = array(
+    'title' => 'Log in',
+    'access callback' => 'user_is_anonymous',
+    'type' => MENU_NORMAL_ITEM,
+	'menu' => 'primary-links',
+	'weight' => 51
+  );
  
   // SITE SETTINGS
     $items['admin/settings/site_settings'] = array(
