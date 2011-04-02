@@ -36,14 +36,14 @@ function ec_user_menu() {
 
   global $user;
   
-  $items['admin/user/add'] = array(
+  /*$items['admin/user/add'] = array(
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ucreate_user_form'),
     'title' => 'Add user',
     'description' => 'Add a user to this web site.',
     'access arguments' => array('create users'),
     'menu_name' => 'menu-administration',
-  );
+  );*/
  
   $items['admin/user/create'] = array(
     'title' => 'Add user',
