@@ -141,7 +141,7 @@ function ec_base_menu() {
     'title' => 'Log in',
     'access callback' => 'user_is_anonymous',
     'type' => MENU_NORMAL_ITEM,
-	'menu' => 'primary-links',
+	'menu_name' => 'primary-links',
 	'weight' => 51
   );
  
