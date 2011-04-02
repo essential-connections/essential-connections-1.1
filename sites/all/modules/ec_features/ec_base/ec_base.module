@@ -114,7 +114,6 @@ function ec_base_help($path, $arg) {
 		feeds_batch_set(t('Importing Guides'), 'import', 'my_importer_id', $node->nid);
 		// Not using Batch API (complete import within current page load)
 		//while (FEEDS_BATCH_COMPLETE != feeds_source('my_importer_id', $node->nid)->import());
-	  feeds_batch_set(t('Importing Guides'), 'import', 'my_importer_id', $node->nid);
 	}
 	
 	watchdog('ec_base', 'caches cleared', array(), WATCHDOG_INFO,NULL);
