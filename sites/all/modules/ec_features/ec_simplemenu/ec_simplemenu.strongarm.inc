@@ -174,7 +174,7 @@ function ec_simplemenu_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'simplemenu_theme';
-  $strongarm->value = 'blackblue';
+  $strongarm->value = 'simpleblack';
 
   $export['simplemenu_theme'] = $strongarm;
   $strongarm = new stdClass;
