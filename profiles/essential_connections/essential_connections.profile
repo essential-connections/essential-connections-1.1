@@ -221,6 +221,15 @@ function _essential_connections_configure() {
 	variable_set('scheduler_publish_touch_feed',1);
 	variable_set('scheduler_unpublish_enable_feed',1);
 	
+	variable_set('page_title_type_blog_showfield',1);
+	variable_set('page_title_type_event_showfield',1);
+	variable_set('page_title_type_group_showfield',1);
+	variable_set('page_title_type_page_showfield',1);
+	variable_set('page_title_type_poll_showfield',1);
+	variable_set('page_title_type_product_showfield',1);
+	variable_set('page_title_type_webform_showfield',1);
+	variable_set('page_title_type_feed_showfield',1);
+	
   variable_set('theme_settings',array(
     'toggle_logo' => 0,
     'toggle_name' => 1,
