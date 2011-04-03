@@ -213,6 +213,13 @@ function _essential_connections_configure() {
     0 => 'status',
     1 => 'revision',
     ));
+	variable_set('node_options_feed', array(
+    0 => 'status',
+    1 => 'revision',
+    ));
+	variable_set('scheduler_publish_enable_feed',1);
+	variable_set('scheduler_publish_touch_feed',1);
+	variable_set('scheduler_unpublish_enable_feed',1);
 	
   variable_set('theme_settings',array(
     'toggle_logo' => 0,
