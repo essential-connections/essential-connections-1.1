@@ -578,7 +578,7 @@ function ec_user_views_default_views() {
         'html' => 0,
       ),
       'value' => '<?php
-print l(\'edit\',\'user/\'.$data->uid.\'/edit\', array(\'attributes\' => array(\'target\' => \'_blank\')));
+print l(\'edit\',\'user/\'.$data->uid.\'/edit\');
 ?>',
       'exclude' => 0,
       'id' => 'phpcode',

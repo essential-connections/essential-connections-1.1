@@ -268,7 +268,7 @@ $nodes = taxonomy_select_nodes(array($data->tid), \'and\', 0, TRUE, \'n.sticky D
 //$result = db_result($nodes);
 $output = \'<ul>\';
 while ($n = db_fetch_object($nodes)) {
-$output .= \'<li>\'.l($n->title,\'node/\'.$n->nid.\'/edit\',array(\'attributes\' => array(\'target\' => \'_blank\'))).\'</li>\';
+$output .= \'<li>\'.l($n->title,\'node/\'.$n->nid.\'/edit\').\'</li>\';
 }
 
 $output .= \'</ul>\';
@@ -303,7 +303,7 @@ print($output);
         'html' => 0,
       ),
       'value' => '<?php
-print l(\'edit\',\'administer/categories/edit/\'.$data->tid, array(\'attributes\' => array(\'target\' => \'_blank\')));
+print l(\'edit\',\'administer/categories/edit/\'.$data->tid);
 ?>',
       'exclude' => 0,
       'id' => 'phpcode_1',

@@ -937,7 +937,7 @@ print(\'<em>videos:</em>\'.$count);
       'html' => 0,
     ),
     'value' => '<?php
-print l(\'edit\',\'node/\'.$data->nid.\'/edit\', array(\'attributes\' => array(\'target\' => \'_blank\')));
+print l(\'edit\',\'node/\'.$data->nid.\'/edit\');
 ?>',
     'exclude' => 0,
     'id' => 'phpcode_1',

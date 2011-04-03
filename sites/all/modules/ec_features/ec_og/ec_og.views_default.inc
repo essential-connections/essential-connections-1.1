@@ -1328,7 +1328,7 @@ print(\' - Members in list: \'.$GLOBALS[\'pager_total_items\'][0]);
         'html' => 0,
       ),
       'value' => '<?php
-print l(\'edit\',\'node/\'.$data->nid.\'/edit\', array(\'attributes\' => array(\'target\' => \'_blank\')));
+print l(\'edit\',\'node/\'.$data->nid.\'/edit\');
 ?>',
       'exclude' => 0,
       'id' => 'phpcode',
