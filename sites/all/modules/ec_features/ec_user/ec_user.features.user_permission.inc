@@ -43,38 +43,11 @@ function ec_user_user_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported permission: assign user roles
-  $permissions['assign user roles'] = array(
-    'name' => 'assign user roles',
-    'roles' => array(
-      '0' => 'administrator',
-      '1' => 'manager',
-    ),
-  );
-
-  // Exported permission: block users
-  $permissions['block users'] = array(
-    'name' => 'block users',
-    'roles' => array(
-      '0' => 'administrator',
-      '1' => 'manager',
-    ),
-  );
-
   // Exported permission: change own username
   $permissions['change own username'] = array(
     'name' => 'change own username',
     'roles' => array(
       '0' => 'authenticated user',
-    ),
-  );
-
-  // Exported permission: create users
-  $permissions['create users'] = array(
-    'name' => 'create users',
-    'roles' => array(
-      '0' => 'administrator',
-      '1' => 'manager',
     ),
   );
 

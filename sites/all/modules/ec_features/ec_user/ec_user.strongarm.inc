@@ -71,18 +71,6 @@ function ec_user_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'ucreate_default_roles';
-  $strongarm->value = array(
-    6 => 6,
-    5 => 0,
-    3 => 0,
-    4 => 0,
-  );
-
-  $export['ucreate_default_roles'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'user_email_verification';
   $strongarm->value = 1;
 
