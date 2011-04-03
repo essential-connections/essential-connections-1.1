@@ -189,7 +189,7 @@ function essential_connections_profile_tasks(&$task, $url) {
 }
 function _essential_connections_configure() {
 
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'zeropoint');
+	/*db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'zeropoint');
 	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'acquia_marina');
 	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'acquia_prosper');
 	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'bluemarine');
@@ -201,7 +201,7 @@ function _essential_connections_configure() {
 	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'mix_and_match');
 	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'pixture_reloaded');
 	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'pushbutton');
-	
+	*/
 
     //variable_set('site_frontpage', 'user/login');
 	variable_set('theme_default', 'cti_flex');
@@ -270,15 +270,6 @@ function _essential_connections_configure() {
     'seo' => '',
     'themedev' => '',
   ));
-	
-	variable_set('page_title_type_blog_showfield', '1');
-	variable_set('page_title_type_event_showfield', '1');
-	variable_set('page_title_type_group_showfield', '1');
-	variable_set('page_title_type_page_showfield', '1');
-	variable_set('page_title_type_poll_showfield', '1');
-	variable_set('page_title_type_product_showfield', '1');
-	variable_set('page_title_type_webform_showfield', '1');
-	variable_set('page_title_type_feed_showfield', '1');
 	
 
 	$home_path = file_create_path('home');
@@ -353,21 +344,6 @@ function _essential_connections_module_batch_finished($success, $results) {
   variable_set('install_task', 'ec-configure');
 }
 function _essential_connections_install_finished() {
-
-	if(module_exists('feeds')){
-		$node = new stdClass();
-		$node->type = 'feed';
-		$node->title = 'Guides';
-		$node->promote = 1;
-		$node->feeds['FeedsHTTPFetcher']['source'] = 'http://help.essential-connections.com/guides/rss.xml';
-		node_save($node);
-		
-		// Using Batch API (user will see a progress bar).
-		feeds_batch_set(t('Importing Guides'), 'import', 'my_importer_id', $node->nid);
-		// Not using Batch API (complete import within current page load)
-		//while (FEEDS_BATCH_COMPLETE != feeds_source('my_importer_id', $node->nid)->import());
-	}
-
   //drupal_flush_all_caches();
   //drupal_cron_run();
   variable_set('install_task', 'profile-finished');

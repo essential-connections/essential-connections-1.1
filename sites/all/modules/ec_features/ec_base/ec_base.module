@@ -102,8 +102,8 @@ function ec_base_help($path, $arg) {
 		node_save($node);
 		*/
 	
-	/*if(module_exists('feeds')){
-		$node = new stdClass();
+	if(module_exists('feeds')){
+		/*$node = new stdClass();
 		$node->type = 'feed';
 		$node->title = 'Guides';
 		$node->promote = 1;
@@ -111,10 +111,21 @@ function ec_base_help($path, $arg) {
 		node_save($node);
 		
 		// Using Batch API (user will see a progress bar).
-		feeds_batch_set(t('Importing Guides'), 'import', 'my_importer_id', $node->nid);
+		feeds_batch_set(t('Importing Guides'), 'import', 'feed', $node->nid);
 		// Not using Batch API (complete import within current page load)
 		//while (FEEDS_BATCH_COMPLETE != feeds_source('my_importer_id', $node->nid)->import());
-	}*/
+		*/
+		
+		$form_state = array();
+		module_load_include('inc', 'node', 'node.pages');
+		$node = array('type' => 'feed');
+		$form_state['values']['title'] = 'guide test';
+		$form_state['values']['body'] = '';
+		$form_state['values']['name'] = 'admin';
+		$form_state['values']['op'] = t('Save');
+		$form_state['values']['feeds']['FeedsHTTPFetcher']['source'] = 'http://help.essential-connections.com/guides/rss.xml';
+		drupal_execute('feed_node_form', $form_state, (object)$node);
+	}
 	
 	watchdog('ec_base', 'caches cleared', array(), WATCHDOG_INFO,NULL);
   }
