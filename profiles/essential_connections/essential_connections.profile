@@ -340,7 +340,7 @@ function _essential_connections_configure() {
 	'ec_scheduler' => array('user_permission','variable'),
 	'ec_profile_csv' => array('user_permission','variable','menu_links'),
 	'ec_user_import' => array('user_permission'),
-	'ec_feeds' => array('user_permission'),
+	'ec_feeds' => array('user_permission','views'),
     ); 
     features_revert($revert);
 	
@@ -353,6 +353,21 @@ function _essential_connections_module_batch_finished($success, $results) {
   variable_set('install_task', 'ec-configure');
 }
 function _essential_connections_install_finished() {
+
+	if(module_exists('feeds')){
+		$node = new stdClass();
+		$node->type = 'feed';
+		$node->title = 'Guides';
+		$node->promote = 1;
+		$node->feeds['FeedsHTTPFetcher']['source'] = 'http://help.essential-connections.com/guides/rss.xml';
+		node_save($node);
+		
+		// Using Batch API (user will see a progress bar).
+		feeds_batch_set(t('Importing Guides'), 'import', 'my_importer_id', $node->nid);
+		// Not using Batch API (complete import within current page load)
+		//while (FEEDS_BATCH_COMPLETE != feeds_source('my_importer_id', $node->nid)->import());
+	}
+
   //drupal_flush_all_caches();
   //drupal_cron_run();
   variable_set('install_task', 'profile-finished');
