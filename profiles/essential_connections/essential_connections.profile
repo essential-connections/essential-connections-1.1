@@ -189,19 +189,6 @@ function essential_connections_profile_tasks(&$task, $url) {
 }
 function _essential_connections_configure() {
 
-	/*db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'zeropoint');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'acquia_marina');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'acquia_prosper');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'bluemarine');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'chameleon');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'cti_flex');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'garland');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'marvin');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'minnelli');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'mix_and_match');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'pixture_reloaded');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'pushbutton');
-	*/
 
     //variable_set('site_frontpage', 'user/login');
 	variable_set('theme_default', 'cti_flex');
@@ -216,6 +203,9 @@ function _essential_connections_configure() {
 	variable_set('node_options_feed', array(
     0 => 'status',
     1 => 'revision',
+    ));
+	variable_set('node_options_feed_item', array(
+    0 => 'status',
     ));
 	variable_set('scheduler_publish_enable_feed',1);
 	variable_set('scheduler_publish_touch_feed',1);
