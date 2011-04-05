@@ -117,6 +117,7 @@ function _essential_connections_modules() {
 	'ec_profile_csv',
 	'ec_user_import',
 	'ec_feeds',
+	'ec_checkout',
   );
 }
 /**
@@ -322,6 +323,7 @@ function _essential_connections_configure() {
 	'ec_profile_csv' => array('user_permission','variable','menu_links'),
 	'ec_user_import' => array('user_permission'),
 	'ec_feeds' => array('user_permission','views'),
+	'ec_checkout' => array('user_permission'),
     ); 
     features_revert($revert);
 	

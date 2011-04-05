@@ -39,7 +39,7 @@ function ec_theme_cti_flex_strongarm() {
     'default_logo' => '0',
     'logo_path' => '',
     'default_favicon' => '0',
-    'favicon_path' => 'favicon.jpg',
+    'favicon_path' => '',
     'primary_links' => 1,
     'secondary_links' => 1,
     'toggle_logo' => 0,
