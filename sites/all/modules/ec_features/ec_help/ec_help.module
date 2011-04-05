@@ -182,7 +182,7 @@ function ec_help_block($op = 'list', $delta = 0, $edit = array()) {
 }
 function ec_help_display_block(){
 	
-	$content = '<a href="help.essential-connections.com/start" >link</a>';
+	$content = '<a href="http://help.essential-connections.com/start" class="ec-help-link" >Getting Started</a>';
 	
 	return $content;
 }
