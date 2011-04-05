@@ -202,6 +202,7 @@ function _essential_connections_configure() {
     0 => 'status',
     1 => 'revision',
     ));
+	
 	variable_set('node_options_feed', array(
     0 => 'status',
     1 => 'revision',
@@ -213,6 +214,11 @@ function _essential_connections_configure() {
 	variable_set('scheduler_publish_touch_feed',1);
 	variable_set('scheduler_unpublish_enable_feed',1);
 	
+	variable_set('node_options_simplenews', array(
+    0 => 'status',
+    1 => 'revision',
+    ));
+	
 	variable_set('page_title_type_blog_showfield',1);
 	variable_set('page_title_type_event_showfield',1);
 	variable_set('page_title_type_group_showfield',1);
@@ -221,6 +227,7 @@ function _essential_connections_configure() {
 	variable_set('page_title_type_product_showfield',1);
 	variable_set('page_title_type_webform_showfield',1);
 	variable_set('page_title_type_feed_showfield',1);
+	variable_set('page_title_type_simplenews_showfield',1);
 	
   variable_set('theme_settings',array(
     'toggle_logo' => 0,
