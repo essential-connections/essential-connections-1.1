@@ -129,7 +129,7 @@ function ec_base_help($path, $arg) {
 		//while (FEEDS_BATCH_COMPLETE != feeds_source('my_importer_id', $node->nid)->import());
 		*/
 		
-		$form_state = array();
+		/*$form_state = array();
 		module_load_include('inc', 'node', 'node.pages');
 		$node = array('type' => 'feed');
 		$form_state['values']['title'] = 'Guides';
@@ -139,6 +139,7 @@ function ec_base_help($path, $arg) {
 		$form_state['values']['op'] = t('Save');
 		$form_state['values']['feeds']['FeedsHTTPFetcher']['source'] = 'http://help.essential-connections.com/guides/rss.xml';
 		drupal_execute('feed_node_form', $form_state, (object)$node);
+		*/
 	}
 	
 	watchdog('ec_base', 'install done', array(), WATCHDOG_INFO,NULL);
