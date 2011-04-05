@@ -55,6 +55,7 @@ function ec_admin_access_strongarm() {
 	45 => 'admin/settings/scheduler',
 	46 => 'admin/settings/search404',
 	47 => 'admin/user/user/create',
+	48 => 'admin/settings/simplenews/mail',
   );
 
   $export['ec_denied_admin_paths'] = $strongarm;
