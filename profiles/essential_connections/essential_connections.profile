@@ -118,6 +118,7 @@ function _essential_connections_modules() {
 	'ec_user_import',
 	'ec_feeds',
 	'ec_checkout',
+	'ec_simplenews',
   );
 }
 /**
@@ -324,6 +325,7 @@ function _essential_connections_configure() {
 	'ec_user_import' => array('user_permission'),
 	'ec_feeds' => array('user_permission','views'),
 	'ec_checkout' => array('user_permission'),
+	'ec_simplenews' => array('user_permission','variable'),
     ); 
     features_revert($revert);
 	
