@@ -92,7 +92,7 @@ function ec_help_menu() {
        'type' => MENU_NORMAL_ITEM,
        'weight' => -99999,
 	   'options' => array('attributes' => array('class' => 'ec-help-link')),
-	   //'menu_name' => 'primary-links',
+	   'menu_name' => 'primary-links',
      );
      /*$items['help/all'] = array(
        'title' => 'General Help',
