@@ -164,6 +164,9 @@ function ec_help_block($op = 'list', $delta = 0, $edit = array()) {
       'weight' => -10, 
       'status' => 1, 
       'region' => 'left',
+	  'visibility'=> '0',
+	  'pages' => 'user/*/edit',
+	  'roles' => array(5),
     );
 
     return $blocks;
