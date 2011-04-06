@@ -10,13 +10,13 @@ function ec_signup_form_alter(&$form, $form_state, $form_id) {
 
   //global $user;
     //if($user->uid == 1){
-        drupal_set_message('<pre>form - ' . print_r($form, TRUE) . '</pre>');
+       //drupal_set_message('<pre>form - ' . print_r($form, TRUE) . '</pre>');
     //}  
 	
 
   switch($form_id){
-	case 'user_import_add_form':
-	  $form['ftp']['#type'] = 'hidden';
+	case 'signup_settings_form':
+	  $form['adv_settings']['#type'] = 'hidden';
 	  break;
   }
   
