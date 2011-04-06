@@ -230,6 +230,10 @@ function _essential_connections_configure() {
 	variable_set('page_title_type_feed_showfield',1);
 	variable_set('page_title_type_simplenews_showfield',1);
 	
+	variable_set('signup_status_invite_status','1');
+	variable_set('signup_status_notifications_delete',1);
+	variable_set('signup_status_notifications_statuses',array(2 => 2));
+	
   variable_set('theme_settings',array(
     'toggle_logo' => 0,
     'toggle_name' => 1,

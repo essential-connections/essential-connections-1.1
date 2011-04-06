@@ -88,9 +88,7 @@ function ec_signup_user_default_permissions() {
   // Exported permission: invite people to signup
   $permissions['invite people to signup'] = array(
     'name' => 'invite people to signup',
-    'roles' => array(
-      '0' => 'authenticated user',
-    ),
+    'roles' => array(),
   );
 
   // Exported permission: manage signup status codes
