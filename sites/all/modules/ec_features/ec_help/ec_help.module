@@ -169,32 +169,6 @@ function ec_help_view(){
   return $output;
 }
 
-function ec_help_block($op = 'list', $delta = 0, $edit = array()) {
-  if ($op == 'list') {
-    $blocks[0] = array(
-      'info' => t('Getting Started'), 
-      'weight' => -10, 
-      'status' => 1, 
-      'region' => 'left',
-	  'visibility'=> '0',
-	  'pages' => 'user/*/edit',
-	  'roles' => '5',
-    );
-
-    return $blocks;
-  }
-  else if ($op == 'view') {
-    switch ($delta) {
-      case 0:
-        $block = array(
-          'subject' => t(''), 
-          'content' => ec_help_display_block(),
-        );
-        break;
-    }
-    return $block;
-  }
-}
 function ec_help_display_block(){
 	
 	$content = '<a href="http://help.essential-connections.com/start" class="ec-help-link" >Getting Started</a>';
