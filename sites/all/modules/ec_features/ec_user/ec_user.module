@@ -97,8 +97,11 @@ function ec_user_form_alter(&$form, $form_state, $form_id) {
     if (in_array($rid,$locked_roles)) {
         drupal_goto('admin/user/roles');
     }
+  }else 
+  if($form_id == 'user_profile_form'){
+     //drupal_set_message('<b>form:</b><pre>'.print_r($form, TRUE) .'</pre>');
+      unset($form['theme_select']);
   }
-
 
 }
 
