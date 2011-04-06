@@ -16,7 +16,7 @@ function ec_signup_form_alter(&$form, $form_state, $form_id) {
 
   switch($form_id){
 	case 'signup_settings_form':
-	  $form['adv_settings']['#type'] = 'hidden';
+	  //$form['adv_settings']['#type'] = 'hidden';
 	  break;
   }
   
