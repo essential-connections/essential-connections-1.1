@@ -356,5 +356,12 @@ function ec_og_strongarm() {
   $strongarm->value = '0';
 
   $export['og_visibility_registration'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'notifications_content_type_group';
+  $strongarm->value = array();
+
+  $export['notifications_content_type_group'] = $strongarm;
   return $export;
 }

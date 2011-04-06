@@ -124,55 +124,6 @@ function ec_messaging_notifications_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'notifications_content_type_blog';
-  $strongarm->value = array();
-
-  $export['notifications_content_type_blog'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'notifications_content_type_event';
-  $strongarm->value = array();
-
-  $export['notifications_content_type_event'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'notifications_content_type_group';
-  $strongarm->value = array();
-
-  $export['notifications_content_type_group'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'notifications_content_type_page';
-  $strongarm->value = array();
-
-  $export['notifications_content_type_page'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'notifications_content_type_panel';
-  $strongarm->value = array();
-
-  $export['notifications_content_type_panel'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'notifications_content_type_poll';
-  $strongarm->value = array();
-
-  $export['notifications_content_type_poll'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'notifications_content_type_webform';
-  $strongarm->value = array();
-
-  $export['notifications_content_type_webform'] = $strongarm;
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'notifications_default_auto';
   $strongarm->value = 0;
 
