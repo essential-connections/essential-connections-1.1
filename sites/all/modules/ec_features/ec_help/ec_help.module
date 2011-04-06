@@ -85,7 +85,7 @@ function ec_help_menu() {
 	   'options' => array('attributes' => array('class' => 'ec-help-link')),
      );
      $items['http://help.essential-connections.com/start'] = array(
-       'title' => 'Help',
+       'title' => 'Getting Started',
        'page callback' => 'ec_help_view',
        'access callback' => 'user_access',
        'access arguments' => array('access help'),
