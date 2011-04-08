@@ -5,7 +5,7 @@
  */
 function ec_base_cron() {
 
-$dir = conf_path();
+$dir = realpath('./').'/'.file_directory_path();
 $size = `du -s $dir`; 
 $array = explode("\t", $size); 
 $size = $array[0]; 
