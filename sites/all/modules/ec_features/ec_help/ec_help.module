@@ -94,7 +94,7 @@ function ec_help_menu() {
 	   'options' => array('attributes' => array('class' => 'ec-help-link')),
 	   //'menu_name' => 'primary-links',
      );
-     $items['http://www.essential-connections.com/user'] = array(
+     /*$items['http://www.essential-connections.com/user'] = array(
        'title' => 'Control Panel',
        'page callback' => 'ec_help_view',
        'access callback' => 'user_access',
@@ -102,8 +102,7 @@ function ec_help_menu() {
        'type' => MENU_NORMAL_ITEM,
        'weight' => 99999,
 	   'options' => array('attributes' => array('class' => 'ec-help-link')),
-	   //'menu_name' => 'primary-links',
-     );
+     );*/
      /*$items['help/all'] = array(
        'title' => 'General Help',
        'page callback' => 'ec_help_view',
