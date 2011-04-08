@@ -1,17 +1,5 @@
 <?php
 
-/**
- * Implementation of hook_cron().
- */
-function ec_base_cron() {
-
-$dir = realpath('./').'/'.file_directory_path();
-$size = `du -s $dir`; 
-$array = explode("\t", $size); 
-$size = $array[0]; 
-  watchdog('ec_base', 'du: '.$dir.' : '.$size, array(), WATCHDOG_INFO, NULL);
-
-}
 
 /**
  * Implementation of hook_theme_registry_alter().
