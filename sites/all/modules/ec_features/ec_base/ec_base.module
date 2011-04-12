@@ -247,7 +247,13 @@ function ec_base_menu_link_alter(&$item, $menu) {
     case 'logout':
 	  $item['weight'] = -9999;
 	break;
-	
+	case 'heartbeat/ogheartbeat':
+	case 'heartbeat/membersactivity':
+	case 'heartbeat/groupsactivity':
+	case 'heartbeat/privateheartbeat':
+	case 'heartbeat/publicheartbeat':
+	  $item['hidden'] = 1;
+	break;
   }
 }
 
