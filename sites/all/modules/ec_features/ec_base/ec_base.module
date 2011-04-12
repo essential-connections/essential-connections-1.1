@@ -254,6 +254,9 @@ function ec_base_menu_link_alter(&$item, $menu) {
 	case 'heartbeat/publicheartbeat':
 	  $item['hidden'] = 1;
 	break;
+	case 'node/add/feed-item':
+	  $item['hidden'] = 1;
+	break;
   }
 }
 
