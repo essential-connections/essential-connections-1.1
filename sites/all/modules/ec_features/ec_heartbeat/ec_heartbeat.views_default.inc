@@ -242,7 +242,7 @@ function ec_heartbeat_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'Recent activities');
-  $handler->override_option('empty', 'no activity yet');
+  $handler->override_option('empty', 'no activities');
   $handler->override_option('empty_format', '2');
   $handler->override_option('use_ajax', TRUE);
   $handler->override_option('items_per_page', 50);
