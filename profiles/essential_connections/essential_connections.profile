@@ -120,6 +120,7 @@ function _essential_connections_modules() {
 	'ec_checkout',
 	'ec_simplenews',
 	'ec_signup',
+	'ec_heartbeat',
   );
 }
 /**
@@ -339,6 +340,7 @@ function _essential_connections_configure() {
 	'ec_checkout' => array('user_permission'),
 	'ec_simplenews' => array('user_permission','variable'),
 	'ec_signup' => array('user_permission','variable'),
+	'ec_heartbeat' => array('user_permission','views'),
     ); 
     features_revert($revert);
 	
