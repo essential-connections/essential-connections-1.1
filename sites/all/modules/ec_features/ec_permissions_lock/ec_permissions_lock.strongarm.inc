@@ -126,6 +126,8 @@ function ec_permissions_lock_strongarm() {
     'use views exporter' => 'use views exporter',
     'administer views_send' => 'administer views_send',
     'use PHP for additional processing' => 'use PHP for additional processing',
+	'configure heartbeat' => 'configure heartbeat',
+	'configure heartbeat messages' => 'configure heartbeat messages',
     'administer blocks' => 0,
     'create blog entries' => 0,
     'delete any blog entry' => 0,
