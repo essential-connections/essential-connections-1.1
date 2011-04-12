@@ -17,9 +17,9 @@ function ec_heartbeat_post_install_install() {
 ,'a:0:{}'
 ,'a:0:{}'
 ,'a:0:{}'
-,'a:2:{s:18:"heartbeat_comments";i:0;s:16:"comment_comments";i:0;}'
 ,'a:0:{}'
-,'a:2:{s:18:"heartbeat_comments";i:0;s:16:"comment_comments";i:0;}'
+,'a:0:{}'
+,'a:0:{}'
 );
   if($result != 1) watchdog('ec_heartbeat_post_install', 'problem replacing heartbeat_messages data in hook_install', array(), WATCHDOG_ERROR, NULL);
   
