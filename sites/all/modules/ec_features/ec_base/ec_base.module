@@ -76,7 +76,7 @@ function ec_base_footer($main = 0) {
   
   if (variable_get('eit_ads','1') == 1){
     $output .= '<div id="ec_ads_footer" style="text-align:center;">
-          <?php print <script type="text/javascript"><!--
+          <script type="text/javascript"><!--
 google_ad_client = "ca-pub-9646714435306637";
 /* footer */
 google_ad_slot = "1336666751";
