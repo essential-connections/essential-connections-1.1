@@ -238,10 +238,10 @@ function ec_base_menu_link_alter(&$item, $menu) {
 	  //$item['access callback'] = 'ec_base_help_access';
 	break;
     case 'admin':
-	  $item['weight'] = 999;
+	  $item['weight'] = 99;
 	break;
     case 'node/add':
-	  $item['weight'] = 99;
+	  $item['weight'] = 999;
 	break;
     case 'group':
 	  $item['hidden'] = 1;
