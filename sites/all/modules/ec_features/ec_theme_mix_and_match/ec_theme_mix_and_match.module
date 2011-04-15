@@ -17,7 +17,7 @@ function ec_theme_mix_and_match_form_alter(&$form, $form_state, $form_id) {
     case 'system_theme_settings':
 
 		//$form['theme_specific']['mix_and_match_colors']['mix_and_match_corners']['description'] = 'This will add rounded corners to blocks and some other elements. Corners are CSS3-based in compliant browsers.';
-        $form['theme_specific']['mix_and_match_colors']['description'] = '';
+        $form['theme_specific']['mix_and_match_colors']['#description'] = '';
 			
 	break;
   }
