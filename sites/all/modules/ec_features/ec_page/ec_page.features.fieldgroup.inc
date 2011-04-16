@@ -118,11 +118,11 @@ function ec_page_fieldgroup_default_groups() {
         'weight' => '5',
         'label' => 'above',
         'teaser' => array(
-          'format' => 'fieldset_collapsible',
+          'format' => 'no_style',
           'exclude' => 0,
         ),
         'full' => array(
-          'format' => 'fieldset_collapsible',
+          'format' => 'no_style',
           'exclude' => 0,
         ),
         'description' => '',
