@@ -412,7 +412,7 @@ function ec_base_site_settings() {
 		//'#required' => TRUE,
 	);
 	
-	date_timezone_site_form($form);
+	//date_timezone_site_form($form);
 	
 	$form['site_frontpage'] = array(
 		'#type' => 'radios',
