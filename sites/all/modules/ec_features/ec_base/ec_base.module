@@ -186,6 +186,17 @@ function ec_base_menu() {
 	'menu_name' => 'primary-links',
 	'weight' => 51
   );*/
+  
+  // admin page override
+    $items['admin'] = array(
+       'title' => 'Administer',
+       'description' => '',
+       'page callback' => 'ec_base_admin_page',
+       'access callback' => 'user_access',
+       'access arguments' => array('access administration pages'),
+       'type' => MENU_CALLBACK,
+       'weight' => 1
+    );
  
   // SITE SETTINGS
     $items['admin/settings/site_settings'] = array(
@@ -224,6 +235,10 @@ function ec_base_backup_migrate_restore_access() {
 function ec_base_backup_migrate_advanced_access() {
 	global $user;
 	return ($user->uid == 1) ? TRUE:FALSE;
+}
+
+function ec_base_admin_page() {
+	return t('Please select an item under the Administer menu on the top of the page.');
 }
 
 /**
