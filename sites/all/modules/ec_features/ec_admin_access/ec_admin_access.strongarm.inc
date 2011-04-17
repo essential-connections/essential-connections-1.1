@@ -59,6 +59,7 @@ function ec_admin_access_strongarm() {
 	49 => 'admin/settings/mimemail',
 	50 => 'admin/settings/simplenews/general',
 	51 => 'admin/content/heartbeat',
+	52 => 'admin/by-module',
   );
 
   $export['ec_denied_admin_paths'] = $strongarm;
