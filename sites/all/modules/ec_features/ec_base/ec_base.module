@@ -194,7 +194,7 @@ function ec_base_menu() {
        'page callback' => 'ec_base_admin_page',
        'access callback' => 'user_access',
        'access arguments' => array('access administration pages'),
-       'type' => MENU_CALLBACK,
+       'type' => MENU_NORMAL_ITEM,
        'weight' => 1
     );
  
