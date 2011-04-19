@@ -32,11 +32,6 @@ function ec_block_preprocess_block_admin_display_form(&$variables) {
 	  case 'menu_devel':
 	  case 'devel_2':
 	  case 'devel_0':
-      case 'calendar_0':
-      case 'user_import_og_0':
-      case 'heartbeat_singleheartbeat':
-      case 'clickpath_0':
-      case 'notifications_ui_0':
         unset($variables['block_listing']['-1'][$key]);
         break;
     }
