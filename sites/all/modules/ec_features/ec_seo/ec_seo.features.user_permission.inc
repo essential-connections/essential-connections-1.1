@@ -14,6 +14,14 @@ function ec_seo_user_default_permissions() {
     ),
   );
 
+  // Exported permission: administer meta tags
+  $permissions['edit meta tags'] = array(
+    'name' => 'edit meta tags',
+    'roles' => array(
+      '0' => 'administrator',
+    ),
+  );
+
   // Exported permission: administer page titles
   $permissions['administer page titles'] = array(
     'name' => 'administer page titles',
