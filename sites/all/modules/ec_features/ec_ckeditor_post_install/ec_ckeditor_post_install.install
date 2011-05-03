@@ -1,5 +1,4 @@
 <?php
-// $Id: ec_ckeditor_post_install.install,v 1.0 2011/02/27 17:31:49 s Exp $
 
 
 function ec_ckeditor_post_install_install() {
@@ -73,7 +72,8 @@ function ec_ckeditor_post_install_install() {
 
       $arr['excl_mode'] = 1;
       $arr['excl'] = 
-	  "admin/build/block/add.edit-body\n".
+      "admin/build/block/add.edit-body\n".
+      "*@node/*/edit.edit-body\n".
       "*@node/add/*.edit-body\n";
 
       //force by default simple toolbar on selected textareas
