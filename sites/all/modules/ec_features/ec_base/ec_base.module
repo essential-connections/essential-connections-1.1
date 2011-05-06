@@ -109,7 +109,11 @@ function ec_base_help($path, $arg) {
   if(!(variable_get('ec_install_done','0') == '1')){
     variable_set('ec_install_done','1');
 	drupal_flush_all_caches();
-	
+        
+        if(module_exists('jqp')){
+          jqp_rebuild_cache();
+        }
+
 	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'zeropoint');
 	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'acquia_marina');
 	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'acquia_prosper');
