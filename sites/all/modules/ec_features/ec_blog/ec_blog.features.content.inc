@@ -175,9 +175,9 @@ function ec_blog_content_default_fields() {
       'insert_width' => '',
       'label' => 'Images',
       'weight' => '8',
-      'description' => 'Upload two or more images here to show in this blog entry. ',
-      'type' => 'imagefield_widget',
-      'module' => 'imagefield',
+      'description' => 'Upload images here to show in this blog entry. ',
+      'type' => 'swfupload_widget',
+      'module' => 'swfupload',
     ),
   );
 

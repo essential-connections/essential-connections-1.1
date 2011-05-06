@@ -175,9 +175,9 @@ function ec_page_content_default_fields() {
       'insert_width' => '',
       'label' => 'Images',
       'weight' => '3',
-      'description' => 'Upload two or more images here to show in this page. ',
-      'type' => 'imagefield_widget',
-      'module' => 'imagefield',
+      'description' => 'Upload images here to show in this page. ',
+      'type' => 'swfupload_widget',
+      'module' => 'swfupload',
     ),
   );
 
