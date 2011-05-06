@@ -111,6 +111,7 @@ function ec_base_help($path, $arg) {
 	drupal_flush_all_caches();
         
         if(module_exists('jqp')){
+          module_load_include('inc', 'jqp', 'jqp.admin');
           jqp_rebuild_cache();
         }
 
