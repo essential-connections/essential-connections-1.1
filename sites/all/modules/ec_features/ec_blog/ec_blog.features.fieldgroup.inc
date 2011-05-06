@@ -62,7 +62,7 @@ function ec_blog_fieldgroup_default_groups() {
     'group_type' => 'standard',
     'type_name' => 'blog',
     'group_name' => 'group_images',
-    'label' => 'Slideshow',
+    'label' => 'Images',
     'settings' => array(
       'form' => array(
         'style' => 'fieldset',

@@ -62,7 +62,7 @@ function ec_event_fieldgroup_default_groups() {
     'group_type' => 'standard',
     'type_name' => 'event',
     'group_name' => 'group_images',
-    'label' => 'Slideshow',
+    'label' => 'Images',
     'settings' => array(
       'form' => array(
         'style' => 'fieldset',

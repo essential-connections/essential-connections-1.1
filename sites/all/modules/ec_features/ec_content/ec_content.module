@@ -23,7 +23,7 @@ function ec_content_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
 
       if($node->field_image && $node->field_image[0]['fid']){
 	    $node->content['ddblock'] = array(
-			'#value' => views_embed_view('node_gallery','page_1',array($node->nid)),
+			'#value' => views_embed_view('node_gallery','page_2',array($node->nid)),
 			'#weight' => $node->content['group_images']['#weight'],
 	    );
 	  }
