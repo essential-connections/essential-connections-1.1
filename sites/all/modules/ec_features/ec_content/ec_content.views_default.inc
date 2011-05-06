@@ -1986,7 +1986,7 @@ $handler->override_option('fields', array(
     ),
     'link_to_node' => 0,
     'label_type' => 'none',
-    'format' => 'imagefield__lightbox2__small__large',
+    'format' => 'imagefield__lightbox2__small__original',
     'multiple' => array(
       'group' => 0,
       'multiple_number' => '',
