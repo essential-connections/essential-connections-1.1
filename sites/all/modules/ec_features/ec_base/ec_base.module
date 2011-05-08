@@ -78,8 +78,8 @@ function ec_base_footer($main = 0) {
     $output .= '<div id="ec_ads_footer" style="text-align:center;">
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-1715737034922134";
-/* echeader */
-google_ad_slot = "0184185974";
+/* ecbottom */
+google_ad_slot = "9252329833";
 google_ad_width = 728;
 google_ad_height = 90;
 //-->
