@@ -139,9 +139,7 @@ function ec_help_menu() {
 function ec_help_get_page_help(){
 
   $args = arg();
-  $path = implode("-", $args);
-  
-  
+
   // add node type to node edit paths
   if($args[0] == 'node' && $args[1] > 0){
     $node = node_load($args[1]);
@@ -154,8 +152,8 @@ function ec_help_get_page_help(){
   foreach ($args as $key => $val){
     if(is_numeric($val)) $args[$key] = '*';
   }
-  
-  
+
+  $path = implode("-", $args);
   $url = variable_get('ec_help_url', 'http://help.essential-connections.com');
   $feed_url = $url.'/get_help_link/'.$path;
   $rawFeed = file_get_contents($feed_url);
