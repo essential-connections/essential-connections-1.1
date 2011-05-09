@@ -46,7 +46,7 @@ Drupal.behaviors.feedbacktab = function(context) {
   });
   $('.ec-help-link').css({background:"#000"});
   $('.ec-help-link').css({color:"#fff"});
-  $('.ec-help-link').css({padding:"10px"});
+  $('.ec-help-link').css({padding:"5px"});
 
   /*tab.click(function() {
     //var dialog = Drupal.theme('feedbacktabIframe').dialog(dialogOptions);
