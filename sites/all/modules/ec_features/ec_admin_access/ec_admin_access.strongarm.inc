@@ -62,6 +62,7 @@ function ec_admin_access_strongarm() {
 	52 => 'admin/by-module',
         53 => 'user/1/delete',
         54 => 'user/3/delete',
+        55 => 'user/1/edit',
   );
 
   $export['ec_denied_admin_paths'] = $strongarm;
