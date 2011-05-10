@@ -16,3 +16,4 @@ function ec_content_user_default_permissions() {
 
   return $permissions;
 }
+
