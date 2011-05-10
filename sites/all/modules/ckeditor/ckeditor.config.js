@@ -115,14 +115,14 @@ CKEDITOR.editorConfig = function(config) {
   if (Drupal.ckeditorCompareVersion('3.1')) {
     CKEDITOR.plugins.addExternal('drupalbreaks', Drupal.settings.ckeditor.module_path + '/plugins/drupalbreaks/');
   }
-  //if (Drupal.settings.ckeditor.linktocontent_menu) {
+  if (Drupal.settings.ckeditor.linktocontent_menu) {
     CKEDITOR.plugins.addExternal('linktomenu', Drupal.settings.ckeditor.module_path + '/plugins/linktomenu/');
     Drupal.settings.ckeditor.linktomenu_basepath = Drupal.settings.basePath;
-  //}
-  //if (Drupal.settings.ckeditor.linktocontent_node) {
+  }
+  if (Drupal.settings.ckeditor.linktocontent_node) {
     CKEDITOR.plugins.addExternal('linktonode', Drupal.settings.ckeditor.module_path + '/plugins/linktonode/');
     Drupal.settings.ckeditor.linktonode_basepath = Drupal.settings.basePath;
-  //}
+  }
 
   // 'MediaEmbed' plugin. To enable it, uncomment lines below and add 'MediaEmbed' button to selected toolbars.
   config.extraPlugins += (config.extraPlugins ? ',mediaembed' : 'mediaembed' );
@@ -132,4 +132,5 @@ CKEDITOR.editorConfig = function(config) {
   config.extraPlugins += (config.extraPlugins ? ',imce' : 'imce' );
   CKEDITOR.plugins.addExternal('imce', Drupal.settings.ckeditor.module_path + '/plugins/imce/');
 };
+
 
