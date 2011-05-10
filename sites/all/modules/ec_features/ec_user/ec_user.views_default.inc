@@ -596,6 +596,7 @@ print l(\'edit\',\'user/\'.$data->uid.\'/edit\');
       'value' => array(
         '0' => 0,
         '1' => '1',
+        '3' => '3',
       ),
       'group' => '0',
       'exposed' => FALSE,
