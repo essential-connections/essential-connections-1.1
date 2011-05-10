@@ -1,5 +1,6 @@
 core = "6.x"
 dependencies[] = "better_formats"
+dependencies[] = "pathologic"
 dependencies[] = "ec_formats_filters_post_install"
 dependencies[] = "features"
 dependencies[] = "strongarm"

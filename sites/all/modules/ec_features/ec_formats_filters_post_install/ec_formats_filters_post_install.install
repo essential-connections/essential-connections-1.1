@@ -14,6 +14,8 @@ function ec_formats_filters_post_install_install() {
 	(13, 2, 'filter', 2, 0),
 	(16, 1, 'filter', 0, 1),
 	(17, 1, 'filter', 1, 2),
+        (37, 2, 'pathologic', 0, 10),
+        (43, 1, 'pathologic', 0, 10),
 	(18, 1, 'filter', 2, 0);
 	");
 	if($result != 1) watchdog('ec_formats_filters_post_install', 'problem replacing filters in hook_install', array(), WATCHDOG_ERROR,NULL);
