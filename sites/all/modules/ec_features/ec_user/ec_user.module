@@ -18,8 +18,10 @@ function ec_user_preprocess_page(&$variables) {
                 $rows[] = array($name, t('locked'), $edit_permissions);
             }
         }
-        $form = user_admin_role();
-        //$rows[] = array(drupal_render($form['name']), array('data' => drupal_render($form['submit']), 'colspan' => 2));
+        //module_load_include('inc', 'user', 'user.admin');
+        //$form = user_admin_role();
+        $form = drupal_get_form('user_admin_new_role');
+        $rows[] = array(drupal_render($form['name']), array('data' => drupal_render($form['submit']), 'colspan' => 2));
         //$rows[] = array('<input type="text" maxlength="64" name="name" id="edit-name" size="32" value="" class="form-text">', array('data' => '<input type="submit" name="op" id="edit-submit" value="Add role" class="form-submit">', 'colspan' => 2));
 
 
