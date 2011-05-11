@@ -29,7 +29,7 @@ function ec_user_preprocess_page(&$variables) {
         //$output = drupal_render_form('user_admin_new_role',$form);
         $output .= theme('table', $header, $rows);
 
-        $variables['content'] = $output;
+        //$variables['content'] = $output;
     }
 }
 
@@ -100,6 +100,7 @@ function ec_user_form_alter(&$form, $form_state, $form_id) {
     $locked_roles = variable_get('ec_locked_roles',array(DRUPAL_ANONYMOUS_RID, DRUPAL_AUTHENTICATED_RID,3,4,5,6));
     $rid = arg(4);
     if (in_array($rid,$locked_roles)) {
+        drupal_set_message('This role is locked','ERROR');
         drupal_goto('admin/user/roles');
     }
   }else 
