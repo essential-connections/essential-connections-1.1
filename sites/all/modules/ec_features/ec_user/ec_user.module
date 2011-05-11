@@ -25,10 +25,10 @@ function ec_user_preprocess_page(&$variables) {
         //$rows[] = array('<input type="text" maxlength="64" name="name" id="edit-name" size="32" value="" class="form-text">', array('data' => '<input type="submit" name="op" id="edit-submit" value="Add role" class="form-submit">', 'colspan' => 2));
 
 
-        //$output = drupal_render($form);
-        $output = drupal_render_form('user_admin_new_role',$form);
+        $output = drupal_render($form);
+        //$output = drupal_render_form('user_admin_new_role',$form);
         $output .= theme('table', $header, $rows);
-
+dpm($variables['content']);
         $variables['content'] = $output;
     }
 }
