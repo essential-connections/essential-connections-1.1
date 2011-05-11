@@ -7,7 +7,6 @@ function ec_formats_filters_post_install_install() {
 	$result = db_query("REPLACE INTO {filters} (fid, format, module, delta, weight) VALUES
 	(15, 1, 'filter', 3, 10),
 	(14, 1, 'htmlpurifier', 0, 10),
-	(10, 2, 'htmlpurifier', 0, 10),
 	(8, 3, 'php', 0, 0),
 	(11, 2, 'filter', 3, 10),
 	(12, 2, 'filter', 1, 1),

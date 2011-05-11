@@ -17,7 +17,7 @@ function ec_ckeditor_post_install_install() {
 
       //security
       $arr['ss'] = "2";
-      $arr['filters']['htmlpurifier/0'] = 1;
+      $arr['filters']['htmlpurifier/0'] = 0;
 	  $arr['filters']['htmlpurifier/1'] = 0;
 	  $arr['filters']['filter/3'] = 1;
 	  $arr['filters']['filter/0'] = 1;

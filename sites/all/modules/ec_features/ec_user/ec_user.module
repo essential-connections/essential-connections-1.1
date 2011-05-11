@@ -24,7 +24,7 @@ function ec_user_preprocess_page(&$variables) {
         $output = drupal_render($form);
         $output .= theme('table', $header, $rows);
 
-        $variables['content'] = $output;
+       // $variables['content'] = $output;
     }
 }
 
