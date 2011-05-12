@@ -17,9 +17,6 @@ function ec_base_theme_registry_alter(&$theme_registry) {
  */
 function ec_base_preprocess_page(&$variables) {
 
-global $user;
-if($user->uid == 1) dpm($variables);
-
   $path = implode("/", arg());
   
   // keep default drupal page 'Welcome to your new Drupal site' from ever showing
