@@ -25,12 +25,12 @@ function ec_user_preprocess_page(&$variables) {
         $output = drupal_render($form);
         //$output = drupal_render_form('user_admin_new_role',$form);
         $output .= theme('table', $header, $rows);
-        
-        $variables['content'] = $output;
         */
-
-        str_replace('<a href="/admin/user/roles/edit/5">edit role</a>','locked',$variables['content']);
+         
+        $output = $variables['content'];
         
+        str_replace('<a href="/admin/user/roles/edit/5">edit role</a>','locked',$output);
+        $variables['content'] = $output;       
     }
 }
 
