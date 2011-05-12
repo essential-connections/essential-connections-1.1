@@ -8,7 +8,7 @@ include_once('ec_user.features.inc');
  */
 function ec_user_preprocess_page(&$variables) {
     if(arg(0) == 'admin' && arg(1) == 'user' && arg(2) == 'roles' && !arg(3)){
-	  $locked_roles = variable_get('ec_locked_roles',array(DRUPAL_ANONYMOUS_RID, DRUPAL_AUTHENTICATED_RID,3,4,5,6));
+	/*$locked_roles = variable_get('ec_locked_roles',array(DRUPAL_ANONYMOUS_RID, DRUPAL_AUTHENTICATED_RID,3,4,5,6));
         $header = array(t('Name'), array('data' => t('Operations'), 'colspan' => 2));
         foreach (user_roles() as $rid => $name) {
             $edit_permissions = l(t('edit permissions'), 'admin/user/permissions/'. $rid);
@@ -20,16 +20,17 @@ function ec_user_preprocess_page(&$variables) {
         }
         //module_load_include('inc', 'user', 'user.admin');
         $form = user_admin_role();
-        //$form = drupal_get_form('user_admin_new_role');
         $rows[] = array(drupal_render($form['name']), array('data' => drupal_render($form['submit']), 'colspan' => 2));
-        //$rows[] = array('<input type="text" maxlength="64" name="name" id="edit-name" size="32" value="" class="form-text">', array('data' => '<input type="submit" name="op" id="edit-submit" value="Add role" class="form-submit">', 'colspan' => 2));
-
 
         $output = drupal_render($form);
         //$output = drupal_render_form('user_admin_new_role',$form);
         $output .= theme('table', $header, $rows);
+        
+        $variables['content'] = $output;
+        */
 
-        //$variables['content'] = $output;
+        str_replace('<a href="/admin/user/roles/edit/5">edit role</a>','locked',$variables['content']);
+        
     }
 }
 
