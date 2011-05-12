@@ -28,7 +28,7 @@ function ec_user_preprocess_page(&$variables) {
         */
          
         $output = $variables['content'];
-        
+   drupal_set_message($output);     
         str_replace('edit role','locked',$output);
         $variables['content'] = $output;       
     }
