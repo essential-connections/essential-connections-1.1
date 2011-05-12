@@ -27,10 +27,16 @@ function ec_user_preprocess_page(&$variables) {
         $output .= theme('table', $header, $rows);
         */
          
-        $output = $variables['content'];
-   drupal_set_message($output);     
-        str_replace('edit role','locked',$output);
-        $variables['content'] = $output;       
+        //$output = $variables['content'];     
+        $output = str_replace('<a href="/admin/user/roles/edit/5">edit role</a>','locked',$variables['content']);
+        $variables['content'] = $output;
+        $output = str_replace('<a href="/admin/user/roles/edit/3">edit role</a>','locked',$variables['content']);
+        $variables['content'] = $output; 
+        $output = str_replace('<a href="/admin/user/roles/edit/4">edit role</a>','locked',$variables['content']);
+        $variables['content'] = $output; 
+        $output = str_replace('<a href="/admin/user/roles/edit/6">edit role</a>','locked',$variables['content']);
+        $variables['content'] = $output; 
+       
     }
 }
 
