@@ -47,8 +47,7 @@ Drupal.behaviors.feedbacktab = function(context) {
   $('.ec-help-link').css({background:"#000"});
   $('.ec-help-link').css({color:"#fff"});
   $('.ec-help-link').css({padding:"5px"});
-  $('.ec-help-link').css({margin-top:"5px"});
-  $('.ec-help-link').css({margin-bottom:"5px"});
+  $('.ec-help-link').css({margin:"5px 5px 5px 5px"});
   //$('.ec-help-link').css({font-weight:"bold"});
 
   /*tab.click(function() {
