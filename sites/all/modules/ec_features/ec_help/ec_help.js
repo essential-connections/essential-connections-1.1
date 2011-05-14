@@ -45,6 +45,7 @@ Drupal.behaviors.feedbacktab = function(context) {
     return false;
   });
   $('.ec-help-link').css({background:"#000"});
+  $('.ec-help-link').css({border:"#333333 1px solid"});
   $('.ec-help-link').css({color:"#fff"});
   $('.ec-help-link').css({padding:"5px"});
   //$('.ec-help-link').css({margin:"5px !important"});
