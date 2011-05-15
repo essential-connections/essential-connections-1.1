@@ -10,6 +10,7 @@ function ec_block_preprocess_block_admin_display_form(&$variables) {
       case 'user_1':
       case 'views_node_gallery-block_1':
       case 'jcarousel_block_0':
+      case 'og_views_0':
       case 'og_views_1':
       case 'forum_0':
       case 'diff_inline':
