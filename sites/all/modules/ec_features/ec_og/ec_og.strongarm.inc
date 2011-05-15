@@ -316,7 +316,7 @@ function ec_og_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'og_private_groups';
-  $strongarm->value = '2';
+  $strongarm->value = '3';
 
   $export['og_private_groups'] = $strongarm;
   $strongarm = new stdClass;
@@ -346,7 +346,7 @@ function ec_og_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'og_visibility_directory';
-  $strongarm->value = '1';
+  $strongarm->value = '3';
 
   $export['og_visibility_directory'] = $strongarm;
   $strongarm = new stdClass;

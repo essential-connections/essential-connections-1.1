@@ -95,6 +95,10 @@ function ec_block_install() {
 (308, 'heartbeat', 'connectedheartbeat', 'garland', 0, -8, '', 0, 0, 0, '', '', 6);");
   if($result != 1) watchdog('ec_block_install', 'problem replacing {blocks} in hook_install', array(), WATCHDOG_ERROR, NULL);
   
+  $result = db_query("REPLACE INTO {blocks_roles} (module, delta, rid) VALUES
+('og', '0', 2);");
+  if($result != 1) watchdog('ec_block_install', 'problem replacing {blocks_roles} in hook_install', array(), WATCHDOG_ERROR, NULL);
+
 
 }
 
