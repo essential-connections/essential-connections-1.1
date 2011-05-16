@@ -111,7 +111,7 @@ function _essential_connections_modules() {
 	'ec_theme_pixture_reloaded',
 	'ec_theme_zeropoint',
 	'ec_uc',
-	'ec_frontpage',
+	//'ec_frontpage',
 	'ec_seo',
 	'ec_scheduler',
 	'ec_profile_csv',
