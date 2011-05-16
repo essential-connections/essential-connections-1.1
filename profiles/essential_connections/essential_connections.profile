@@ -29,7 +29,7 @@ function essential_connections_profile_details() {
   );
 }
 function _essential_connections_modules() {
-  /*return array(
+  return array(
 	'ctools','features','strongarm',
 	'ec_base',
 	'ec_protect_critical_users',
@@ -81,9 +81,6 @@ function _essential_connections_modules() {
 	'ec_simplenews',
 	'ec_signup',
 	'ec_heartbeat',
-  );*/
-  return array(
-	'ctools','features','strongarm',
   );
 }
 /**
@@ -305,7 +302,7 @@ function _essential_connections_configure() {
 	'ec_signup' => array('user_permission','variable'),
 	'ec_heartbeat' => array('user_permission','views'),
     ); 
-    //features_revert($revert);
+    features_revert($revert);
 	
 }
 /**
