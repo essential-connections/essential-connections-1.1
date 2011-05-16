@@ -1796,7 +1796,7 @@ $handler->override_option('sitename_title', FALSE);
 
 
   $views[$view->name] = $view;
-/*
+
   // Exported view: node_gallery
 $view = new view;
 $view->name = 'node_gallery';
@@ -1806,7 +1806,7 @@ $view->view_php = '';
 $view->base_table = 'node';
 $view->is_cacheable = FALSE;
 $view->api_version = 2;
-$view->disabled = FALSE;
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 $handler = $view->new_display('default', 'Defaults', 'default');
 $handler->override_option('fields', array(
   'field_image_fid' => array(
@@ -2061,7 +2061,7 @@ $handler->override_option('tab_options', array(
   'description' => '',
   'weight' => 0,
 ));
-*/
+
 
   $views[$view->name] = $view;
 
