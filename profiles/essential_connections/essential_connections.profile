@@ -305,7 +305,7 @@ function _essential_connections_configure() {
 	'ec_signup' => array('user_permission','variable'),
 	'ec_heartbeat' => array('user_permission','views'),
     ); 
-    features_revert($revert);
+    //features_revert($revert);
 	
 }
 /**
