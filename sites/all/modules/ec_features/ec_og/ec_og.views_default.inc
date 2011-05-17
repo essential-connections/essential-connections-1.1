@@ -1092,7 +1092,7 @@ print(\' - Members in list: \'.$GLOBALS[\'pager_total_items\'][0]);
   ));
 
   $views[$view->name] = $view;
-
+/*
   // Exported view: og_admin
   $view = new view;
   $view->name = 'og_admin';
@@ -1997,6 +1997,6 @@ print $output;
 	));
   
   $views[$view->name] = $view;
-
+*/
   return $views;
 }
