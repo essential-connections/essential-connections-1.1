@@ -76,7 +76,7 @@ function _essential_connections_modules() {
 	'ec_scheduler',
 	'ec_profile_csv',
 	'ec_user_import',
-	'ec_feeds',
+	//'ec_feeds',
 	'ec_checkout',
 	'ec_simplenews',
 	'ec_signup',
@@ -175,6 +175,8 @@ function _essential_connections_configure() {
 	variable_set('scheduler_publish_enable_feed',1);
 	variable_set('scheduler_publish_touch_feed',1);
 	variable_set('scheduler_unpublish_enable_feed',1);
+	variable_set('notifications_content_type_feed_item',array());
+	variable_set('notifications_node_ui_feed_item',array());
 	
 	variable_set('node_options_simplenews', array(
     0 => 'status',
@@ -245,13 +247,13 @@ function _essential_connections_configure() {
 	chmod($picture_path,0777);
 
 	drupal_flush_all_caches();
-    node_access_rebuild();
+	node_access_rebuild();
 
-    if (function_exists('strongarm_init')) {
-      strongarm_init();
-    }
+	if (function_exists('strongarm_init')) {
+		strongarm_init();
+	}
 
-    $revert = array(
+	$revert = array(
 	'ec_base' => array('user_permission','variable','menu_links','menu_custom'),
 	'ec_protect_critical_users' => array('user_permission','variable'),
 	'ec_user' => array('user_permission','variable'),
@@ -301,8 +303,8 @@ function _essential_connections_configure() {
 	'ec_simplenews' => array('user_permission','variable'),
 	'ec_signup' => array('user_permission','variable'),
 	'ec_heartbeat' => array('user_permission','views'),
-    ); 
-    features_revert($revert);
+	); 
+	//features_revert($revert);
 	
 }
 /**
