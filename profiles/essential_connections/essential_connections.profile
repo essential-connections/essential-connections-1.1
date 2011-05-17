@@ -33,7 +33,7 @@ function _essential_connections_modules() {
 	'ctools','features','strongarm',
 	'ec_base',
 	'ec_protect_critical_users',
-	//'ec_user',
+	'ec_user',
 	'ec_permissions_lock',
 	'ec_delegate_menu',
 	'ec_admin_access',
@@ -80,7 +80,7 @@ function _essential_connections_modules() {
 	'ec_checkout',
 	'ec_simplenews',
 	'ec_signup',
-	//'ec_heartbeat',
+	'ec_heartbeat',
   );
 }
 /**
