@@ -48,7 +48,7 @@ function _essential_connections_modules() {
 	'ec_formats_filters',
 	'ec_htmlpurifier',
 	'ec_imagecache',
-	//'ec_og',
+	'ec_og',
 	'ec_messaging_notifications',
 	'ec_blog',
 	'ec_poll',

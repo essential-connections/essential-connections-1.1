@@ -5,7 +5,7 @@
  */
 function ec_og_views_default_views() {
   $views = array();
-
+/*
   // Exported view: add_member
   $view = new view;
   $view->name = 'add_member';
@@ -15,7 +15,7 @@ function ec_og_views_default_views() {
   $view->base_table = 'users';
   $view->is_cacheable = FALSE;
   $view->api_version = 2;
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+  $view->disabled = FALSE; 
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('fields', array(
     'uid' => array(
@@ -347,7 +347,7 @@ return FALSE;
   $view->base_table = 'users';
   $view->is_cacheable = FALSE;
   $view->api_version = 2;
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+  $view->disabled = FALSE; 
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('fields', array(
     'picture' => array(
@@ -676,7 +676,7 @@ print(\' - Members in list: \'.$GLOBALS[\'pager_total_items\'][0]);
   $view->base_table = 'users';
   $view->is_cacheable = FALSE;
   $view->api_version = 2;
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+  $view->disabled = FALSE; 
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('fields', array(
     'picture' => array(
@@ -1102,7 +1102,7 @@ print(\' - Members in list: \'.$GLOBALS[\'pager_total_items\'][0]);
   $view->base_table = 'node';
   $view->is_cacheable = FALSE;
   $view->api_version = 2;
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+  $view->disabled = FALSE; 
   $handler = $view->new_display('default', 'Defaults', 'default');
   $handler->override_option('fields', array(
     'title' => array(
@@ -1611,7 +1611,7 @@ print $output;
 	$view->base_table = 'users';
 	$view->is_cacheable = FALSE;
 	$view->api_version = 2;
-	$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+	$view->disabled = FALSE; 
 	$handler = $view->new_display('default', 'Defaults', 'default');
 	$handler->override_option('fields', array(
 	  'picture' => array(
@@ -1997,6 +1997,6 @@ print $output;
 	));
   
   $views[$view->name] = $view;
-
+*/
   return $views;
 }
