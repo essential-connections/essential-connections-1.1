@@ -5,7 +5,7 @@
  */
 function ec_og_views_default_views() {
   $views = array();
-/*
+
   // Exported view: add_member
   $view = new view;
   $view->name = 'add_member';
@@ -337,7 +337,7 @@ return FALSE;
   ));
 
   $views[$view->name] = $view;
-
+/*
   // Exported view: group_members
   $view = new view;
   $view->name = 'group_members';
@@ -1601,7 +1601,7 @@ print $output;
   ));
 
   $views[$view->name] = $view;
-  
+  */
   //exported view group_broadcast
 	$view = new view;
 	$view->name = 'group_broadcast';
@@ -1997,6 +1997,6 @@ print $output;
 	));
   
   $views[$view->name] = $view;
-*/
+
   return $views;
 }
