@@ -176,7 +176,7 @@ function _essential_connections_configure() {
 	variable_set('scheduler_publish_touch_feed',1);
 	variable_set('scheduler_unpublish_enable_feed',1);
 	variable_set('notifications_content_type_feed_item',array());
-	variable_set('notifications_node_ui_feed_item',array());
+	//variable_set('notifications_node_ui_feed_item',array());
 	
 	variable_set('node_options_simplenews', array(
     0 => 'status',
