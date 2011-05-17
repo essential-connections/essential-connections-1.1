@@ -11,7 +11,7 @@ function essential_connections_profile_modules() {
   $modules = array( 
     'ctools','features','strongarm',
   ); 
-  return $modules;
+  return _essential_connections_modules();//$modules;
 } 
 
 /**
