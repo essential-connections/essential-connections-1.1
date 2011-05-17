@@ -5,7 +5,7 @@
  */
 function ec_og_views_default_views() {
   $views = array();
-/*
+
   // Exported view: add_member
   $view = new view;
   $view->name = 'add_member';
@@ -252,15 +252,7 @@ function ec_og_views_default_views() {
     ),
   ));
   $handler->override_option('access', array(
-    'type' => 'php',
-    'code' => '<?php
-global $user;
-$node = node_load(arg(1));
-if( (user_access(\'administer nodes\') || user_access(\'manage groups\') || og_is_group_admin($node, $user)) && og_is_group_type($node->type) ){
-  return TRUE;
-}
-return FALSE;
-?>',
+    'type' => 'none',
   ));
   $handler->override_option('cache', array(
     'type' => 'none',
@@ -337,7 +329,7 @@ return FALSE;
   ));
 
   $views[$view->name] = $view;
-*//*
+
   // Exported view: group_members
   $view = new view;
   $view->name = 'group_members';
@@ -666,7 +658,7 @@ print(\' - Members in list: \'.$GLOBALS[\'pager_total_items\'][0]);
   ));
 
   $views[$view->name] = $view;
-*//*
+
   // Exported view: manage_members
   $view = new view;
   $view->name = 'manage_members';
@@ -973,15 +965,7 @@ print(\' - Members in list: \'.$GLOBALS[\'pager_total_items\'][0]);
     ),
   ));
   $handler->override_option('access', array(
-    'type' => 'php',
-    'code' => '<?php
-global $user;
-$node = node_load(arg(1));
-if(user_access(\'administer nodes\') || user_access(\'manage groups\') || og_is_group_admin($node, $user)){
-  return TRUE;
-}
-return FALSE;
-?>',
+    'type' => 'none',
   ));
   $handler->override_option('cache', array(
     'type' => 'none',
@@ -1092,7 +1076,7 @@ print(\' - Members in list: \'.$GLOBALS[\'pager_total_items\'][0]);
   ));
 
   $views[$view->name] = $view;
-*//*
+
   // Exported view: og_admin
   $view = new view;
   $view->name = 'og_admin';
@@ -1454,13 +1438,7 @@ print l(\'edit\',\'node/\'.$data->nid.\'/edit\');
     ),
   ));
   $handler->override_option('access', array(
-    'type' => 'php',
-    'code' => '<?php
-if(user_access(\'administer nodes\') || user_access(\'manage groups\')){
-  return TRUE;
-}
-return FALSE;
-?>',
+    'type' => 'none',
   ));
   $handler->override_option('cache', array(
     'type' => 'none',
@@ -1601,7 +1579,7 @@ print $output;
   ));
 
   $views[$view->name] = $view;
-*/
+
   //exported view group_broadcast
 	$view = new view;
 	$view->name = 'group_broadcast';
@@ -1876,15 +1854,7 @@ print $output;
 	  ),
 	));
 	$handler->override_option('access', array(
-	  'type' => 'php',
-	  'code' => '<?php
-	global $user;
-	$node = node_load(arg(1));
-	if(user_access(\'administer nodes\') || user_access(\'manage groups\') || user_access(\'broadcast\') || og_is_group_admin($node, $user)){
-	  return TRUE;
-	}
-	return FALSE;
-	?>',
+	  'type' => 'none',
 	));
 	$handler->override_option('cache', array(
 	  'type' => 'none',
