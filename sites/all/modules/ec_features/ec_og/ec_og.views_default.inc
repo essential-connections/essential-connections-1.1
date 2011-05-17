@@ -5,7 +5,7 @@
  */
 function ec_og_views_default_views() {
   $views = array();
-
+/*
   // Exported view: add_member
   $view = new view;
   $view->name = 'add_member';
@@ -337,7 +337,7 @@ return FALSE;
   ));
 
   $views[$view->name] = $view;
-/*
+*/
   // Exported view: group_members
   $view = new view;
   $view->name = 'group_members';
@@ -666,7 +666,7 @@ print(\' - Members in list: \'.$GLOBALS[\'pager_total_items\'][0]);
   ));
 
   $views[$view->name] = $view;
-
+/*
   // Exported view: manage_members
   $view = new view;
   $view->name = 'manage_members';
