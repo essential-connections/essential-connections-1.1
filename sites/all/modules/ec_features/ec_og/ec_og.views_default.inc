@@ -1601,7 +1601,7 @@ print $output;
   ));
 
   $views[$view->name] = $view;
-  */
+  
   //exported view group_broadcast
 	$view = new view;
 	$view->name = 'group_broadcast';
@@ -1997,6 +1997,6 @@ print $output;
 	));
   
   $views[$view->name] = $view;
-
+*/
   return $views;
 }
