@@ -1864,6 +1864,7 @@ print $output;
   'type' => 'role',
   'role' => array(
     '2' => 2,
+  	),
 	));
 	$handler->override_option('cache', array(
 	  'type' => 'none',
