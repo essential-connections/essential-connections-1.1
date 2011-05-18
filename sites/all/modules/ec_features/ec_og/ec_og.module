@@ -51,7 +51,7 @@ function ec_og_menu() {
     $items['node/%node/manage_members'] = array(
        'title' => 'Manage Members',
        'page callback' => 'views_embed_view',
-       'page arguments' => array('manage_members','page'),
+       'page arguments' => array('manage_members','page_1'),
        'access callback' => 'ec_og_manage_members_access',
        'access arguments' => array(1),
        'type' => MENU_LOCAL_TASK,
