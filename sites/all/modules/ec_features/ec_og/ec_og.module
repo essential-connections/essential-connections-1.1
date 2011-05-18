@@ -3,6 +3,16 @@
 include_once('ec_og.features.inc');
 
 /**
+ * Preprocess function for the page theme hook.
+ *
+ */
+function ec_og_preprocess_page(&$variables) {
+    if(arg(0) == 'og' && arg(1) == 'users' && arg(2)){
+       drupal_goto('node/'.arg(2).'/members');
+    }
+}
+
+/**
  * Implementation of hook_perm().
  */
 function ec_og_perm() {
@@ -39,7 +49,7 @@ function ec_og_menu() {
 
 	// manage_members
     $items['node/%node/manage_members'] = array(
-       'title' => 'Add Members',
+       'title' => 'Manage Members',
        'page callback' => 'views_embed_view',
        'page arguments' => array('manage_members','page'),
        'access callback' => 'ec_og_manage_members_access',
