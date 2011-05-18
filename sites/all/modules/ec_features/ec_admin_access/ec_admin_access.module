@@ -38,7 +38,7 @@ function ec_admin_access_menu_alter(&$items) {
     $denied_paths = variable_get('ec_denied_admin_paths',array());
 	//drupal_set_message(':::'.$item['link_path'].' : '.in_array($item['link_path'],$denied_paths));
     foreach($denied_paths as $path) {
-      $items[$path]['access callback'] = 'ec_admin_access_admin_access';
+      $items[$path]['access callback'] = TRUE;//'ec_admin_access_admin_access';
     }
   
 }
