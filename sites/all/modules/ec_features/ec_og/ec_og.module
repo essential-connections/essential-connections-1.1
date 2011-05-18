@@ -137,13 +137,7 @@ function ec_og_manage_members_access($node){
 	}
 	return FALSE;
 }
-function ec_og_broadcast_access($node){
-	global $user;
-	if( (user_access('administer nodes') || user_access('manage groups') || user_access('broadcast') || og_is_group_admin($node, $user)) && og_is_group_type($node->type) ){
-  	return TRUE;
-	}
-	return FALSE;
-}
+
 
 /**
 * Implementation of hook_mail()
