@@ -27,12 +27,11 @@ function ec_og_menu() {
 
     global $user;
 
-	// add_members
      $items['node/%node/add_members'] = array(
        'title' => 'Add Members',
        'page callback' => 'views_embed_view',
        'page arguments' => array('add_member','page'),
-       'access callback' => 'ec_og_add_members_access',
+       'access callback' => 'ec_og_is_group',
        'access arguments' => array(1),
        'type' => MENU_LOCAL_TASK,
        'weight' => 6
@@ -46,17 +45,6 @@ function ec_og_menu() {
        'type' => MENU_CALLBACK,
        'weight' => 1
     );
-
-	// manage_members
-    /*$items['node/%node/manage_members'] = array(
-       'title' => 'Manage Members',
-       'page callback' => 'views_embed_view',
-       'page arguments' => array('manage_members','page',1),
-       'access callback' => 'ec_og_manage_members_access',
-       'access arguments' => array(1),
-       'type' => MENU_LOCAL_TASK,
-       'weight' => 6
-    );*/
     $items['node/%node/manage_members/add/%user'] = array(
        'title' => 'Add Member',
        'page callback' => 'ec_og_add_member1',
@@ -85,16 +73,6 @@ function ec_og_menu() {
        'weight' => 1
     );
 
-	// broadcast
-    /*$items['node/%node/broadcast1'] = array(
-       'title' => 'Broadcast',
-       'page callback' => 'views_embed_view',
-       'page arguments' => array('group_bradcast','page',1),
-       'access callback' => 'ec_og_broadcast_access',
-       'access arguments' => array(1),
-       'type' => MENU_LOCAL_TASK,
-       'weight' => 5
-    );*/
 
   // OG overrides ///////////////////////////
 
@@ -119,20 +97,12 @@ function ec_og_menu() {
     'type' => MENU_LOCAL_TASK,
     'weight' => 7
   );
-	
+
 
 
   ////////////////////////////////////
 
   return $items;
-}
-function ec_og_menu_alter(&$items) {
-  
-	$i = $items['node/%node/manage_members'];
-	$i['access callback'] = 'ec_og_manage_members_access';
-  $items['node/%node/manage_members'] = $i;
-	$items['node/%node/broadcast']['access callback'] = 'ec_og_broadcast_access';
-  
 }
 
 function ec_og_goto_members($node){
@@ -141,21 +111,13 @@ function ec_og_goto_members($node){
     drupal_goto('node/'.$node->nid.'/members');
   }
 }
-function ec_og_add_members_access($node){
-	global $user;
-	if( (user_access('administer nodes') || user_access('manage groups') || og_is_group_admin($node, $user)) && og_is_group_type($node->type) ){
-  	return TRUE;
-	}
-	return FALSE;
+function ec_og_is_group($node){
+  if(user_access('manage groups') && og_is_group_type($node->type)){
+    return TRUE;
+  }else{
+    return FALSE;
+  }
 }
-function ec_og_manage_members_access($node){
-	global $user;
-	if( (user_access('administer nodes') || user_access('manage groups') || og_is_group_admin($node, $user)) && og_is_group_type($node->type) ){
-  	return TRUE;
-	}
-	return FALSE;
-}
-
 
 /**
 * Implementation of hook_mail()
