@@ -87,9 +87,9 @@ function ec_og_menu() {
 
 	// broadcast
     $items['node/%node/broadcast1'] = array(
-       'title' => 'Add Members',
+       'title' => 'Broadcast',
        'page callback' => 'views_embed_view',
-       'page arguments' => array('group_bradcast','page'),
+       'page arguments' => array('group_bradcast','page',1),
        'access callback' => 'ec_og_broadcast_access',
        'access arguments' => array(1),
        'type' => MENU_LOCAL_TASK,
