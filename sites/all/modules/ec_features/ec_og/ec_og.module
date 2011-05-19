@@ -128,7 +128,9 @@ function ec_og_menu() {
 }
 function ec_og_menu_alter(&$items) {
   
-  $items['node/%node/manage_members']['access callback'] = 'ec_og_manage_members_access';
+	$i = $items['node/%node/manage_members'];
+	$i['access callback'] = 'ec_og_manage_members_access';
+  $items['node/%node/manage_members'] = $i;
 	$items['node/%node/broadcast']['access callback'] = 'ec_og_broadcast_access';
   
 }
