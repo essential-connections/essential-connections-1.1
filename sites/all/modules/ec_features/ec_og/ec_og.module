@@ -51,7 +51,7 @@ function ec_og_menu() {
     $items['node/%node/manage_members'] = array(
        'title' => 'Manage Members',
        'page callback' => 'views_embed_view',
-       'page arguments' => array('manage_members'),
+       'page arguments' => array('manage_members','page',1),
        'access callback' => 'ec_og_manage_members_access',
        'access arguments' => array(1),
        'type' => MENU_LOCAL_TASK,
@@ -86,7 +86,7 @@ function ec_og_menu() {
     );
 
 	// broadcast
-    $items['node/%node/broadcast'] = array(
+    $items['node/%node/broadcast1'] = array(
        'title' => 'Add Members',
        'page callback' => 'views_embed_view',
        'page arguments' => array('group_bradcast','page'),
@@ -108,18 +108,18 @@ function ec_og_menu() {
   );
 
     // Broadcast tab on group node.
- /* $items['node/%node/broadcast'] = array(
+  $items['node/%node/broadcast'] = array(
     'title' => 'Broadcast',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ec_og_broadcast_form', 1),
-    'access callback' => 'ec_og_broadcast_access',
+    'access callback' => FALSE,
     'access arguments' => array(1),
     //'access callback' => 'user_access',
     //'access arguments' => array('broadcast'),
     'type' => MENU_LOCAL_TASK,
     'weight' => 7
   );
-	*/
+	
 
 
   ////////////////////////////////////
