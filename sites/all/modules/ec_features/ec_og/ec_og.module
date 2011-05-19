@@ -48,7 +48,7 @@ function ec_og_menu() {
     );
 
 	// manage_members
-    $items['node/%node/manage_members'] = array(
+    /*$items['node/%node/manage_members'] = array(
        'title' => 'Manage Members',
        'page callback' => 'views_embed_view',
        'page arguments' => array('manage_members','page',1),
@@ -56,7 +56,7 @@ function ec_og_menu() {
        'access arguments' => array(1),
        'type' => MENU_LOCAL_TASK,
        'weight' => 6
-    );
+    );*/
     $items['node/%node/manage_members/add/%user'] = array(
        'title' => 'Add Member',
        'page callback' => 'ec_og_add_member1',
@@ -86,7 +86,7 @@ function ec_og_menu() {
     );
 
 	// broadcast
-    $items['node/%node/broadcast1'] = array(
+    /*$items['node/%node/broadcast1'] = array(
        'title' => 'Broadcast',
        'page callback' => 'views_embed_view',
        'page arguments' => array('group_bradcast','page',1),
@@ -94,7 +94,7 @@ function ec_og_menu() {
        'access arguments' => array(1),
        'type' => MENU_LOCAL_TASK,
        'weight' => 5
-    );
+    );*/
 
   // OG overrides ///////////////////////////
 
@@ -112,7 +112,7 @@ function ec_og_menu() {
     'title' => 'Broadcast',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ec_og_broadcast_form', 1),
-    'access callback' => FALSE,
+    'access callback' => 'ec_og_broadcast_access',
     'access arguments' => array(1),
     //'access callback' => 'user_access',
     //'access arguments' => array('broadcast'),
@@ -125,6 +125,12 @@ function ec_og_menu() {
   ////////////////////////////////////
 
   return $items;
+}
+function ec_og_menu_alter(&$items) {
+  
+  $items['node/%node/manage_members']['access callback'] = 'ec_og_manage_members_access';
+	$items['node/%node/broadcast']['access callback'] = 'ec_og_broadcast_access';
+  
 }
 
 function ec_og_goto_members($node){
