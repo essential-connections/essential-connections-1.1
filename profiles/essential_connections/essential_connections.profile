@@ -31,6 +31,7 @@ function essential_connections_profile_details() {
 function _essential_connections_modules() {
   return array(
 	'ctools','features','strongarm',
+  'views','views_access_php',
 	'ec_base',
 	'ec_protect_critical_users',
 	'ec_user',
