@@ -44,10 +44,10 @@ Drupal.behaviors.feedbacktab = function(context) {
     //help.moveTo(0,0);
     return false;
   });
-  $('.ec-help-link').css({background:"#000"});
-  $('.ec-help-link').css({border:"#666 1px solid"});
-  $('.ec-help-link').css({color:"#fff"});
-  $('.ec-help-link').css({padding:"5px"});
+  $('.ec-help-link-page').css({background:"#000"});
+  $('.ec-help-link-page').css({border:"#666 1px solid"});
+  $('.ec-help-link-page').css({color:"#fff"});
+  $('.ec-help-link-page').css({padding:"5px"});
   //$('.ec-help-link').css({margin:"5px !important"});
   //$('.ec-help-link').css({font-weight:"bold"});
 
