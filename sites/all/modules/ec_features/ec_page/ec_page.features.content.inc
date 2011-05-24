@@ -148,7 +148,7 @@ function ec_page_content_default_fields() {
       'alt' => '',
       'custom_alt' => 1,
       'title' => '',
-      'custom_title' => 1,
+      'custom_title' => 0,
       'title_type' => 'textfield',
       'default_image' => NULL,
       'use_default_image' => 0,

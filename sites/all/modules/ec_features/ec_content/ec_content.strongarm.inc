@@ -9,6 +9,99 @@ function ec_content_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'flowplayer3_mediaplayer';
+  $strongarm->value = array(
+    'clip' => array(
+      'autoPlay' => 'false',
+      'autoBuffering' => 'false',
+      'scaling' => 'scale',
+      'start' => '',
+      'duration' => '',
+      'accelerated' => 'false',
+      'bufferLength' => '',
+      'provider' => '',
+      'fadeInSpeed' => '',
+      'fadeOutSpeed' => '',
+      'linkUrl' => '',
+      'linkWindow' => '_blank',
+      'live' => 'false',
+      'cuePointMultiplier' => '',
+    ),
+    'controls' => array(
+      'backgroundGradient' => 'medium',
+      'progressGradient' => 'medium',
+      'bufferGradient' => 'none',
+      'sliderGradient' => 'none',
+      'autoHide' => 'fullscreen',
+      'play' => 'true',
+      'volume' => 'true',
+      'mute' => 'true',
+      'time' => 'true',
+      'stop' => 'false',
+      'playlist' => 'false',
+      'fullscreen' => 'true',
+      'scrubber' => 'true',
+    ),
+    'canvas' => array(
+      'height' => '375',
+      'width' => '500',
+      'backgroundImage' => '',
+      'backgroundRepeat' => 'repeat',
+      'backgroundGradient' => 'low',
+      'border' => '',
+      'borderRadius' => '',
+    ),
+  );
+
+  $export['flowplayer3_mediaplayer'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'flowplayer3_mediaplayer_file';
+  $strongarm->value = 'flowplayer-3.1.1.swf';
+
+  $export['flowplayer3_mediaplayer_file'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'flowplayer3_mediaplayer_stream_plugin';
+  $strongarm->value = 'flowplayer.rtmp-3.0.2.swf';
+
+  $export['flowplayer3_mediaplayer_stream_plugin'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'flowplayer3_palette';
+  $strongarm->value = array(
+    'backgroundColor' => '#000000',
+    'controlbarbackgroundColor' => '#000000',
+    'timeColor' => '#01daff',
+    'durationColor' => '#ffffff',
+    'progressColor' => '#015b7a',
+    'bufferColor' => '#6c9cbc',
+    'sliderColor' => '#000000',
+    'buttonColor' => '#889aa4',
+    'buttonOverColor' => '#92b2bd',
+  );
+
+  $export['flowplayer3_palette'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'flowplayer3_product_key';
+  $strongarm->value = '';
+
+  $export['flowplayer3_product_key'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'flowplayer3_scheme';
+  $strongarm->value = '#000000,#000000,#01daff,#ffffff,#015b7a,#6c9cbc,#000000,#889aa4,#92b2bd';
+
+  $export['flowplayer3_scheme'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'lightbox2_border_size';
   $strongarm->value = '10';
 
@@ -272,5 +365,40 @@ function ec_content_strongarm() {
   $strongarm->value = 'Video !current of !total';
 
   $export['lightbox2_video_count_str'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swftools_flv_display';
+  $strongarm->value = 'flowplayer3_mediaplayer';
+
+  $export['swftools_flv_display'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swftools_flv_display_list';
+  $strongarm->value = 'flowplayer3_mediaplayer';
+
+  $export['swftools_flv_display_list'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swftools_media_display_list';
+  $strongarm->value = 'flowplayer3_mediaplayer';
+
+  $export['swftools_media_display_list'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swftools_mp3_display';
+  $strongarm->value = 'flowplayer3_mediaplayer';
+
+  $export['swftools_mp3_display'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'swftools_mp3_display_list';
+  $strongarm->value = 'flowplayer3_mediaplayer';
+
+  $export['swftools_mp3_display_list'] = $strongarm;
   return $export;
 }
