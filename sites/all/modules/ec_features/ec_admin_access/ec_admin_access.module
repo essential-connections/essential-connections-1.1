@@ -2,6 +2,21 @@
 
 include_once('ec_admin_access.features.inc');
 
+/**
+ * Implementation of hook_help().
+ */
+function ec_admin_access_help($path, $arg) {
+  $output = '';
+  
+	global $user;
+	if($user->uid != 1){
+  	if($path == 'user/1/edit'){
+			drupal_goto('user/1');
+		}
+  }
+
+  return $output;
+}
 
 /**
  * Implementation of hook_theme_registry_alter().
@@ -34,6 +49,7 @@ include_once('ec_admin_access.features.inc');
 }*/
 
 function ec_admin_access_menu_alter(&$items) {
+
   
     $denied_paths = variable_get('ec_denied_admin_paths',array());
 	//drupal_set_message(':::'.$item['link_path'].' : '.in_array($item['link_path'],$denied_paths));
