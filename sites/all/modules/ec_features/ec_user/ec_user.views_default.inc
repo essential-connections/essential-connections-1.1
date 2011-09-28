@@ -693,7 +693,7 @@ print l(\'edit\',\'user/\'.$data->uid.\'/edit\');
   $handler->override_option('empty', '<?php
 $output = \'There are no users\';
 if(user_access(\'create users\')){
-$output .=\'<ul><li>\'.l(\'Add User\',\'user/add\').\'</li></ul>\';
+$output .=\'<ul><li>\'.l(\'Add User\',\'admin/user/create\').\'</li></ul>\';
 }
 print $output;
 ?>');
