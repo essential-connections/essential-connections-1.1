@@ -73,6 +73,7 @@ function ec_ckeditor_post_install_install() {
       $arr['excl_mode'] = 1;
       $arr['excl'] = 
       "admin/build/block/add.edit-body\n".
+      "admin/build/block/configure/block/*.edit-body".
       "*@node/*/edit.edit-body\n".
       "*@node/add/*.edit-body\n";
 
