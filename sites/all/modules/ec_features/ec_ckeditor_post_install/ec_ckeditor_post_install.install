@@ -38,13 +38,13 @@ function ec_ckeditor_post_install_install() {
       $arr['language_direction'] = "default";
       
       //output
-      $arr['enter_mode'] = "p";
-      $arr['shift_enter_mode'] = "br";
+      $arr['enter_mode'] = "br";
+      $arr['shift_enter_mode'] = "p";
       $arr['font_format'] = 'p;div;pre;address;h1;h2;h3;h4;h5;h6';
       $arr['format_source'] = "t";
       $arr['format_output'] = "t";
       $arr['custom_formatting'] = "f";
-      $arr['formatting']['custom_formatting_options'] = array('indent' => 'indent', 'breakBeforeOpen' => 'breakBeforeOpen', 'breakAfterOpen' => 'breakAfterOpen', 'breakAfterClose' => 'breakAfterClose');
+      $arr['formatting']['custom_formatting_options'] = array();
 
       //css
       $arr['css_mode'] = "theme";
