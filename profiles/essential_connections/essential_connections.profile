@@ -82,6 +82,7 @@ function _essential_connections_modules() {
 	'ec_simplenews',
 	'ec_signup',
 	'ec_heartbeat',
+  'hosting_profile_roles',
   );
 }
 /**
@@ -156,7 +157,8 @@ function _essential_connections_configure() {
 	
 
     //variable_set('site_frontpage', 'user/login');
-	variable_set('theme_default', 'cti_flex');
+	//variable_set('theme_default', 'cti_flex');
+  variable_set('theme_default', 'mix_and_match');
 	variable_set('preprocess_css', '1');
 	variable_set('preprocess_js', '1');
 	variable_set('user_picture_path', 'home/profile_pictures');
