@@ -93,25 +93,30 @@ function ec_base_help($path, $arg) {
 
   if(!(variable_get('ec_install_done','0') == '1')){
     variable_set('ec_install_done','1');
-	drupal_flush_all_caches();
-        
-        if(module_exists('jqp')){
-          module_load_include('inc', 'jqp', 'jqp.admin');
-          jqp_rebuild_cache();
-        }
 
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'zeropoint');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'acquia_marina');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'acquia_prosper');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'bluemarine');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'chameleon');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'cti_flex');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'garland');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'marvin');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'minnelli');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'mix_and_match');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'pixture_reloaded');
-	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'pushbutton');
+	  module_disable(array(
+	  'hosting_profile_roles',
+	  ));
+
+	  drupal_flush_all_caches();
+        
+    if(module_exists('jqp')){
+      module_load_include('inc', 'jqp', 'jqp.admin');
+      jqp_rebuild_cache();
+    }
+
+	  db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'zeropoint');
+	  db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'acquia_marina');
+	  db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'acquia_prosper');
+	  db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'bluemarine');
+	  db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'chameleon');
+	  db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'cti_flex');
+	  db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'garland');
+  	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'marvin');
+  	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'minnelli');
+  	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'mix_and_match');
+  	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'pixture_reloaded');
+  	db_query("UPDATE {system} SET status = 1 WHERE type = 'theme' and name = '%s'", 'pushbutton');
 
 		/*
 		$node = new stdClass();
