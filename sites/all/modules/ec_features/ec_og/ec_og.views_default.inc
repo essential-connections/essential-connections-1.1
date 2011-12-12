@@ -7,120 +7,120 @@ function ec_og_views_default_views() {
   $views = array();
 
   // Exported view: add_member
-  $view = new view;
-  $view->name = 'add_member';
-  $view->description = '';
-  $view->tag = 'eit';
-  $view->view_php = '';
-  $view->base_table = 'users';
-  $view->is_cacheable = FALSE;
-  $view->api_version = 2;
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-  $handler = $view->new_display('default', 'Defaults', 'default');
-  $handler->override_option('fields', array(
-    'uid' => array(
-      'label' => 'Uid',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-      ),
-      'link_to_user' => 0,
-      'exclude' => 1,
-      'id' => 'uid',
-      'table' => 'users',
-      'field' => 'uid',
-      'relationship' => 'none',
+$view = new view;
+$view->name = 'add_member';
+$view->description = '';
+$view->tag = 'eit';
+$view->view_php = '';
+$view->base_table = 'users';
+$view->is_cacheable = FALSE;
+$view->api_version = 2;
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+$handler = $view->new_display('default', 'Defaults', 'default');
+$handler->override_option('fields', array(
+  'uid' => array(
+    'label' => 'Uid',
+    'alter' => array(
+      'alter_text' => 0,
+      'text' => '',
+      'make_link' => 0,
+      'path' => '',
+      'alt' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'help' => '',
+      'trim' => 0,
+      'max_length' => '',
+      'word_boundary' => 1,
+      'ellipsis' => 1,
+      'html' => 0,
     ),
-    'picture' => array(
-      'id' => 'picture',
-      'table' => 'users',
-      'field' => 'picture',
-      'label' => '',
-      'relationship' => 'none',
+    'link_to_user' => 0,
+    'exclude' => 1,
+    'id' => 'uid',
+    'table' => 'users',
+    'field' => 'uid',
+    'relationship' => 'none',
+  ),
+  'picture' => array(
+    'id' => 'picture',
+    'table' => 'users',
+    'field' => 'picture',
+    'label' => '',
+    'relationship' => 'none',
+  ),
+  'name' => array(
+    'label' => 'User Name',
+    'alter' => array(
+      'alter_text' => 0,
+      'text' => '',
+      'make_link' => 0,
+      'path' => '',
+      'alt' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'help' => '',
+      'trim' => 0,
+      'max_length' => '',
+      'word_boundary' => 1,
+      'ellipsis' => 1,
+      'html' => 0,
     ),
-    'name' => array(
-      'label' => 'User Name',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-      ),
-      'link_to_user' => 1,
-      'overwrite_anonymous' => 0,
-      'anonymous_text' => '',
-      'exclude' => 0,
-      'id' => 'name',
-      'table' => 'users',
-      'field' => 'name',
-      'relationship' => 'none',
+    'link_to_user' => 1,
+    'overwrite_anonymous' => 0,
+    'anonymous_text' => '',
+    'exclude' => 0,
+    'id' => 'name',
+    'table' => 'users',
+    'field' => 'name',
+    'relationship' => 'none',
+  ),
+  'rid' => array(
+    'label' => 'Role',
+    'alter' => array(
+      'alter_text' => 0,
+      'text' => '',
+      'make_link' => 0,
+      'path' => '',
+      'alt' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'help' => '',
+      'trim' => 0,
+      'max_length' => '',
+      'word_boundary' => 1,
+      'ellipsis' => 1,
+      'html' => 0,
     ),
-    'rid' => array(
-      'label' => 'Role',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-      ),
-      'type' => 'separator',
-      'separator' => ', ',
-      'empty' => '',
-      'exclude' => 0,
-      'id' => 'rid',
-      'table' => 'users_roles',
-      'field' => 'rid',
-      'relationship' => 'none',
+    'type' => 'separator',
+    'separator' => ', ',
+    'empty' => '',
+    'exclude' => 0,
+    'id' => 'rid',
+    'table' => 'users_roles',
+    'field' => 'rid',
+    'relationship' => 'none',
+  ),
+  'phpcode' => array(
+    'label' => 'Actions',
+    'alter' => array(
+      'alter_text' => 0,
+      'text' => '',
+      'make_link' => 0,
+      'path' => '[phpcode]',
+      'link_class' => '',
+      'alt' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'help' => '',
+      'trim' => 0,
+      'max_length' => '',
+      'word_boundary' => 1,
+      'ellipsis' => 1,
+      'strip_tags' => 0,
+      'html' => 0,
     ),
-    'phpcode' => array(
-      'label' => 'Actions',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '[phpcode]',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'strip_tags' => 0,
-        'html' => 0,
-      ),
-      'value' => '<?php 
+    'value' => '<?php 
   $nid = arg(1);
   $og = node_load($nid);
   if($og){
@@ -152,108 +152,170 @@ function ec_og_views_default_views() {
       print($output);
     }
 ?>',
-      'exclude' => 0,
-      'id' => 'phpcode',
-      'table' => 'customfield',
-      'field' => 'phpcode',
-      'relationship' => 'none',
-      'override' => array(
-        'button' => 'Override',
-      ),
+    'exclude' => 0,
+    'id' => 'phpcode',
+    'table' => 'customfield',
+    'field' => 'phpcode',
+    'relationship' => 'none',
+    'override' => array(
+      'button' => 'Override',
     ),
-    'contact' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'strip_tags' => 0,
-        'html' => 0,
-      ),
-      'text' => 'contact',
-      'link_display' => 'icon',
-      'exclude' => 0,
-      'id' => 'contact',
-      'table' => 'users',
-      'field' => 'contact',
-      'relationship' => 'none',
+  ),
+  'contact' => array(
+    'label' => '',
+    'alter' => array(
+      'alter_text' => 0,
+      'text' => '',
+      'make_link' => 0,
+      'path' => '',
+      'link_class' => '',
+      'alt' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'help' => '',
+      'trim' => 0,
+      'max_length' => '',
+      'word_boundary' => 1,
+      'ellipsis' => 1,
+      'strip_tags' => 0,
+      'html' => 0,
     ),
-  ));
-  $handler->override_option('filters', array(
-    'status' => array(
-      'id' => 'status',
-      'table' => 'users',
-      'field' => 'status',
-      'operator' => '=',
-      'value' => 1,
+    'text' => 'contact',
+    'link_display' => 'icon',
+    'exclude' => 0,
+    'id' => 'contact',
+    'table' => 'users',
+    'field' => 'contact',
+    'relationship' => 'none',
+  ),
+));
+$handler->override_option('arguments', array(
+  'uid' => array(
+    'default_action' => 'ignore',
+    'style_plugin' => 'default_summary',
+    'style_options' => array(),
+    'wildcard' => 'all',
+    'wildcard_substitution' => 'All',
+    'title' => '',
+    'breadcrumb' => '',
+    'default_argument_type' => 'fixed',
+    'default_argument' => '',
+    'validate_type' => 'none',
+    'validate_fail' => 'not found',
+    'break_phrase' => 0,
+    'not' => 0,
+    'id' => 'uid',
+    'table' => 'users',
+    'field' => 'uid',
+    'validate_user_argument_type' => 'uid',
+    'validate_user_roles' => array(
+      '2' => 0,
+      '5' => 0,
+      '3' => 0,
+      '4' => 0,
+      '6' => 0,
+    ),
+    'override' => array(
+      'button' => 'Override',
+    ),
+    'relationship' => 'none',
+    'default_options_div_prefix' => '',
+    'default_argument_user' => 0,
+    'default_argument_fixed' => '',
+    'default_argument_php' => '',
+    'validate_argument_node_type' => array(
+      'webform' => 0,
+      'blog' => 0,
+      'poll' => 0,
+      'event' => 0,
       'group' => 0,
-      'exposed' => FALSE,
-      'expose' => array(
-        'operator' => FALSE,
-        'label' => '',
-      ),
-      'relationship' => 'none',
-      'expose_button' => array(
-        'button' => 'Expose',
-      ),
+      'page' => 0,
+      'feed' => 0,
+      'feed_item' => 0,
+      'product' => 0,
+      'simplenews' => 0,
     ),
-    'uid' => array(
-      'operator' => 'in',
-      'value' => '',
-      'group' => '0',
-      'exposed' => TRUE,
-      'expose' => array(
-        'use_operator' => 0,
-        'operator' => 'uid_op',
-        'identifier' => 'uid',
-        'label' => 'User Name',
-        'optional' => 1,
-        'remember' => 0,
-        'reduce' => 0,
-      ),
-      'id' => 'uid',
-      'table' => 'users',
-      'field' => 'uid',
-      'relationship' => 'none',
+    'validate_argument_node_access' => 0,
+    'validate_argument_nid_type' => 'nid',
+    'validate_argument_vocabulary' => array(
+      '4' => 0,
+      '2' => 0,
+      '3' => 0,
     ),
-    'rid' => array(
-      'operator' => 'or',
-      'value' => array(),
-      'group' => '0',
-      'exposed' => TRUE,
-      'expose' => array(
-        'use_operator' => 1,
-        'operator' => 'rid_op',
-        'identifier' => 'rid',
-        'label' => 'Role',
-        'optional' => 1,
-        'single' => 0,
-        'remember' => 0,
-        'reduce' => 0,
-      ),
-      'id' => 'rid',
-      'table' => 'users_roles',
-      'field' => 'rid',
-      'relationship' => 'none',
-      'reduce_duplicates' => 0,
-      'override' => array(
-        'button' => 'Override',
-      ),
+    'validate_argument_type' => 'tid',
+    'validate_argument_transform' => 0,
+    'validate_user_restrict_roles' => 0,
+    'validate_argument_is_member' => 0,
+    'validate_argument_signup_status' => 'any',
+    'validate_argument_signup_node_access' => 0,
+    'validate_argument_php' => '',
+  ),
+));
+$handler->override_option('filters', array(
+  'status' => array(
+    'id' => 'status',
+    'table' => 'users',
+    'field' => 'status',
+    'operator' => '=',
+    'value' => 1,
+    'group' => 0,
+    'exposed' => FALSE,
+    'expose' => array(
+      'operator' => FALSE,
+      'label' => '',
     ),
-  ));
-  $handler->override_option('access', array(
-    'type' => 'php',
-    'code' => '<?php
+    'relationship' => 'none',
+    'expose_button' => array(
+      'button' => 'Expose',
+    ),
+  ),
+  'uid' => array(
+    'operator' => 'in',
+    'value' => '',
+    'group' => '0',
+    'exposed' => TRUE,
+    'expose' => array(
+      'use_operator' => 0,
+      'operator' => 'uid_op',
+      'identifier' => 'uid',
+      'label' => 'User Name',
+      'optional' => 1,
+      'remember' => 0,
+      'reduce' => 0,
+    ),
+    'id' => 'uid',
+    'table' => 'users',
+    'field' => 'uid',
+    'relationship' => 'none',
+  ),
+  'rid' => array(
+    'operator' => 'or',
+    'value' => array(),
+    'group' => '0',
+    'exposed' => TRUE,
+    'expose' => array(
+      'use_operator' => 1,
+      'operator' => 'rid_op',
+      'identifier' => 'rid',
+      'label' => 'Role',
+      'optional' => 1,
+      'single' => 0,
+      'remember' => 0,
+      'reduce' => 0,
+    ),
+    'id' => 'rid',
+    'table' => 'users_roles',
+    'field' => 'rid',
+    'relationship' => 'none',
+    'reduce_duplicates' => 0,
+    'override' => array(
+      'button' => 'Override',
+    ),
+  ),
+));
+$handler->override_option('access', array(
+  'type' => 'php',
+  'code' => '<?php
 global $user;
 $node = node_load(arg(1));
 if( (user_access(\'administer nodes\') || user_access(\'manage groups\') || og_is_group_admin($node, $user)) && og_is_group_type($node->type) ){
@@ -261,80 +323,79 @@ if( (user_access(\'administer nodes\') || user_access(\'manage groups\') || og_i
 }
 return FALSE;
 ?>',
-  ));
-  $handler->override_option('cache', array(
-    'type' => 'none',
-  ));
-  $handler->override_option('title', 'Add Members');
-  $handler->override_option('header_format', '2');
-  $handler->override_option('header_empty', 0);
-  $handler->override_option('empty', 'No results');
-  $handler->override_option('empty_format', '1');
-  $handler->override_option('use_ajax', '0');
-  $handler->override_option('items_per_page', 25);
-  $handler->override_option('use_pager', '1');
-  $handler->override_option('distinct', 0);
-  $handler->override_option('style_plugin', 'table');
-  $handler->override_option('style_options', array(
-    'grouping' => '',
-    'override' => 1,
-    'sticky' => 1,
-    'order' => 'asc',
-    'columns' => array(
-      'uid' => 'uid',
-      'picture' => 'picture',
-      'name' => 'name',
-      'rid' => 'rid',
-      'phpcode' => 'phpcode',
-      'contact' => 'name',
+));
+$handler->override_option('cache', array(
+  'type' => 'none',
+));
+$handler->override_option('title', 'Add Members');
+$handler->override_option('header_format', '2');
+$handler->override_option('header_empty', 0);
+$handler->override_option('empty', 'No results');
+$handler->override_option('empty_format', '1');
+$handler->override_option('items_per_page', 25);
+$handler->override_option('use_pager', '1');
+$handler->override_option('distinct', 0);
+$handler->override_option('style_plugin', 'table');
+$handler->override_option('style_options', array(
+  'grouping' => '',
+  'override' => 1,
+  'sticky' => 1,
+  'order' => 'asc',
+  'columns' => array(
+    'uid' => 'uid',
+    'picture' => 'picture',
+    'name' => 'name',
+    'rid' => 'rid',
+    'phpcode' => 'phpcode',
+    'contact' => 'name',
+  ),
+  'info' => array(
+    'uid' => array(
+      'sortable' => 0,
+      'separator' => '',
     ),
-    'info' => array(
-      'uid' => array(
-        'sortable' => 0,
-        'separator' => '',
-      ),
-      'picture' => array(
-        'sortable' => 0,
-        'separator' => '',
-      ),
-      'name' => array(
-        'sortable' => 1,
-        'separator' => ' ',
-      ),
-      'rid' => array(
-        'separator' => '',
-      ),
-      'phpcode' => array(
-        'separator' => '',
-      ),
-      'contact' => array(
-        'separator' => '',
-      ),
+    'picture' => array(
+      'sortable' => 0,
+      'separator' => '',
     ),
-    'default' => '-1',
-  ));
-  $handler->override_option('row_options', array(
-    'inline' => array(
-      'value' => 'value',
-      'value_1' => 'value_1',
+    'name' => array(
+      'sortable' => 1,
+      'separator' => ' ',
     ),
-    'separator' => ' ',
-  ));
-  $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->override_option('path', 'node/%/add_members');
-  $handler->override_option('menu', array(
-    'type' => 'tab',
-    'title' => 'Add Members',
-    'description' => '',
-    'weight' => '6',
-    'name' => 'navigation',
-  ));
-  $handler->override_option('tab_options', array(
-    'type' => 'normal',
-    'title' => 'Users',
-    'description' => '',
-    'weight' => '0',
-  ));
+    'rid' => array(
+      'separator' => '',
+    ),
+    'phpcode' => array(
+      'separator' => '',
+    ),
+    'contact' => array(
+      'separator' => '',
+    ),
+  ),
+  'default' => '-1',
+));
+$handler->override_option('row_options', array(
+  'inline' => array(
+    'value' => 'value',
+    'value_1' => 'value_1',
+  ),
+  'separator' => ' ',
+));
+$handler = $view->new_display('page', 'Page', 'page_1');
+$handler->override_option('path', 'node/%/add_members');
+$handler->override_option('menu', array(
+  'type' => 'tab',
+  'title' => 'Add Members',
+  'description' => '',
+  'weight' => '6',
+  'name' => 'navigation',
+));
+$handler->override_option('tab_options', array(
+  'type' => 'normal',
+  'title' => 'Users',
+  'description' => '',
+  'weight' => '0',
+));
 
   $views[$view->name] = $view;
 
