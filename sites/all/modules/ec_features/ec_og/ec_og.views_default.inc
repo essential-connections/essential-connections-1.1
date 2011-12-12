@@ -190,7 +190,7 @@ $handler->override_option('fields', array(
   ),
 ));
 $handler->override_option('arguments', array(
-  'uid' => array(
+  'null' => array(
     'default_action' => 'ignore',
     'style_plugin' => 'default_summary',
     'style_options' => array(),
@@ -202,11 +202,10 @@ $handler->override_option('arguments', array(
     'default_argument' => '',
     'validate_type' => 'none',
     'validate_fail' => 'not found',
-    'break_phrase' => 0,
-    'not' => 0,
-    'id' => 'uid',
-    'table' => 'users',
-    'field' => 'uid',
+    'must_not_be' => 0,
+    'id' => 'null',
+    'table' => 'views',
+    'field' => 'null',
     'validate_user_argument_type' => 'uid',
     'validate_user_roles' => array(
       '2' => 0,
