@@ -75,7 +75,7 @@ function ec_help_perm() {
 function ec_help_menu() {
   $items = array();
 
-     $items['http://help.essential-connections.com'] = array(
+     $items['http://help.wisewebsites.co'] = array(
        'title' => 'Help',
        'page callback' => 'ec_help_view',
        'access callback' => 'user_access',
@@ -84,7 +84,7 @@ function ec_help_menu() {
        'weight' => 66,
 	   'options' => array('attributes' => array('class' => 'ec-help-link')),
      );
-     $items['http://help.essential-connections.com/content/getting-started'] = array(
+     $items['http://help.wisewebsites.co/content/getting-started'] = array(
        'title' => 'Getting Started',
        'page callback' => 'ec_help_view',
        'access callback' => 'user_access',
@@ -154,7 +154,7 @@ function ec_help_get_page_help(){
   }
 
   $path = implode("-", $args);
-  $url = variable_get('ec_help_url', 'http://help.essential-connections.com');
+  $url = variable_get('ec_help_url', 'http://help.wisewebsites.co');
   $feed_url = $url.'/get_help_link/'.$path;
   $rawFeed = file_get_contents($feed_url);
   if($rawFeed){
@@ -178,7 +178,7 @@ function ec_help_view(){
 
 function ec_help_display_block(){
 	
-	$content = '<a href="http://help.essential-connections.com/start" class="ec-help-link" >Getting Started</a>';
+	$content = '<a href="http://help.wisewebsites.co/start" class="ec-help-link" >Getting Started</a>';
 	
 	return $content;
 }
